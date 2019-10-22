@@ -1,0 +1,497 @@
+version: 43.0.9
+pageUuid: 441da88c-f50b-11e9-a727-3365e655cd68
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - companiesQuery:
+          pluginTemplate:
+            id: companiesQuery
+            type: datasource
+            subtype: GoogleSheetsQuery
+            resourceName: Sample GSheets
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - useRawSpreadsheetId: true
+                - runWhenModelUpdates: true
+                - spreadsheetId: 1jQKcJQRgjBNzr2ZlKHJOGzv7HwSHJZOiYV0wQ9sx2EI
+                - sheetUpdate: ''
+                - privateParams: []
+                - triggersOnSuccess: []
+                - sheetIdToCopy: ''
+                - data: null
+                - showSuccessToaster: true
+                - actionType: read
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - watchedParams: []
+                - useRawCopyToSpreadsheetId: false
+                - timestamp: 0
+                - copyToSpreadsheetId: ''
+                - runWhenPageLoads: false
+                - sheetTitle: ''
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - sheetRange: 'A3:Z'
+                - queryThrottleTime: '750'
+            createdAt: 2018-09-17T20:07:05.926Z
+            updatedAt: 2018-09-20T08:10:29.924Z
+      - companiesTable:
+          pluginTemplate:
+            id: companiesTable
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - actionButtonQuery: ''
+                - actionButtonType: runQuery
+                - columnWidths:
+                    - ordered:
+                        - id: Title
+                        - value: 250
+                    - ordered:
+                        - id: Sales
+                        - value: 80
+                - actionButtonDisabled: ''
+                - columnWidthsMobile: []
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - address_id: ''
+                      - active: ''
+                      - created_at: ''
+                      - quantity: ''
+                      - image_url: ''
+                      - name: ''
+                      - Sales: orange
+                      - sales: ''
+                      - activebool: ''
+                      - create_date: ''
+                      - last_update: ''
+                      - last_name: ''
+                      - updated_at: ''
+                      - Title: blue
+                      - store_id: ''
+                      - first_name: ''
+                      - unit_price_cents: ''
+                      - id: ''
+                      - customer_id: ''
+                      - email: ''
+                      - Description: green
+                      - category: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - actionButtonUrl: ''
+                - actionButton: false
+                - actionButtonNewWindow: false
+                - columnVisibility:
+                    ordered:
+                      - address_id: true
+                      - active: true
+                      - created_at: true
+                      - quantity: true
+                      - image_url: true
+                      - name: true
+                      - Sales: true
+                      - sales: true
+                      - activebool: true
+                      - create_date: true
+                      - last_update: true
+                      - last_name: true
+                      - updated_at: true
+                      - Title: true
+                      - store_id: true
+                      - first_name: true
+                      - unit_price_cents: true
+                      - id: false
+                      - customer_id: true
+                      - email: true
+                      - Description: true
+                      - category: true
+                - selectedPageIndex: '0'
+                - serverPaginated: false
+                - data: '{{ filteredCompanies.data }}'
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - actionButtonInternalUrlPath: ''
+                - pageSize: 8
+                - selectedColumn: null
+                - sortedColumn: ''
+                - actionButtonText: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - onRowSelect: ''
+                - selectedIndex: ''
+                - totalRowCount: ''
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - columns:
+                    - Title
+                    - Sales
+                    - Description
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - customer_id
+                    - store_id
+                    - first_name
+                    - last_name
+                    - address_id
+                    - activebool
+                    - create_date
+                    - last_update
+                    - active
+                    - quantity
+                    - unit_price_cents
+                    - created_at
+                    - updated_at
+                    - image_url
+                    - category
+                - sort: null
+                - actionButtonInternalUrlQuery: ''
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+            position2:
+              position2:
+                row: 3
+                height: 10
+                width: 7
+            mobilePosition2:
+              position2:
+                row: 3
+                height: 9
+                width: 12
+            createdAt: 2018-08-06T18:01:25.280Z
+            updatedAt: 2018-09-20T08:59:14.957Z
+      - toInput:
+          pluginTemplate:
+            id: toInput
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: 'true'
+                - disabledKeyCodes: ''
+                - docsSlug: textinput
+                - leftIconName: mail
+                - initialValue: '{{  companiesTable.selectedRow.data.email  }}'
+                - value: ''
+                - placeholder: Send to...
+                - label: 'To:'
+                - labelMaxWidth: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: ''
+            position2:
+              position2:
+                row: 1
+                col: 7
+                height: 2
+                width: 5
+            mobilePosition2:
+              position2:
+                row: 12
+                height: 2
+                width: 12
+            createdAt: 2018-09-17T23:58:47.568Z
+            updatedAt: 2018-09-20T08:10:29.927Z
+      - bccInput:
+          pluginTemplate:
+            id: bccInput
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - docsSlug: textinput
+                - leftIconName: mail
+                - initialValue: ''
+                - value: ''
+                - placeholder: BCC'd emails (maybe your email?)
+                - label: 'BCC (optional):'
+                - labelMaxWidth: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: ''
+            position2:
+              position2:
+                row: 3
+                col: 7
+                height: 2
+                width: 5
+            mobilePosition2:
+              position2:
+                row: 14
+                height: 2
+                width: 12
+            createdAt: 2018-09-18T00:01:06.012Z
+            updatedAt: 2018-09-20T08:10:29.927Z
+      - personalizedInput:
+          pluginTemplate:
+            id: personalizedInput
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - docsSlug: textinput
+                - leftIconName: search
+                - initialValue: ''
+                - value: ''
+                - placeholder: I was excited by the potential your company has!
+                - label: Personalized snippet
+                - labelMaxWidth: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: ''
+            position2:
+              position2:
+                row: 5
+                col: 7
+                height: 3
+                width: 5
+            mobilePosition2:
+              position2:
+                row: 16
+                height: 3
+                width: 12
+            createdAt: 2018-09-18T00:03:50.869Z
+            updatedAt: 2018-09-20T08:10:29.928Z
+      - sendEmailButton:
+          pluginTemplate:
+            id: sendEmailButton
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - color: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: Send Email
+                - exportQuery: ''
+                - action: sendEmail
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                row: 12
+                col: 7
+                height: 1
+                width: 5
+            mobilePosition2:
+              position2:
+                row: 23
+                height: 1
+                width: 12
+            createdAt: 2018-09-18T00:06:17.145Z
+            updatedAt: 2018-09-20T08:10:29.928Z
+      - text2:
+          pluginTemplate:
+            id: text2
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    <center><h3 style="line-height:25px">Demo day
+                    companies</h3></center>
+
+                    <style>
+                      .retool-canvas {
+                        min-width: 0 !important;
+                      }
+                      .retool-branding {
+                        min-width: 0 !important;
+                      }
+                    </style>
+                - html: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                height: 1
+                width: 12
+            mobilePosition2:
+              position2:
+                height: 1
+                width: 12
+            createdAt: 2018-09-18T00:26:47.046Z
+            updatedAt: 2018-09-20T08:51:04.778Z
+      - emailPreview:
+          pluginTemplate:
+            id: emailPreview
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: 'true'
+                - disabledKeyCodes: ''
+                - docsSlug: textinput
+                - leftIconName: search
+                - initialValue: >-
+                    Hi founders at {{  companiesTable.selectedRow.data.name }},
+
+
+                    It was great to meet yesterday. {{  personalizedInput.value
+                    }}
+
+
+                    Thanks!
+                - value: ''
+                - placeholder: Search here...
+                - label: Email preview
+                - labelMaxWidth: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: ''
+            position2:
+              position2:
+                row: 8
+                col: 7
+                height: 4
+                width: 5
+            mobilePosition2:
+              position2:
+                row: 19
+                height: 4
+                width: 12
+            createdAt: 2018-09-18T00:58:49.496Z
+            updatedAt: 2018-09-20T08:10:29.929Z
+      - sendEmail:
+          pluginTemplate:
+            id: sendEmail
+            type: datasource
+            subtype: RESTQuery
+            resourceName: onboarding_api
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: >-
+                    [{"key":"to","value":"{{
+                    companiesTable.selectedRow.data.email}}"},{"key":"bcc","value":"{{bccInput.value}}"},{"key":"snippet","value":"{{personalizedInput.value}}"},{"key":"company_name","value":"{{
+                    companiesTable.selectedRow.data.name }}"}]
+                - queryDisabledMessage: Please enter in a personalized snippet!
+                - successMessage: ''
+                - queryDisabled: '{{ !personalizedInput.value}}'
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - paginationEnabled: false
+                - query: emails/new
+                - privateParams: []
+                - triggersOnSuccess: []
+                - data: null
+                - showSuccessToaster: true
+                - cookies: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - watchedParams: []
+                - paginationDataField: ''
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - type: POST
+                - bodyType: json
+                - queryThrottleTime: '750'
+            createdAt: 2018-09-19T05:51:17.389Z
+            updatedAt: 2018-09-20T08:10:29.929Z
+      - multiselect1:
+          pluginTemplate:
+            id: multiselect1
+            type: widget
+            subtype: MultiSelectWidget
+            template:
+              ordered:
+                - label: Filter by category
+                - labelMaxWidth: ''
+                - value: ''
+                - displayValue: ''
+                - placeholder: ''
+                - values: '  {{ companiesQuery.data.map(function(d) { return d.category })}}'
+                - labels: >-
+                    {{ companiesQuery.data.map(function(d) { return d.category
+                    })}}
+                - disabled: ''
+            position2:
+              position2:
+                row: 1
+                height: 2
+                width: 7
+            mobilePosition2:
+              position2:
+                row: 1
+                height: 2
+                width: 12
+            createdAt: 2018-09-20T08:07:10.344Z
+            updatedAt: 2018-09-20T08:10:29.929Z
+      - filteredCompanies:
+          pluginTemplate:
+            id: filteredCompanies
+            type: datasource
+            subtype: SqlTransformQuery
+            resourceName: SQL Transforms
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from {{ companiesQuery.data }} where {{
+                    multiselect1.value.length == 0}} or category = ANY ({{
+                    multiselect1.value}}) order by category
+                - privateParams: []
+                - triggersOnSuccess: []
+                - data: null
+                - showSuccessToaster: true
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - watchedParams: []
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - queryThrottleTime: '750'
+            createdAt: 2018-09-20T08:08:33.866Z
+            updatedAt: 2018-09-20T08:10:29.929Z
+  createdAt: null
+  version: 2.29.11
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
