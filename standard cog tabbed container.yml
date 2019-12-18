@@ -1,0 +1,3721 @@
+version: 43.0.9
+pageUuid: 60175c20-1b87-11ea-96e6-172f8b0032ad
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - capture_list:
+          pluginTemplate:
+            id: capture_list
+            type: datasource
+            subtype: SqlQuery
+            resourceName: Catalog DB
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: "SELECT\nc.pos_code,\nc.uuid,\nc.extra,\nc.source,\nc.extra -> 'notes' as notes,\nc.full_name,\nc.display_name,\nc.created_at,\nfront_pics.front_pic_location,\nback_pics.back_pic_location,\nstate\nFROM\ncapture c\nleft JOIN\n(\n  select \n  capture_uuid,\n  file_location as front_pic_location\n  FROM\n  capture_document\n  WHERE type = 'front_inv_pic'\n)front_pics\non\nfront_pics.capture_uuid = c.uuid\nleft JOIN\n(\n  select \n  capture_uuid,\n  file_location as back_pic_location\n  FROM\n  capture_document\n  WHERE type = 'back_inv_pic'\n)back_pics\non\nback_pics.capture_uuid = c.uuid\nWHERE\nc.store_uuid = {{select1.value}}\nAND\nc.uuid = ANY({{ formatDataAsArray(filtered_captures.data).map(c => c.uuid)}})\nAND\nc.pos_code ILIKE {{'%' + textinput3.value + '%' }}\nAND\nc.display_name ILIKE {{'%' + textinput4.value + '%' }}\nAND\n\t(\n    (c.state != 'ERROR' AND {{checkbox1.value = false}}) \n    \tOR \n    \t{{checkbox1.value = true}} \n\t)"
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10001'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-04-20T04:49:38.684Z
+            updatedAt: 2019-12-10T23:43:45.655Z
+      - stores:
+          pluginTemplate:
+            id: stores
+            type: datasource
+            subtype: SqlQuery
+            resourceName: Catalog DB
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: 'select uuid, name, display_name from store;'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-05T19:23:45.073Z
+            updatedAt: 2019-09-18T20:19:51.967Z
+      - cap_front_pic:
+          pluginTemplate:
+            id: cap_front_pic
+            type: datasource
+            subtype: GCSQuery
+            resourceName: Standard catalog bucket
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: >-
+                    {{table1.selectedRow.data.front_pic_location.split("/").slice(-1).pop()}}
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - sourceFileKey: ''
+                - uploadFileName: export.csv
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: ''
+                - uploadFileAcl: ''
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - sourceBucketName: ''
+                - actionType: getSignedUrl
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - rawData: null
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - signedOperationName: read
+                - enableTransformer: false
+                - uploadFileType: csv
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-05T19:47:19.735Z
+            updatedAt: 2019-09-18T20:19:51.967Z
+      - cap_back_pic:
+          pluginTemplate:
+            id: cap_back_pic
+            type: datasource
+            subtype: GCSQuery
+            resourceName: Standard catalog bucket
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: >-
+                    {{table1.selectedRow.data.back_pic_location.split("/").slice(-1).pop()}}
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - sourceFileKey: ''
+                - uploadFileName: export.csv
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: ''
+                - uploadFileAcl: ''
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - sourceBucketName: ''
+                - actionType: getSignedUrl
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - rawData: null
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - signedOperationName: read
+                - enableTransformer: false
+                - uploadFileType: csv
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-05T20:11:00.378Z
+            updatedAt: 2019-09-18T20:19:51.967Z
+      - add_to_list:
+          pluginTemplate:
+            id: add_to_list
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: |-
+                    var list_uuids = state1.value.map(c => c.uuid)
+                    if (!list_uuids.includes(table1.selectedRow.data.uuid)){
+                      state1.setValue(state1.value.concat([table1.selectedRow.data]))
+                    }
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-06T01:33:16.043Z
+            updatedAt: 2019-09-18T20:19:51.970Z
+      - clear_list:
+          pluginTemplate:
+            id: clear_list
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: 'state1.setValue([])'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-06T03:07:11.670Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - remove_from_list:
+          pluginTemplate:
+            id: remove_from_list
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: >-
+                    state1.setValue(state1.value.filter(c => c.uuid !=
+                    table4.selectedRow.data.uuid))
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-06T03:23:20.051Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - close_modal:
+          pluginTemplate:
+            id: close_modal
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: modal1.close()
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-06T06:21:06.672Z
+            updatedAt: 2019-09-18T20:19:51.972Z
+      - scenes:
+          pluginTemplate:
+            id: scenes
+            type: datasource
+            subtype: SqlQuery
+            resourceName: Catalog DB
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: |-
+                    select 
+                    distinct sc.scene_name
+                    from scene sc
+                    where 
+                    sc.store_uuid = {{select1.value}};
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-06T06:32:59.279Z
+            updatedAt: 2019-09-18T20:19:51.972Z
+      - scenes_completed:
+          pluginTemplate:
+            id: scenes_completed
+            type: datasource
+            subtype: SqlQuery
+            resourceName: Catalog DB
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: |-
+                    SELECT
+                    DISTINCT
+                    s.pipeline_scene_name,
+                    s.uuid,
+                    s.scene_name,
+                    s.created_at
+                    FROM
+                    scene s 
+                    JOIN
+                    step st 
+                    ON
+                    s.uuid = st.scene_uuid
+                    JOIN
+                    label_item li 
+                    ON
+                    st.uuid = li.step_uuid
+                    WHERE
+                    li.capture_uuid = {{table1.selectedRow.data.uuid}}
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-06T16:06:47.107Z
+            updatedAt: 2019-09-18T20:19:51.972Z
+      - filtered_captures:
+          pluginTemplate:
+            id: filtered_captures
+            type: datasource
+            subtype: SqlQuery
+            resourceName: Catalog DB
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: "SELECT\nc.uuid  \nFROM\ncapture c \nWHERE\nc.store_uuid = {{select1.value}}\nAND\nc.uuid not in\n(\n  SELECT\n\tdistinct(c.uuid)\n\tFROM\n\tscene sc\n\tJOIN\n\tstep s\n\tON\n\tsc.uuid = s.scene_uuid\n\tJOIN\n\tlabel_item li \n\tON\n\ts.uuid = li.step_uuid\n\tJOIN\n\tcapture c \n\tON\n\tc.uuid = li.capture_uuid\n\tWHERE\n\t( {{ !multiselect1.value }} OR sc.scene_name = ANY({{ multiselect1.value }}) )\n)"
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-12T02:06:29.071Z
+            updatedAt: 2019-09-18T20:19:51.980Z
+      - query28:
+          pluginTemplate:
+            id: query28
+            type: datasource
+            subtype: GCSQuery
+            resourceName: Standard catalog bucket
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: '{{table1.selectedRow.data.uuid.split(''-'').join('''')}}.jpg'
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - sourceFileKey: >-
+                    {{table1.selectedRow.data.front_pic_location.split("/").slice(-1).pop()}}
+                - uploadFileName: export.csv
+                - privateParams: []
+                - triggersOnSuccess:
+                    - stores7
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: ''
+                - uploadFileAcl: ''
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - sourceBucketName: >-
+                    {{retoolContext.environment == "staging" ?
+                    "skubilee-catalog" : "standard-prod-catalog"}}
+                - actionType: copy
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - rawData: null
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: >-
+                    {{retoolContext.environment == "staging" ?
+                    "standard-dev-catalog-download-cache" :
+                    "standard-prod-catalog-download-cache"}}
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - signedOperationName: ''
+                - enableTransformer: false
+                - uploadFileType: csv
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-13T05:45:04.996Z
+            updatedAt: 2019-09-18T20:19:51.981Z
+      - query27:
+          pluginTemplate:
+            id: query27
+            type: datasource
+            subtype: GCSQuery
+            resourceName: Standard Catalog Capture Download Cache
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: '{{table1.selectedRow.data.uuid.split(''-'').join('''')}}.jpg'
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - sourceFileKey: ''
+                - uploadFileName: export.csv
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: ''
+                - uploadFileAcl: ''
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - sourceBucketName: ''
+                - actionType: download
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - rawData: null
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - signedOperationName: ''
+                - enableTransformer: false
+                - uploadFileType: csv
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-22T04:45:00.590Z
+            updatedAt: 2019-09-18T20:19:51.981Z
+      - capture_groups:
+          pluginTemplate:
+            id: capture_groups
+            type: datasource
+            subtype: SqlQuery
+            resourceName: Catalog DB
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select capture_group.* from capture_group, store where
+                    store_uuid = store.uuid and store.name = {{select4.value}}
+                    order by created_at desc
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-07-09T07:02:51.116Z
+            updatedAt: 2019-09-18T20:19:51.982Z
+      - capture_group_items:
+          pluginTemplate:
+            id: capture_group_items
+            type: datasource
+            subtype: SqlQuery
+            resourceName: Catalog DB
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: "SELECT\nc.pos_code,\nc.uuid,\nc.extra,\nc.extra->'notes' as notes,\nc.full_name,\nc.display_name,\nc.created_at,\ncgi.position,\nfront_pics.front_pic_location,\nback_pics.back_pic_location\nFROM\n(\n\tselect \n  *\n  FROM\n  capture_group_item\n  WHERE\n  capture_group_uuid = {{select5.value}}\n)cgi\nJOIN\ncapture c\nON\ncgi.capture_uuid = c.uuid\nleft JOIN\n(\n  select \n  capture_uuid,\n  file_location as front_pic_location\n  FROM\n  capture_document\n  WHERE type = 'front_inv_pic'\n)front_pics\non\nfront_pics.capture_uuid = c.uuid\nleft JOIN\n(\n  select \n  capture_uuid,\n  file_location as back_pic_location\n  FROM\n  capture_document\n  WHERE type = 'back_inv_pic'\n)back_pics\non\nback_pics.capture_uuid = c.uuid"
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-07-09T07:07:37.994Z
+            updatedAt: 2019-09-18T20:19:51.982Z
+      - group_front_pic:
+          pluginTemplate:
+            id: group_front_pic
+            type: datasource
+            subtype: GCSQuery
+            resourceName: Standard catalog bucket
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: >-
+                    {{table6.selectedRow.data.front_pic_location.split("/").slice(-1).pop()}}
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - sourceFileKey: ''
+                - uploadFileName: export.csv
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: ''
+                - uploadFileAcl: ''
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - sourceBucketName: ''
+                - actionType: getSignedUrl
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - rawData: null
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - signedOperationName: read
+                - enableTransformer: false
+                - uploadFileType: csv
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-07-09T07:16:11.188Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - group_back_pic:
+          pluginTemplate:
+            id: group_back_pic
+            type: datasource
+            subtype: GCSQuery
+            resourceName: Standard catalog bucket
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: >-
+                    {{table6.selectedRow.data.back_pic_location.split("/").slice(-1).pop()}}
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - sourceFileKey: ''
+                - uploadFileName: export.csv
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: ''
+                - uploadFileAcl: ''
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - sourceBucketName: ''
+                - actionType: getSignedUrl
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - rawData: null
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - signedOperationName: read
+                - enableTransformer: false
+                - uploadFileType: csv
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-07-09T07:47:15.174Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - create_new_list:
+          pluginTemplate:
+            id: create_new_list
+            type: datasource
+            subtype: RESTQuery
+            resourceName: Catalog API
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: >-
+                    [{"key":"name","value":"{{textinput1.value}}"},{"key":"store_uuid","value":"{{select1.value}}"},{"key":"capture_uuids","value":"{{state1.value.map(x
+                    => x.uuid)}}"}]
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[{"key":"X-Api-Key","value":"store-info-standard"}]'
+                - paginationEnabled: false
+                - query: capture_groups/
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess:
+                    - close_modal
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - cookies: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - importedQueryInputDefaults:
+                    ordered: []
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - type: POST
+                - enableCaching: false
+                - bodyType: json
+                - queryThrottleTime: '750'
+            createdAt: 2019-07-10T21:24:06.134Z
+            updatedAt: 2019-09-18T20:19:51.995Z
+      - modal8open:
+          pluginTemplate:
+            id: modal8open
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: modal8.open()
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-12-10T19:04:35.326Z
+            updatedAt: 2019-12-10T19:37:27.571Z
+      - image1:
+          pluginTemplate:
+            id: image1
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{cap_front_pic.data.signedUrl}}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                height: 7
+                width: 3
+            mobilePosition2:
+              position2:
+                container: container2
+                row: 2
+                height: 3
+                width: 2
+            createdAt: 2019-04-22T05:13:23.055Z
+            updatedAt: 2019-09-18T20:19:51.966Z
+      - table1:
+          pluginTemplate:
+            id: table1
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: pos_code
+                        value: 138
+                    - object:
+                        id: created_at
+                        value: 178.5625
+                    - object:
+                        id: notes
+                        value: 88.171875
+                    - object:
+                        id: uuid
+                        value: 295
+                    - object:
+                        id: source
+                        value: 130
+                    - object:
+                        id: __retool__action_list
+                        value: 74.265625
+                    - object:
+                        id: display_name
+                        value: 288
+                    - object:
+                        id: Calculated Column 1
+                        value: 87
+                    - object:
+                        id: front_pic_location
+                        value: 574
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered:
+                      - Calculated Column 1:
+                          ordered:
+                            - buttonType: action
+                            - action: modal8open
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - Calculated Column 1: Edit
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - front_pic_location: ''
+                      - pos_code_type: ''
+                      - notes: ''
+                      - back_pic_location: ''
+                      - display_name: ''
+                      - retired_at: ''
+                      - Calculated Column 1: ''
+                      - created_at: ''
+                      - quantity: ''
+                      - image_url: ''
+                      - name: ''
+                      - sales: ''
+                      - created_by: ''
+                      - extra: ''
+                      - state: ''
+                      - updated_at: ''
+                      - pos_code: ''
+                      - bucket_directory: ''
+                      - file_location: ''
+                      - store_uuid: ''
+                      - unit_price_cents: ''
+                      - type: ''
+                      - source: ''
+                      - id: ''
+                      - full_name: ''
+                      - uuid: ''
+                      - email: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - created_at: datetime
+                      - uuid: default
+                      - Calculated Column 1: button
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - front_pic_location: true
+                      - pos_code_type: true
+                      - notes: true
+                      - back_pic_location: false
+                      - display_name: true
+                      - retired_at: true
+                      - Calculated Column 1: true
+                      - created_at: true
+                      - quantity: true
+                      - image_url: true
+                      - name: true
+                      - sales: true
+                      - created_by: true
+                      - extra: false
+                      - state: true
+                      - updated_at: true
+                      - pos_code: true
+                      - bucket_directory: true
+                      - file_location: true
+                      - store_uuid: true
+                      - unit_price_cents: true
+                      - type: true
+                      - source: true
+                      - id: true
+                      - full_name: false
+                      - uuid: true
+                      - email: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Add to List
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ capture_list.data }}'
+                - displayedData: null
+                - actionButtons:
+                    - ordered:
+                        - actionButtonText: ➕
+                        - actionButtonType: runQuery
+                        - actionButtonQuery: add_to_list
+                        - actionButtonInternalUrlPath: ''
+                        - actionButtonInternalUrlQuery: ''
+                        - actionButtonUrl: ''
+                        - actionButtonNewWindow: false
+                        - actionButtonDisabled: ''
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: false
+                - defaultSortByColumn: created_at
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered:
+                      - display_name: false
+                - pageSize: 17
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: right
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: true
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered:
+                      - uuid: false
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered:
+                      - Calculated Column 1: ✏️
+                - showClearSelection: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - display_name
+                    - full_name
+                    - Calculated Column 1
+                    - pos_code
+                    - notes
+                    - extra
+                    - uuid
+                    - created_at
+                    - front_pic_location
+                    - back_pic_location
+                    - source
+                    - state
+                - sort: null
+                - calculatedColumns:
+                    - Calculated Column 1
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 3
+                col: 3
+                height: 12
+                width: 9
+            mobilePosition2:
+              position2:
+                container: container3
+                row: 4
+                height: 8
+                width: 8
+            createdAt: 2019-04-22T05:13:57.500Z
+            updatedAt: 2019-12-17T17:10:31.158Z
+      - select1:
+          pluginTemplate:
+            id: select1
+            type: widget
+            subtype: SelectWidget
+            template:
+              ordered:
+                - values: '{{ stores.data.uuid }}'
+                - allowOutOfRangeValues: false
+                - enableFuzzyMatching: false
+                - searchValue: ''
+                - displayValue: ''
+                - tooltipText: ''
+                - value: ''
+                - maxResults: 50
+                - placeholder: ''
+                - label: Store
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: false
+                - onSelect: capture_list
+                - disabled: ''
+                - hideClearButton: false
+                - required: true
+                - labels: '{{ stores.data.display_name }}'
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 3
+                height: 1
+                width: 5
+            mobilePosition2:
+              position2:
+                row: 21
+                col: 7
+                height: 1
+                width: 4
+            createdAt: 2019-06-05T19:23:36.151Z
+            updatedAt: 2019-11-05T18:24:53.497Z
+      - text7:
+          pluginTemplate:
+            id: text7
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: Front
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: container2
+                row: 4
+                col: 1
+                height: 1
+                width: 3
+            createdAt: 2019-06-05T20:03:10.632Z
+            updatedAt: 2019-09-18T20:19:51.967Z
+      - image2:
+          pluginTemplate:
+            id: image2
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{ cap_back_pic.data.signedUrl }}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 9
+                height: 7
+                width: 3
+            mobilePosition2:
+              position2:
+                container: container2
+                row: 12
+                height: 7
+                width: 12
+            createdAt: 2019-06-05T20:03:31.780Z
+            updatedAt: 2019-09-18T20:19:51.967Z
+      - text8:
+          pluginTemplate:
+            id: text8
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: Back
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 8
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: container2
+                row: 2
+                height: 1
+                width: 2
+            createdAt: 2019-06-05T20:04:06.707Z
+            updatedAt: 2019-09-18T20:19:51.967Z
+      - tabbedcontainer1:
+          pluginTemplate:
+            id: tabbedcontainer1
+            type: widget
+            subtype: TabbedContainerWidget
+            template:
+              ordered:
+                - disabled: ''
+                - selectedTab: '"0"'
+                - selectedTabIndex: 0
+                - showTabBar: true
+                - tabNames: >-
+                    ["Capture Explorer","CaptureGroup (list) Explorer", "Capture
+                    Creator"]
+                - spinWhenChildrenAreFetching: true
+            position2:
+              position2:
+                row: .nan
+                height: .nan
+                width: 11
+            mobilePosition2:
+              position2:
+                row: 19
+                col: 6
+                height: 8
+                width: 6
+            createdAt: 2019-06-05T21:27:32.342Z
+            updatedAt: 2019-12-11T00:02:21.554Z
+      - modal1:
+          pluginTemplate:
+            id: modal1
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: '#37d67a'
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: 200px
+                - onModalOpen: ''
+                - modalWidth: ''
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: Save List
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 16
+                col: 9
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 3
+                col: 9
+                height: 1
+                width: 3
+            createdAt: 2019-06-06T01:09:45.361Z
+            updatedAt: 2019-09-18T20:19:51.970Z
+      - state1:
+          pluginTemplate:
+            id: state1
+            type: state
+            subtype: State
+            template:
+              ordered:
+                - value: '[]'
+            createdAt: 2019-06-06T02:27:27.015Z
+            updatedAt: 2019-09-18T20:19:51.970Z
+      - table4:
+          pluginTemplate:
+            id: table4
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: extra
+                        value: 114
+                    - object:
+                        id: __retool__action_list
+                        value: 108.171875
+                    - object:
+                        id: pos_code
+                        value: 126.96875
+                    - object:
+                        id: display_name
+                        value: 149.46875
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - front_pic_location: ''
+                      - notes: ''
+                      - back_pic_location: ''
+                      - display_name: ''
+                      - created_at: ''
+                      - name: ''
+                      - sales: ''
+                      - extra: ''
+                      - pos_code: ''
+                      - id: ''
+                      - full_name: ''
+                      - uuid: ''
+                      - email: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - front_pic_location: false
+                      - notes: true
+                      - back_pic_location: false
+                      - display_name: true
+                      - created_at: true
+                      - name: true
+                      - sales: true
+                      - extra: false
+                      - pos_code: true
+                      - id: true
+                      - full_name: false
+                      - uuid: true
+                      - email: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Remove from list
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{state1.value}}'
+                - displayedData: null
+                - actionButtons:
+                    - ordered:
+                        - actionButtonText: ❌
+                        - actionButtonType: runQuery
+                        - actionButtonQuery: remove_from_list
+                        - actionButtonInternalUrlPath: ''
+                        - actionButtonInternalUrlQuery: ''
+                        - actionButtonUrl: ''
+                        - actionButtonNewWindow: false
+                        - actionButtonDisabled: ''
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: false
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 11
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - pos_code
+                    - extra
+                    - full_name
+                    - display_name
+                    - created_at
+                    - front_pic_location
+                    - back_pic_location
+                    - uuid
+                    - notes
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 17
+                col: 3
+                height: 8
+                width: 9
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 17
+                height: 8
+                width: 8
+            createdAt: 2019-06-06T02:28:59.406Z
+            updatedAt: 2019-09-18T20:19:51.970Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - color: '#eb144c'
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: Clear list
+                - exportQuery: ''
+                - action: clear_list
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 16
+                col: 3
+                height: 1
+                width: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 16
+                col: 3
+                height: 1
+                width: 2
+            createdAt: 2019-06-06T03:09:22.620Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - modal2:
+          pluginTemplate:
+            id: modal2
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: ''
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: 700px
+                - onModalOpen: ''
+                - modalWidth: 50%
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: "\U0001F50E"
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 2
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 8
+                height: 1
+                width: 3
+            createdAt: 2019-06-06T04:05:03.963Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - image5:
+          pluginTemplate:
+            id: image5
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{image1.imageUrl}}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal2
+                height: 16
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal2
+                row: 4
+                col: 3
+                height: 3
+                width: 2
+            createdAt: 2019-06-06T04:06:28.922Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - modal3:
+          pluginTemplate:
+            id: modal3
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: ''
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: 700px
+                - onModalOpen: ''
+                - modalWidth: 50%
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: "\U0001F50E"
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 8
+                col: 2
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 2
+                height: 1
+                width: 1
+            createdAt: 2019-06-06T04:08:52.039Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - image6:
+          pluginTemplate:
+            id: image6
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{image2.imageUrl}}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal3
+                height: 16
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal3
+                height: 3
+                width: 2
+            createdAt: 2019-06-06T04:09:39.949Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - table5:
+          pluginTemplate:
+            id: table5
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: scene type
+                        value: 162.5
+                    - object:
+                        id: recorded
+                        value: 43
+                    - object:
+                        id: done
+                        value: 50
+                    - object:
+                        id: descriptor
+                        value: 149.5
+                    - object:
+                        id: created_at
+                        value: 98
+                    - object:
+                        id: __retool__action_list
+                        value: 55
+                    - object:
+                        id: scene_name
+                        value: 110
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - '': ''
+                      - a: ''
+                      - done: ''
+                      - c: ''
+                      - d: ''
+                      - created_at: ''
+                      - name: ''
+                      - scene: ''
+                      - sales: ''
+                      - scene type: ''
+                      - date: ''
+                      - descriptor: ''
+                      - recorded: ''
+                      - sc: ''
+                      - scene_: ''
+                      - re: ''
+                      - 'scene ': ''
+                      - store_uuid: ''
+                      - pipeline_scene_name: ''
+                      - id: ''
+                      - uuid: ''
+                      - email: ''
+                      - scene_name: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - date: date
+                      - created_at: date
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - '': true
+                      - a: true
+                      - done: true
+                      - c: true
+                      - d: true
+                      - created_at: true
+                      - name: true
+                      - scene: true
+                      - sales: true
+                      - scene type: true
+                      - date: true
+                      - descriptor: true
+                      - recorded: true
+                      - sc: true
+                      - scene_: true
+                      - re: true
+                      - 'scene ': true
+                      - store_uuid: false
+                      - pipeline_scene_name: false
+                      - id: true
+                      - uuid: false
+                      - email: true
+                      - scene_name: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Inspect
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ scenes_completed.data }}'
+                - displayedData: null
+                - actionButtons:
+                    - ordered:
+                        - actionButtonText: "\U0001F50E"
+                        - actionButtonType: openInternalUrl
+                        - actionButtonQuery: ''
+                        - actionButtonInternalUrlPath: 57baf260-8c19-11e9-b0a3-c31f66313d96
+                        - actionButtonInternalUrlQuery: '"[]"'
+                        - actionButtonUrl: ''
+                        - actionButtonNewWindow: true
+                        - actionButtonDisabled: ''
+                        - actionButtonInternalUrlHashParams: >-
+                            "[{\"key\":\"store_uuid\",\"value\":\"{{select1.value}}\"},{\"key\":\"scene_uuid\",\"value\":\"{{table5.selectedRow.data
+                            && table5.selectedRow.data.uuid}}\"}]"
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: false
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 9
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered:
+                      - scene_name: true
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: false
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - scene_name
+                    - created_at
+                    - pipeline_scene_name
+                    - store_uuid
+                    - uuid
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 18
+                height: 7
+                width: 3
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 16
+                height: 8
+                width: 8
+            createdAt: 2019-06-06T04:12:26.562Z
+            updatedAt: 2019-12-17T23:55:33.501Z
+      - button2:
+          pluginTemplate:
+            id: button2
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - color: '#1ea9fb'
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: "\U0001F4BE"
+                - exportQuery: ''
+                - action: create_new_list
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: '{{textinput1.value === "" }}'
+            position2:
+              position2:
+                container: modal1
+                row: 2
+                col: 4
+                height: 1
+                width: 4
+            mobilePosition2:
+              position2:
+                container: modal1
+                row: 2
+                col: 1
+                height: 1
+                width: 2
+            createdAt: 2019-06-06T04:40:46.882Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - state2:
+          pluginTemplate:
+            id: state2
+            type: state
+            subtype: State
+            template:
+              ordered:
+                - value: '""'
+            createdAt: 2019-06-06T04:57:53.687Z
+            updatedAt: 2019-09-18T20:19:51.971Z
+      - textinput1:
+          pluginTemplate:
+            id: textinput1
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - docsSlug: textinput
+                - currencyType: USD
+                - leftIconName: export
+                - initialValue: ''
+                - tooltipText: ''
+                - value: ''
+                - placeholder: ''
+                - label: Enter List name
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: true
+            position2:
+              position2:
+                container: modal1
+                height: 1
+                width: 11
+            mobilePosition2:
+              position2:
+                container: modal1
+                row: 1
+                col: 1
+                height: 1
+                width: 4
+            createdAt: 2019-06-06T05:44:30.982Z
+            updatedAt: 2019-09-18T20:19:51.972Z
+      - button4:
+          pluginTemplate:
+            id: button4
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - color: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: ⬇️
+                - exportQuery: ''
+                - action: query28
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: '{{table1.selectedRow.data.front_pic_location == null}}'
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 1
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                height: 1
+                width: 2
+            createdAt: 2019-06-09T08:12:07.956Z
+            updatedAt: 2019-09-18T20:19:51.972Z
+      - transformer1:
+          pluginTemplate:
+            id: transformer1
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: return 5
+                - value: ''
+            createdAt: 2019-06-10T05:59:16.973Z
+            updatedAt: 2019-09-18T20:19:51.972Z
+      - textinput3:
+          pluginTemplate:
+            id: textinput3
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - docsSlug: textinput
+                - currencyType: USD
+                - leftIconName: search
+                - initialValue: ''
+                - tooltipText: ''
+                - value: ''
+                - placeholder: Search here...
+                - label: POS code
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 2
+                col: 3
+                height: 1
+                width: 4
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 2
+                col: 3
+                height: 1
+                width: 4
+            createdAt: 2019-06-11T00:32:53.758Z
+            updatedAt: 2019-09-18T20:19:51.972Z
+      - textinput4:
+          pluginTemplate:
+            id: textinput4
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - docsSlug: textinput
+                - currencyType: USD
+                - leftIconName: search
+                - initialValue: ''
+                - tooltipText: ''
+                - value: ''
+                - placeholder: Search here...
+                - label: product name
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 2
+                col: 7
+                height: 1
+                width: 5
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 2
+                col: 8
+                height: 1
+                width: 4
+            createdAt: 2019-06-12T01:36:58.405Z
+            updatedAt: 2019-09-18T20:19:51.980Z
+      - multiselect1:
+          pluginTemplate:
+            id: multiselect1
+            type: widget
+            subtype: MultiSelectWidget
+            template:
+              ordered:
+                - values: '{{ formatDataAsArray(scenes.data).map(s => s.scene_name) }}'
+                - allowOutOfRangeValues: false
+                - enableFuzzyMatching: true
+                - searchValue: ''
+                - displayValue: ''
+                - tooltipText: ''
+                - value: ''
+                - maxResults: 50
+                - placeholder: ''
+                - label: Exclude captures that are part of scene
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSelect: ''
+                - allowCustomValues: false
+                - disabled: ''
+                - hideClearButton: false
+                - required: false
+                - labels: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 3
+                height: 1
+                width: 9
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                col: 8
+                height: 1
+                width: 4
+            createdAt: 2019-06-12T23:53:10.617Z
+            updatedAt: 2019-09-18T20:19:51.981Z
+      - text3:
+          pluginTemplate:
+            id: text3
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: <b>Scenes Completed</b>
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 17
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 17
+                height: 1
+                width: 3
+            createdAt: 2019-06-13T04:53:17.638Z
+            updatedAt: 2019-09-18T20:19:51.981Z
+      - select4:
+          pluginTemplate:
+            id: select4
+            type: widget
+            subtype: SelectWidget
+            template:
+              ordered:
+                - values: '{{ stores.data.name }}'
+                - allowOutOfRangeValues: false
+                - enableFuzzyMatching: false
+                - searchValue: ''
+                - displayValue: ''
+                - tooltipText: ''
+                - value: ''
+                - maxResults: 50
+                - placeholder: ''
+                - label: Store
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSelect: capture_groups
+                - disabled: ''
+                - hideClearButton: false
+                - required: true
+                - labels: '{{ stores.data.display_name }}'
+            position2:
+              position2:
+                container: tabbedcontainer1
+                height: 1
+                width: 5
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                height: 1
+                width: 4
+                tabNum: 2
+            createdAt: 2019-07-09T06:59:48.207Z
+            updatedAt: 2019-09-18T20:19:51.981Z
+      - select5:
+          pluginTemplate:
+            id: select5
+            type: widget
+            subtype: SelectWidget
+            template:
+              ordered:
+                - values: '{{ capture_groups.data.uuid }}'
+                - allowOutOfRangeValues: false
+                - enableFuzzyMatching: true
+                - searchValue: ''
+                - displayValue: ''
+                - tooltipText: ''
+                - value: ''
+                - maxResults: '100'
+                - placeholder: ''
+                - label: List Name
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSelect: capture_group_items
+                - disabled: ''
+                - hideClearButton: false
+                - required: true
+                - labels: '{{ capture_groups.data.name }}'
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                height: 1
+                width: 5
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                height: 1
+                width: 4
+                tabNum: 2
+            createdAt: 2019-07-09T07:02:30.859Z
+            updatedAt: 2019-09-18T20:19:51.982Z
+      - table6:
+          pluginTemplate:
+            id: table6
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: display_name
+                        value: 296.796875
+                    - object:
+                        id: position
+                        value: 64.4375
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - front_pic_location: ''
+                      - notes: ''
+                      - back_pic_location: ''
+                      - display_name: ''
+                      - position: ''
+                      - created_at: ''
+                      - extra: ''
+                      - pos_code: ''
+                      - full_name: ''
+                      - uuid: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - front_pic_location: false
+                      - notes: true
+                      - back_pic_location: false
+                      - display_name: true
+                      - position: true
+                      - created_at: true
+                      - name: true
+                      - sales: true
+                      - extra: false
+                      - pos_code: true
+                      - id: true
+                      - full_name: false
+                      - uuid: true
+                      - email: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{  capture_group_items.data  }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: position
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 19
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - position
+                    - display_name
+                    - pos_code
+                    - extra
+                    - created_at
+                    - notes
+                    - uuid
+                    - full_name
+                    - front_pic_location
+                    - back_pic_location
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 5
+                height: 13
+                width: 12
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 3
+                height: 8
+                width: 8
+                tabNum: 2
+            createdAt: 2019-07-09T07:09:32.386Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - image9:
+          pluginTemplate:
+            id: image9
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{ group_front_pic.data.signedUrl }}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 8
+                height: 4
+                width: 2
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                col: 8
+                height: 3
+                width: 2
+                tabNum: 2
+            createdAt: 2019-07-09T07:12:33.676Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - image10:
+          pluginTemplate:
+            id: image10
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{ group_back_pic.data.signedUrl }}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 10
+                height: 4
+                width: 2
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                col: 10
+                height: 3
+                width: 2
+                tabNum: 2
+            createdAt: 2019-07-09T07:47:32.195Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - modal6:
+          pluginTemplate:
+            id: modal6
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: ''
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: 700px
+                - onModalOpen: ''
+                - modalWidth: "50%\t"
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: "\U0001F50E"
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 4
+                col: 9
+                height: 1
+                width: 1
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 4
+                col: 8
+                height: 1
+                width: 3
+                tabNum: 2
+            createdAt: 2019-07-09T07:49:02.670Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - image11:
+          pluginTemplate:
+            id: image11
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{image9.imageUrl}}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal6
+                height: 16
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal6
+                height: 3
+                width: 2
+            createdAt: 2019-07-09T07:49:54.051Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - modal7:
+          pluginTemplate:
+            id: modal7
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: ''
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: 700px
+                - onModalOpen: ''
+                - modalWidth: 50%
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: "\U0001F50E"
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 4
+                col: 11
+                height: 1
+                width: 1
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 4
+                col: 9
+                height: 1
+                width: 3
+                tabNum: 2
+            createdAt: 2019-07-09T07:51:21.680Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - image12:
+          pluginTemplate:
+            id: image12
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{image10.imageUrl}}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal7
+                height: 16
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal7
+                height: 3
+                width: 2
+            createdAt: 2019-07-09T07:51:47.806Z
+            updatedAt: 2019-09-18T20:19:51.985Z
+      - button5:
+          pluginTemplate:
+            id: button5
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - color: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: "\U0001F504"
+                - exportQuery: ''
+                - action: capture_groups
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 5
+                height: 1
+                width: 1
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 5
+                height: 1
+                width: 2
+                tabNum: 1
+            createdAt: 2019-07-11T21:39:05.074Z
+            updatedAt: 2019-09-18T20:19:51.996Z
+      - modal8:
+          pluginTemplate:
+            id: modal8
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: ''
+                - hidden: 'true'
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: |
+                    775px
+                - onModalOpen: ''
+                - modalWidth: 60%
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: Open Modal
+            position2:
+              position2:
+                row: 30
+                col: 2
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                row: 30
+                col: 2
+                height: 1
+                width: 3
+            createdAt: 2019-12-10T19:22:21.966Z
+            updatedAt: 2019-12-16T19:25:59.067Z
+      - image13:
+          pluginTemplate:
+            id: image13
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{cap_front_pic.data.signedUrl}}'
+                - action: modal9open
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal8
+                row: 2
+                height: 11
+                width: 6
+            mobilePosition2:
+              position2:
+                container: modal8
+                height: 3
+                width: 2
+            createdAt: 2019-12-10T19:30:37.991Z
+            updatedAt: 2019-12-10T19:47:25.516Z
+      - text4:
+          pluginTemplate:
+            id: text4
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: Front
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: modal8
+                row: 1
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: modal8
+                height: 1
+                width: 3
+            createdAt: 2019-12-10T19:34:16.284Z
+            updatedAt: 2019-12-10T19:34:24.768Z
+      - modal9:
+          pluginTemplate:
+            id: modal9
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: ''
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: '1000'
+                - onModalOpen: ''
+                - modalWidth: |+
+                    55%
+
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: "\U0001F50E"
+            position2:
+              position2:
+                container: modal8
+                row: 1
+                col: 1
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: modal8
+                row: 1
+                col: 1
+                height: 1
+                width: 3
+            createdAt: 2019-12-10T19:39:20.299Z
+            updatedAt: 2019-12-10T19:43:30.085Z
+      - image14:
+          pluginTemplate:
+            id: image14
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{cap_back_pic.data.signedUrl}}'
+                - action: modal10open
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal8
+                row: 2
+                col: 6
+                height: 11
+                width: 6
+            mobilePosition2:
+              position2:
+                container: modal8
+                row: 1
+                col: 6
+                height: 3
+                width: 2
+            createdAt: 2019-12-10T19:42:02.032Z
+            updatedAt: 2019-12-10T19:55:34.595Z
+      - image15:
+          pluginTemplate:
+            id: image15
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{cap_front_pic.data.signedUrl}}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal9
+                height: 24
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal9
+                height: 3
+                width: 2
+            createdAt: 2019-12-10T19:43:53.022Z
+            updatedAt: 2019-12-10T19:44:05.298Z
+      - text5:
+          pluginTemplate:
+            id: text5
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: Back
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: modal8
+                row: 1
+                col: 6
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: modal8
+                col: 6
+                height: 1
+                width: 3
+            createdAt: 2019-12-10T19:45:41.974Z
+            updatedAt: 2019-12-10T19:45:48.220Z
+      - modal9open:
+          pluginTemplate:
+            id: modal9open
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: modal9.open()
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-12-10T19:46:24.922Z
+            updatedAt: 2019-12-10T19:47:08.053Z
+      - text6:
+          pluginTemplate:
+            id: text6
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: <center><h2>Edit Capture</h2></center>
+                - html: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: modal8
+                height: 1
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal8
+                col: 4
+                height: 1
+                width: 3
+            createdAt: 2019-12-10T19:47:40.929Z
+            updatedAt: 2019-12-10T19:49:12.761Z
+      - modal10:
+          pluginTemplate:
+            id: modal10
+            type: widget
+            subtype: ModalWidget
+            template:
+              ordered:
+                - buttonBackgroundColor: ''
+                - open: false
+                - onModalClose: ''
+                - buttonColor: ''
+                - modalHeight: 1000px
+                - onModalOpen: ''
+                - modalWidth: 55%
+                - closeOnOutsideClick: false
+                - loading: ''
+                - disabled: ''
+                - buttonText: "\U0001F50E"
+            position2:
+              position2:
+                container: modal8
+                row: 1
+                col: 7
+                height: 1
+                width: 1
+            mobilePosition2:
+              position2:
+                container: modal8
+                row: 1
+                col: 7
+                height: 1
+                width: 3
+            createdAt: 2019-12-10T19:50:10.428Z
+            updatedAt: 2019-12-10T19:54:02.928Z
+      - image16:
+          pluginTemplate:
+            id: image16
+            type: widget
+            subtype: ImageWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - imageUrl: '{{cap_back_pic.data.signedUrl}}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal10
+                height: 24
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal10
+                height: 3
+                width: 2
+            createdAt: 2019-12-10T19:54:12.941Z
+            updatedAt: 2019-12-10T19:54:22.824Z
+      - modal10open:
+          pluginTemplate:
+            id: modal10open
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: modal10.open()
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-12-10T19:54:53.093Z
+            updatedAt: 2019-12-10T19:55:20.496Z
+      - form1:
+          pluginTemplate:
+            id: form1
+            type: widget
+            subtype: FormWidget
+            template:
+              ordered:
+                - spinWhenChildrenAreFetching: true
+                - clearFormAfterSubmit: false
+                - borderless: false
+                - data: ''
+                - submitButtonFullWidth: false
+                - submitDisabled: ''
+                - submitButtonText: Update
+                - onSubmit: update_name
+                - requiredFormControls: []
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: modal8
+                row: 13
+                height: 4
+                width: 12
+            mobilePosition2:
+              position2:
+                container: modal8
+                row: 13
+                height: 8
+                width: 6
+            createdAt: 2019-12-10T19:56:34.140Z
+            updatedAt: 2019-12-10T22:18:19.458Z
+      - textinput5:
+          pluginTemplate:
+            id: textinput5
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - currencyType: USD
+                - leftIconName: tag
+                - initialValue: '{{table1.selectedRow.data.full_name}}'
+                - tooltipText: ''
+                - value: ''
+                - placeholder: Search here...
+                - label: full_name
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                container: form1
+                height: 1
+                width: 10
+            mobilePosition2:
+              position2:
+                container: form1
+                row: 1
+                height: 1
+                width: 4
+            createdAt: 2019-12-10T21:35:22.432Z
+            updatedAt: 2019-12-10T21:37:29.324Z
+      - textinput6:
+          pluginTemplate:
+            id: textinput6
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - currencyType: USD
+                - leftIconName: tags
+                - initialValue: '{{table1.selectedRow.data.display_name}}'
+                - tooltipText: ''
+                - value: ''
+                - placeholder: Search here...
+                - label: display_name
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                container: form1
+                row: 1
+                height: 1
+                width: 10
+            mobilePosition2:
+              position2:
+                container: form1
+                row: 1
+                height: 1
+                width: 4
+            createdAt: 2019-12-10T21:40:23.037Z
+            updatedAt: 2019-12-10T21:41:02.753Z
+      - update_name:
+          pluginTemplate:
+            id: update_name
+            type: datasource
+            subtype: RESTQuery
+            resourceName: Catalog API
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: >-
+                    [{"key":"full_name","value":"{{textinput5.value}}"},{"key":"display_name","value":"{{textinput6.value}}"},{"key":"state","value":"{{textinput7.value}}"}]
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[{"key":"X-Api-Key","value":"store-info-standard"}]'
+                - paginationEnabled: false
+                - query: 'captures/{{table1.selectedRow.data.uuid}}'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess:
+                    - capture_list
+                    - modal8close
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - cookies: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - type: PUT
+                - enableCaching: false
+                - bodyType: json
+                - queryThrottleTime: '750'
+            createdAt: 2019-12-10T21:41:39.516Z
+            updatedAt: 2019-12-17T17:36:39.271Z
+      - modal8close:
+          pluginTemplate:
+            id: modal8close
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: modal8.close()
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-12-10T22:20:51.439Z
+            updatedAt: 2019-12-10T22:21:14.300Z
+      - checkbox1:
+          pluginTemplate:
+            id: checkbox1
+            type: widget
+            subtype: CheckboxWidget
+            template:
+              ordered:
+                - label: Show Errors
+                - value: 'false'
+                - disabled: ''
+                - onCheckQuery: capture_list
+                - onUncheckQuery: capture_list
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 10
+                height: 1
+                width: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 3
+                col: 5
+                height: 1
+                width: 2
+            createdAt: 2019-12-10T22:43:44.190Z
+            updatedAt: 2019-12-10T22:44:59.380Z
+      - form2:
+          pluginTemplate:
+            id: form2
+            type: widget
+            subtype: FormWidget
+            template:
+              ordered:
+                - spinWhenChildrenAreFetching: true
+                - clearFormAfterSubmit: false
+                - borderless: false
+                - data: ''
+                - submitButtonFullWidth: false
+                - submitDisabled: ''
+                - submitButtonText: Submit
+                - onSubmit: ''
+                - requiredFormControls: []
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                height: 26
+                width: 12
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 3
+                col: 4
+                height: 8
+                width: 6
+                tabNum: 2
+            createdAt: 2019-12-11T00:05:40.988Z
+            updatedAt: 2019-12-11T00:05:40.988Z
+      - textinput7:
+          pluginTemplate:
+            id: textinput7
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - currencyType: USD
+                - leftIconName: pushpin
+                - initialValue: '{{table1.selectedRow.data.state}}'
+                - tooltipText: ''
+                - value: ''
+                - placeholder: Search here...
+                - label: state
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                container: form1
+                row: 2
+                height: 1
+                width: 6
+            mobilePosition2:
+              position2:
+                container: form1
+                row: 2
+                height: 1
+                width: 4
+            createdAt: 2019-12-17T17:30:02.553Z
+            updatedAt: 2019-12-17T18:49:01.035Z
+      - text9:
+          pluginTemplate:
+            id: text9
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: 'state can be Open, Final, or Error'
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: form1
+                row: 2
+                col: 6
+                height: 1
+                width: 4
+            mobilePosition2:
+              position2:
+                container: form1
+                row: 2
+                col: 6
+                height: 1
+                width: 3
+            createdAt: 2019-12-17T17:30:45.745Z
+            updatedAt: 2019-12-17T17:31:03.233Z
+  createdAt: null
+  version: 2.53.22
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
