@@ -2110,7 +2110,7 @@ appTemplate:
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
-                - pageSize: 9
+                - pageSize: 11
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -2174,7 +2174,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2019-06-06T04:12:26.562Z
-            updatedAt: 2019-12-18T00:40:35.201Z
+            updatedAt: 2019-12-18T00:40:41.416Z
       - button2:
           pluginTemplate:
             id: button2
@@ -2608,7 +2608,7 @@ appTemplate:
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
-                - pageSize: 19
+                - pageSize: 11
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -2678,7 +2678,7 @@ appTemplate:
                 width: 8
                 tabNum: 2
             createdAt: 2019-07-09T07:09:32.386Z
-            updatedAt: 2019-12-18T00:40:35.209Z
+            updatedAt: 2019-12-18T00:40:41.430Z
       - image9:
           pluginTemplate:
             id: image9
