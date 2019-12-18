@@ -1602,7 +1602,7 @@ appTemplate:
                 width: 11
             mobilePosition2:
               position2:
-                height: 16
+                height: 17
                 width: 12
             createdAt: 2019-06-05T21:27:32.342Z
             updatedAt: 2019-12-11T00:02:21.554Z
