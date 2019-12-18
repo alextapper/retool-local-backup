@@ -62,8 +62,8 @@ appTemplate:
                 - databaseUsernameOverride: ''
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-04-20T04:49:38.684Z
-            updatedAt: 2019-12-10T23:43:45.655Z
+            createdAt: '2019-04-20T04:49:38.684Z'
+            updatedAt: '2019-12-10T23:43:45.655Z'
       - stores:
           pluginTemplate:
             id: stores
@@ -121,8 +121,8 @@ appTemplate:
                 - databaseUsernameOverride: ''
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-05T19:23:45.073Z
-            updatedAt: 2019-09-18T20:19:51.967Z
+            createdAt: '2019-06-05T19:23:45.073Z'
+            updatedAt: '2019-09-18T20:19:51.967Z'
       - cap_front_pic:
           pluginTemplate:
             id: cap_front_pic
@@ -189,8 +189,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-05T19:47:19.735Z
-            updatedAt: 2019-09-18T20:19:51.967Z
+            createdAt: '2019-06-05T19:47:19.735Z'
+            updatedAt: '2019-09-18T20:19:51.967Z'
       - cap_back_pic:
           pluginTemplate:
             id: cap_back_pic
@@ -257,8 +257,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-05T20:11:00.378Z
-            updatedAt: 2019-09-18T20:19:51.967Z
+            createdAt: '2019-06-05T20:11:00.378Z'
+            updatedAt: '2019-09-18T20:19:51.967Z'
       - add_to_list:
           pluginTemplate:
             id: add_to_list
@@ -315,8 +315,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-06T01:33:16.043Z
-            updatedAt: 2019-09-18T20:19:51.970Z
+            createdAt: '2019-06-06T01:33:16.043Z'
+            updatedAt: '2019-09-18T20:19:51.970Z'
       - clear_list:
           pluginTemplate:
             id: clear_list
@@ -369,8 +369,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-06T03:07:11.670Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T03:07:11.670Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - remove_from_list:
           pluginTemplate:
             id: remove_from_list
@@ -425,8 +425,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-06T03:23:20.051Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T03:23:20.051Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - close_modal:
           pluginTemplate:
             id: close_modal
@@ -479,8 +479,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-06T06:21:06.672Z
-            updatedAt: 2019-09-18T20:19:51.972Z
+            createdAt: '2019-06-06T06:21:06.672Z'
+            updatedAt: '2019-09-18T20:19:51.972Z'
       - scenes:
           pluginTemplate:
             id: scenes
@@ -544,8 +544,8 @@ appTemplate:
                 - databaseUsernameOverride: ''
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-06T06:32:59.279Z
-            updatedAt: 2019-09-18T20:19:51.972Z
+            createdAt: '2019-06-06T06:32:59.279Z'
+            updatedAt: '2019-09-18T20:19:51.972Z'
       - scenes_completed:
           pluginTemplate:
             id: scenes_completed
@@ -622,8 +622,8 @@ appTemplate:
                 - databaseUsernameOverride: ''
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-06T16:06:47.107Z
-            updatedAt: 2019-09-18T20:19:51.972Z
+            createdAt: '2019-06-06T16:06:47.107Z'
+            updatedAt: '2019-09-18T20:19:51.972Z'
       - filtered_captures:
           pluginTemplate:
             id: filtered_captures
@@ -682,8 +682,8 @@ appTemplate:
                 - databaseUsernameOverride: ''
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-12T02:06:29.071Z
-            updatedAt: 2019-09-18T20:19:51.980Z
+            createdAt: '2019-06-12T02:06:29.071Z'
+            updatedAt: '2019-09-18T20:19:51.980Z'
       - query28:
           pluginTemplate:
             id: query28
@@ -756,8 +756,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-13T05:45:04.996Z
-            updatedAt: 2019-09-18T20:19:51.981Z
+            createdAt: '2019-06-13T05:45:04.996Z'
+            updatedAt: '2019-09-18T20:19:51.981Z'
       - query27:
           pluginTemplate:
             id: query27
@@ -823,8 +823,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-06-22T04:45:00.590Z
-            updatedAt: 2019-09-18T20:19:51.981Z
+            createdAt: '2019-06-22T04:45:00.590Z'
+            updatedAt: '2019-09-18T20:19:51.981Z'
       - capture_groups:
           pluginTemplate:
             id: capture_groups
@@ -886,8 +886,8 @@ appTemplate:
                 - databaseUsernameOverride: ''
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-07-09T07:02:51.116Z
-            updatedAt: 2019-09-18T20:19:51.982Z
+            createdAt: '2019-07-09T07:02:51.116Z'
+            updatedAt: '2019-09-18T20:19:51.982Z'
       - capture_group_items:
           pluginTemplate:
             id: capture_group_items
@@ -946,8 +946,8 @@ appTemplate:
                 - databaseUsernameOverride: ''
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-07-09T07:07:37.994Z
-            updatedAt: 2019-09-18T20:19:51.982Z
+            createdAt: '2019-07-09T07:07:37.994Z'
+            updatedAt: '2019-09-18T20:19:51.982Z'
       - group_front_pic:
           pluginTemplate:
             id: group_front_pic
@@ -1014,8 +1014,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-07-09T07:16:11.188Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:16:11.188Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - group_back_pic:
           pluginTemplate:
             id: group_back_pic
@@ -1082,8 +1082,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-07-09T07:47:15.174Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:47:15.174Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - create_new_list:
           pluginTemplate:
             id: create_new_list
@@ -1148,8 +1148,8 @@ appTemplate:
                 - enableCaching: false
                 - bodyType: json
                 - queryThrottleTime: '750'
-            createdAt: 2019-07-10T21:24:06.134Z
-            updatedAt: 2019-09-18T20:19:51.995Z
+            createdAt: '2019-07-10T21:24:06.134Z'
+            updatedAt: '2019-09-18T20:19:51.995Z'
       - modal8open:
           pluginTemplate:
             id: modal8open
@@ -1200,8 +1200,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-12-10T19:04:35.326Z
-            updatedAt: 2019-12-10T19:37:27.571Z
+            createdAt: '2019-12-10T19:04:35.326Z'
+            updatedAt: '2019-12-10T19:37:27.571Z'
       - image1:
           pluginTemplate:
             id: image1
@@ -1236,8 +1236,8 @@ appTemplate:
                 row: 2
                 height: 3
                 width: 2
-            createdAt: 2019-04-22T05:13:23.055Z
-            updatedAt: 2019-09-18T20:19:51.966Z
+            createdAt: '2019-04-22T05:13:23.055Z'
+            updatedAt: '2019-09-18T20:19:51.966Z'
       - table1:
           pluginTemplate:
             id: table1
@@ -1399,13 +1399,15 @@ appTemplate:
                 - dynamicColumnSettings: null
                 - totalRowCount: ''
                 - recordUpdates:
-                    array: []
+                    ordered:
+                      - array: []
                 - newRow: null
                 - columnEditable:
                     ordered:
                       - uuid: false
                 - filters:
-                    array: []
+                    ordered:
+                      - array: []
                 - displayedDataIndices: null
                 - columnMappers:
                     ordered:
@@ -1452,8 +1454,8 @@ appTemplate:
                 row: 4
                 height: 8
                 width: 8
-            createdAt: 2019-04-22T05:13:57.500Z
-            updatedAt: 2019-12-17T17:10:31.158Z
+            createdAt: '2019-04-22T05:13:57.500Z'
+            updatedAt: '2019-12-17T17:10:31.158Z'
       - select1:
           pluginTemplate:
             id: select1
@@ -1490,8 +1492,8 @@ appTemplate:
                 col: 7
                 height: 1
                 width: 4
-            createdAt: 2019-06-05T19:23:36.151Z
-            updatedAt: 2019-11-05T18:24:53.497Z
+            createdAt: '2019-06-05T19:23:36.151Z'
+            updatedAt: '2019-11-05T18:24:53.497Z'
       - text7:
           pluginTemplate:
             id: text7
@@ -1516,8 +1518,8 @@ appTemplate:
                 col: 1
                 height: 1
                 width: 3
-            createdAt: 2019-06-05T20:03:10.632Z
-            updatedAt: 2019-09-18T20:19:51.967Z
+            createdAt: '2019-06-05T20:03:10.632Z'
+            updatedAt: '2019-09-18T20:19:51.967Z'
       - image2:
           pluginTemplate:
             id: image2
@@ -1552,8 +1554,8 @@ appTemplate:
                 row: 12
                 height: 7
                 width: 12
-            createdAt: 2019-06-05T20:03:31.780Z
-            updatedAt: 2019-09-18T20:19:51.967Z
+            createdAt: '2019-06-05T20:03:31.780Z'
+            updatedAt: '2019-09-18T20:19:51.967Z'
       - text8:
           pluginTemplate:
             id: text8
@@ -1578,8 +1580,8 @@ appTemplate:
                 row: 2
                 height: 1
                 width: 2
-            createdAt: 2019-06-05T20:04:06.707Z
-            updatedAt: 2019-09-18T20:19:51.967Z
+            createdAt: '2019-06-05T20:04:06.707Z'
+            updatedAt: '2019-09-18T20:19:51.967Z'
       - tabbedcontainer1:
           pluginTemplate:
             id: tabbedcontainer1
@@ -1606,8 +1608,8 @@ appTemplate:
                 col: 6
                 height: 8
                 width: 6
-            createdAt: 2019-06-05T21:27:32.342Z
-            updatedAt: 2019-12-11T00:02:21.554Z
+            createdAt: '2019-06-05T21:27:32.342Z'
+            updatedAt: '2019-12-11T00:02:21.554Z'
       - modal1:
           pluginTemplate:
             id: modal1
@@ -1640,8 +1642,8 @@ appTemplate:
                 col: 9
                 height: 1
                 width: 3
-            createdAt: 2019-06-06T01:09:45.361Z
-            updatedAt: 2019-09-18T20:19:51.970Z
+            createdAt: '2019-06-06T01:09:45.361Z'
+            updatedAt: '2019-09-18T20:19:51.970Z'
       - state1:
           pluginTemplate:
             id: state1
@@ -1650,8 +1652,8 @@ appTemplate:
             template:
               ordered:
                 - value: '[]'
-            createdAt: 2019-06-06T02:27:27.015Z
-            updatedAt: 2019-09-18T20:19:51.970Z
+            createdAt: '2019-06-06T02:27:27.015Z'
+            updatedAt: '2019-09-18T20:19:51.970Z'
       - table4:
           pluginTemplate:
             id: table4
@@ -1761,12 +1763,14 @@ appTemplate:
                 - dynamicColumnSettings: null
                 - totalRowCount: ''
                 - recordUpdates:
-                    array: []
+                    ordered:
+                      - array: []
                 - newRow: null
                 - columnEditable:
                     ordered: []
                 - filters:
-                    array: []
+                    ordered:
+                      - array: []
                 - displayedDataIndices: null
                 - columnMappers:
                     ordered: []
@@ -1812,8 +1816,8 @@ appTemplate:
                 row: 17
                 height: 8
                 width: 8
-            createdAt: 2019-06-06T02:28:59.406Z
-            updatedAt: 2019-09-18T20:19:51.970Z
+            createdAt: '2019-06-06T02:28:59.406Z'
+            updatedAt: '2019-09-18T20:19:51.970Z'
       - button1:
           pluginTemplate:
             id: button1
@@ -1851,8 +1855,8 @@ appTemplate:
                 col: 3
                 height: 1
                 width: 2
-            createdAt: 2019-06-06T03:09:22.620Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T03:09:22.620Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - modal2:
           pluginTemplate:
             id: modal2
@@ -1883,8 +1887,8 @@ appTemplate:
                 row: 8
                 height: 1
                 width: 3
-            createdAt: 2019-06-06T04:05:03.963Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T04:05:03.963Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - image5:
           pluginTemplate:
             id: image5
@@ -1919,8 +1923,8 @@ appTemplate:
                 col: 3
                 height: 3
                 width: 2
-            createdAt: 2019-06-06T04:06:28.922Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T04:06:28.922Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - modal3:
           pluginTemplate:
             id: modal3
@@ -1953,8 +1957,8 @@ appTemplate:
                 col: 2
                 height: 1
                 width: 1
-            createdAt: 2019-06-06T04:08:52.039Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T04:08:52.039Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - image6:
           pluginTemplate:
             id: image6
@@ -1987,8 +1991,8 @@ appTemplate:
                 container: modal3
                 height: 3
                 width: 2
-            createdAt: 2019-06-06T04:09:39.949Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T04:09:39.949Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - table5:
           pluginTemplate:
             id: table5
@@ -2133,12 +2137,14 @@ appTemplate:
                 - dynamicColumnSettings: null
                 - totalRowCount: ''
                 - recordUpdates:
-                    array: []
+                    ordered:
+                      - array: []
                 - newRow: null
                 - columnEditable:
                     ordered: []
                 - filters:
-                    array: []
+                    ordered:
+                      - array: []
                 - displayedDataIndices: null
                 - columnMappers:
                     ordered: []
@@ -2175,8 +2181,8 @@ appTemplate:
                 row: 16
                 height: 8
                 width: 8
-            createdAt: 2019-06-06T04:12:26.562Z
-            updatedAt: 2019-12-17T23:55:33.501Z
+            createdAt: '2019-06-06T04:12:26.562Z'
+            updatedAt: '2019-12-17T23:55:33.501Z'
       - button2:
           pluginTemplate:
             id: button2
@@ -2214,8 +2220,8 @@ appTemplate:
                 col: 1
                 height: 1
                 width: 2
-            createdAt: 2019-06-06T04:40:46.882Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T04:40:46.882Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - state2:
           pluginTemplate:
             id: state2
@@ -2224,8 +2230,8 @@ appTemplate:
             template:
               ordered:
                 - value: '""'
-            createdAt: 2019-06-06T04:57:53.687Z
-            updatedAt: 2019-09-18T20:19:51.971Z
+            createdAt: '2019-06-06T04:57:53.687Z'
+            updatedAt: '2019-09-18T20:19:51.971Z'
       - textinput1:
           pluginTemplate:
             id: textinput1
@@ -2263,8 +2269,8 @@ appTemplate:
                 col: 1
                 height: 1
                 width: 4
-            createdAt: 2019-06-06T05:44:30.982Z
-            updatedAt: 2019-09-18T20:19:51.972Z
+            createdAt: '2019-06-06T05:44:30.982Z'
+            updatedAt: '2019-09-18T20:19:51.972Z'
       - button4:
           pluginTemplate:
             id: button4
@@ -2299,8 +2305,8 @@ appTemplate:
                 container: tabbedcontainer1
                 height: 1
                 width: 2
-            createdAt: 2019-06-09T08:12:07.956Z
-            updatedAt: 2019-09-18T20:19:51.972Z
+            createdAt: '2019-06-09T08:12:07.956Z'
+            updatedAt: '2019-09-18T20:19:51.972Z'
       - transformer1:
           pluginTemplate:
             id: transformer1
@@ -2310,8 +2316,8 @@ appTemplate:
               ordered:
                 - funcBody: return 5
                 - value: ''
-            createdAt: 2019-06-10T05:59:16.973Z
-            updatedAt: 2019-09-18T20:19:51.972Z
+            createdAt: '2019-06-10T05:59:16.973Z'
+            updatedAt: '2019-09-18T20:19:51.972Z'
       - textinput3:
           pluginTemplate:
             id: textinput3
@@ -2351,8 +2357,8 @@ appTemplate:
                 col: 3
                 height: 1
                 width: 4
-            createdAt: 2019-06-11T00:32:53.758Z
-            updatedAt: 2019-09-18T20:19:51.972Z
+            createdAt: '2019-06-11T00:32:53.758Z'
+            updatedAt: '2019-09-18T20:19:51.972Z'
       - textinput4:
           pluginTemplate:
             id: textinput4
@@ -2392,8 +2398,8 @@ appTemplate:
                 col: 8
                 height: 1
                 width: 4
-            createdAt: 2019-06-12T01:36:58.405Z
-            updatedAt: 2019-09-18T20:19:51.980Z
+            createdAt: '2019-06-12T01:36:58.405Z'
+            updatedAt: '2019-09-18T20:19:51.980Z'
       - multiselect1:
           pluginTemplate:
             id: multiselect1
@@ -2432,8 +2438,8 @@ appTemplate:
                 col: 8
                 height: 1
                 width: 4
-            createdAt: 2019-06-12T23:53:10.617Z
-            updatedAt: 2019-09-18T20:19:51.981Z
+            createdAt: '2019-06-12T23:53:10.617Z'
+            updatedAt: '2019-09-18T20:19:51.981Z'
       - text3:
           pluginTemplate:
             id: text3
@@ -2458,8 +2464,8 @@ appTemplate:
                 row: 17
                 height: 1
                 width: 3
-            createdAt: 2019-06-13T04:53:17.638Z
-            updatedAt: 2019-09-18T20:19:51.981Z
+            createdAt: '2019-06-13T04:53:17.638Z'
+            updatedAt: '2019-09-18T20:19:51.981Z'
       - select4:
           pluginTemplate:
             id: select4
@@ -2496,8 +2502,8 @@ appTemplate:
                 height: 1
                 width: 4
                 tabNum: 2
-            createdAt: 2019-07-09T06:59:48.207Z
-            updatedAt: 2019-09-18T20:19:51.981Z
+            createdAt: '2019-07-09T06:59:48.207Z'
+            updatedAt: '2019-09-18T20:19:51.981Z'
       - select5:
           pluginTemplate:
             id: select5
@@ -2536,8 +2542,8 @@ appTemplate:
                 height: 1
                 width: 4
                 tabNum: 2
-            createdAt: 2019-07-09T07:02:30.859Z
-            updatedAt: 2019-09-18T20:19:51.982Z
+            createdAt: '2019-07-09T07:02:30.859Z'
+            updatedAt: '2019-09-18T20:19:51.982Z'
       - table6:
           pluginTemplate:
             id: table6
@@ -2630,12 +2636,14 @@ appTemplate:
                 - dynamicColumnSettings: null
                 - totalRowCount: ''
                 - recordUpdates:
-                    array: []
+                    ordered:
+                      - array: []
                 - newRow: null
                 - columnEditable:
                     ordered: []
                 - filters:
-                    array: []
+                    ordered:
+                      - array: []
                 - displayedDataIndices: null
                 - columnMappers:
                     ordered: []
@@ -2679,8 +2687,8 @@ appTemplate:
                 height: 8
                 width: 8
                 tabNum: 2
-            createdAt: 2019-07-09T07:09:32.386Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:09:32.386Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - image9:
           pluginTemplate:
             id: image9
@@ -2717,8 +2725,8 @@ appTemplate:
                 height: 3
                 width: 2
                 tabNum: 2
-            createdAt: 2019-07-09T07:12:33.676Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:12:33.676Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - image10:
           pluginTemplate:
             id: image10
@@ -2755,8 +2763,8 @@ appTemplate:
                 height: 3
                 width: 2
                 tabNum: 2
-            createdAt: 2019-07-09T07:47:32.195Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:47:32.195Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - modal6:
           pluginTemplate:
             id: modal6
@@ -2791,8 +2799,8 @@ appTemplate:
                 height: 1
                 width: 3
                 tabNum: 2
-            createdAt: 2019-07-09T07:49:02.670Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:49:02.670Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - image11:
           pluginTemplate:
             id: image11
@@ -2825,8 +2833,8 @@ appTemplate:
                 container: modal6
                 height: 3
                 width: 2
-            createdAt: 2019-07-09T07:49:54.051Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:49:54.051Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - modal7:
           pluginTemplate:
             id: modal7
@@ -2861,8 +2869,8 @@ appTemplate:
                 height: 1
                 width: 3
                 tabNum: 2
-            createdAt: 2019-07-09T07:51:21.680Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:51:21.680Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - image12:
           pluginTemplate:
             id: image12
@@ -2895,8 +2903,8 @@ appTemplate:
                 container: modal7
                 height: 3
                 width: 2
-            createdAt: 2019-07-09T07:51:47.806Z
-            updatedAt: 2019-09-18T20:19:51.985Z
+            createdAt: '2019-07-09T07:51:47.806Z'
+            updatedAt: '2019-09-18T20:19:51.985Z'
       - button5:
           pluginTemplate:
             id: button5
@@ -2936,8 +2944,8 @@ appTemplate:
                 height: 1
                 width: 2
                 tabNum: 1
-            createdAt: 2019-07-11T21:39:05.074Z
-            updatedAt: 2019-09-18T20:19:51.996Z
+            createdAt: '2019-07-11T21:39:05.074Z'
+            updatedAt: '2019-09-18T20:19:51.996Z'
       - modal8:
           pluginTemplate:
             id: modal8
@@ -2970,8 +2978,8 @@ appTemplate:
                 col: 2
                 height: 1
                 width: 3
-            createdAt: 2019-12-10T19:22:21.966Z
-            updatedAt: 2019-12-16T19:25:59.067Z
+            createdAt: '2019-12-10T19:22:21.966Z'
+            updatedAt: '2019-12-16T19:25:59.067Z'
       - image13:
           pluginTemplate:
             id: image13
@@ -3005,8 +3013,8 @@ appTemplate:
                 container: modal8
                 height: 3
                 width: 2
-            createdAt: 2019-12-10T19:30:37.991Z
-            updatedAt: 2019-12-10T19:47:25.516Z
+            createdAt: '2019-12-10T19:30:37.991Z'
+            updatedAt: '2019-12-10T19:47:25.516Z'
       - text4:
           pluginTemplate:
             id: text4
@@ -3030,8 +3038,8 @@ appTemplate:
                 container: modal8
                 height: 1
                 width: 3
-            createdAt: 2019-12-10T19:34:16.284Z
-            updatedAt: 2019-12-10T19:34:24.768Z
+            createdAt: '2019-12-10T19:34:16.284Z'
+            updatedAt: '2019-12-10T19:34:24.768Z'
       - modal9:
           pluginTemplate:
             id: modal9
@@ -3066,8 +3074,8 @@ appTemplate:
                 col: 1
                 height: 1
                 width: 3
-            createdAt: 2019-12-10T19:39:20.299Z
-            updatedAt: 2019-12-10T19:43:30.085Z
+            createdAt: '2019-12-10T19:39:20.299Z'
+            updatedAt: '2019-12-10T19:43:30.085Z'
       - image14:
           pluginTemplate:
             id: image14
@@ -3104,8 +3112,8 @@ appTemplate:
                 col: 6
                 height: 3
                 width: 2
-            createdAt: 2019-12-10T19:42:02.032Z
-            updatedAt: 2019-12-10T19:55:34.595Z
+            createdAt: '2019-12-10T19:42:02.032Z'
+            updatedAt: '2019-12-10T19:55:34.595Z'
       - image15:
           pluginTemplate:
             id: image15
@@ -3138,8 +3146,8 @@ appTemplate:
                 container: modal9
                 height: 3
                 width: 2
-            createdAt: 2019-12-10T19:43:53.022Z
-            updatedAt: 2019-12-10T19:44:05.298Z
+            createdAt: '2019-12-10T19:43:53.022Z'
+            updatedAt: '2019-12-10T19:44:05.298Z'
       - text5:
           pluginTemplate:
             id: text5
@@ -3165,8 +3173,8 @@ appTemplate:
                 col: 6
                 height: 1
                 width: 3
-            createdAt: 2019-12-10T19:45:41.974Z
-            updatedAt: 2019-12-10T19:45:48.220Z
+            createdAt: '2019-12-10T19:45:41.974Z'
+            updatedAt: '2019-12-10T19:45:48.220Z'
       - modal9open:
           pluginTemplate:
             id: modal9open
@@ -3217,8 +3225,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-12-10T19:46:24.922Z
-            updatedAt: 2019-12-10T19:47:08.053Z
+            createdAt: '2019-12-10T19:46:24.922Z'
+            updatedAt: '2019-12-10T19:47:08.053Z'
       - text6:
           pluginTemplate:
             id: text6
@@ -3242,8 +3250,8 @@ appTemplate:
                 col: 4
                 height: 1
                 width: 3
-            createdAt: 2019-12-10T19:47:40.929Z
-            updatedAt: 2019-12-10T19:49:12.761Z
+            createdAt: '2019-12-10T19:47:40.929Z'
+            updatedAt: '2019-12-10T19:49:12.761Z'
       - modal10:
           pluginTemplate:
             id: modal10
@@ -3276,8 +3284,8 @@ appTemplate:
                 col: 7
                 height: 1
                 width: 3
-            createdAt: 2019-12-10T19:50:10.428Z
-            updatedAt: 2019-12-10T19:54:02.928Z
+            createdAt: '2019-12-10T19:50:10.428Z'
+            updatedAt: '2019-12-10T19:54:02.928Z'
       - image16:
           pluginTemplate:
             id: image16
@@ -3310,8 +3318,8 @@ appTemplate:
                 container: modal10
                 height: 3
                 width: 2
-            createdAt: 2019-12-10T19:54:12.941Z
-            updatedAt: 2019-12-10T19:54:22.824Z
+            createdAt: '2019-12-10T19:54:12.941Z'
+            updatedAt: '2019-12-10T19:54:22.824Z'
       - modal10open:
           pluginTemplate:
             id: modal10open
@@ -3362,8 +3370,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-12-10T19:54:53.093Z
-            updatedAt: 2019-12-10T19:55:20.496Z
+            createdAt: '2019-12-10T19:54:53.093Z'
+            updatedAt: '2019-12-10T19:55:20.496Z'
       - form1:
           pluginTemplate:
             id: form1
@@ -3394,8 +3402,8 @@ appTemplate:
                 row: 13
                 height: 8
                 width: 6
-            createdAt: 2019-12-10T19:56:34.140Z
-            updatedAt: 2019-12-10T22:18:19.458Z
+            createdAt: '2019-12-10T19:56:34.140Z'
+            updatedAt: '2019-12-10T22:18:19.458Z'
       - textinput5:
           pluginTemplate:
             id: textinput5
@@ -3431,8 +3439,8 @@ appTemplate:
                 row: 1
                 height: 1
                 width: 4
-            createdAt: 2019-12-10T21:35:22.432Z
-            updatedAt: 2019-12-10T21:37:29.324Z
+            createdAt: '2019-12-10T21:35:22.432Z'
+            updatedAt: '2019-12-10T21:37:29.324Z'
       - textinput6:
           pluginTemplate:
             id: textinput6
@@ -3469,8 +3477,8 @@ appTemplate:
                 row: 1
                 height: 1
                 width: 4
-            createdAt: 2019-12-10T21:40:23.037Z
-            updatedAt: 2019-12-10T21:41:02.753Z
+            createdAt: '2019-12-10T21:40:23.037Z'
+            updatedAt: '2019-12-10T21:41:02.753Z'
       - update_name:
           pluginTemplate:
             id: update_name
@@ -3533,8 +3541,8 @@ appTemplate:
                 - enableCaching: false
                 - bodyType: json
                 - queryThrottleTime: '750'
-            createdAt: 2019-12-10T21:41:39.516Z
-            updatedAt: 2019-12-17T17:36:39.271Z
+            createdAt: '2019-12-10T21:41:39.516Z'
+            updatedAt: '2019-12-17T17:36:39.271Z'
       - modal8close:
           pluginTemplate:
             id: modal8close
@@ -3585,8 +3593,8 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - queryThrottleTime: '750'
-            createdAt: 2019-12-10T22:20:51.439Z
-            updatedAt: 2019-12-10T22:21:14.300Z
+            createdAt: '2019-12-10T22:20:51.439Z'
+            updatedAt: '2019-12-10T22:21:14.300Z'
       - checkbox1:
           pluginTemplate:
             id: checkbox1
@@ -3612,8 +3620,8 @@ appTemplate:
                 col: 5
                 height: 1
                 width: 2
-            createdAt: 2019-12-10T22:43:44.190Z
-            updatedAt: 2019-12-10T22:44:59.380Z
+            createdAt: '2019-12-10T22:43:44.190Z'
+            updatedAt: '2019-12-10T22:44:59.380Z'
       - form2:
           pluginTemplate:
             id: form2
@@ -3646,8 +3654,8 @@ appTemplate:
                 height: 8
                 width: 6
                 tabNum: 2
-            createdAt: 2019-12-11T00:05:40.988Z
-            updatedAt: 2019-12-11T00:05:40.988Z
+            createdAt: '2019-12-11T00:05:40.988Z'
+            updatedAt: '2019-12-11T00:05:40.988Z'
       - textinput7:
           pluginTemplate:
             id: textinput7
@@ -3684,8 +3692,8 @@ appTemplate:
                 row: 2
                 height: 1
                 width: 4
-            createdAt: 2019-12-17T17:30:02.553Z
-            updatedAt: 2019-12-17T18:49:01.035Z
+            createdAt: '2019-12-17T17:30:02.553Z'
+            updatedAt: '2019-12-17T18:49:01.035Z'
       - text9:
           pluginTemplate:
             id: text9
@@ -3712,8 +3720,8 @@ appTemplate:
                 col: 6
                 height: 1
                 width: 3
-            createdAt: 2019-12-17T17:30:45.745Z
-            updatedAt: 2019-12-17T17:31:03.233Z
+            createdAt: '2019-12-17T17:30:45.745Z'
+            updatedAt: '2019-12-17T17:31:03.233Z'
   createdAt: null
   version: 2.53.22
   responsiveLayoutDisabled: false
