@@ -1602,8 +1602,8 @@ appTemplate:
                 width: 11
             mobilePosition2:
               position2:
-                row: 19
-                col: 6
+                row: 1
+                col: 1
                 height: 8
                 width: 6
             createdAt: 2019-06-05T21:27:32.342Z
