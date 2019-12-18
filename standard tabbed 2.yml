@@ -1597,8 +1597,8 @@ appTemplate:
                 - spinWhenChildrenAreFetching: true
             position2:
               position2:
-                row: .nan
-                height: .nan
+                row: 1
+                height: 10
                 width: 11
             mobilePosition2:
               position2:
