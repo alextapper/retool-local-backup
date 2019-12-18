@@ -2608,7 +2608,7 @@ appTemplate:
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
-                - pageSize: 11
+                - pageSize: 19
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -2678,7 +2678,7 @@ appTemplate:
                 width: 8
                 tabNum: 2
             createdAt: 2019-07-09T07:09:32.386Z
-            updatedAt: 2019-12-18T00:38:44.673Z
+            updatedAt: 2019-12-18T00:39:38.466Z
       - image9:
           pluginTemplate:
             id: image9
