@@ -1604,8 +1604,8 @@ appTemplate:
               position2:
                 row: 1
                 col: 1
-                height: 8
-                width: 6
+                height: 12
+                width: 10
             createdAt: 2019-06-05T21:27:32.342Z
             updatedAt: 2019-12-11T00:02:21.554Z
       - modal1:
@@ -2112,7 +2112,7 @@ appTemplate:
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
-                - pageSize: 11
+                - pageSize: 9
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -2176,7 +2176,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2019-06-06T04:12:26.562Z
-            updatedAt: 2019-12-18T00:38:22.152Z
+            updatedAt: 2019-12-18T00:38:29.882Z
       - button2:
           pluginTemplate:
             id: button2
