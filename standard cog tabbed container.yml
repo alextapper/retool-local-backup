@@ -1600,7 +1600,7 @@ appTemplate:
               position2:
                 row: .nan
                 height: .nan
-                width: 3
+                width: 5
             mobilePosition2:
               position2:
                 height: 17
