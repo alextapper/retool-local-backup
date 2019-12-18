@@ -2110,7 +2110,7 @@ appTemplate:
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
-                - pageSize: 9
+                - pageSize: 11
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -2174,7 +2174,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2019-06-06T04:12:26.562Z
-            updatedAt: 2019-12-18T00:38:52.119Z
+            updatedAt: 2019-12-18T00:39:20.635Z
       - button2:
           pluginTemplate:
             id: button2
