@@ -1486,8 +1486,9 @@ appTemplate:
                 width: 5
             mobilePosition2:
               position2:
-                row: 21
-                col: 7
+                container: tabbedcontainer1
+                row: 12
+                col: 4
                 height: 1
                 width: 4
             createdAt: 2019-06-05T19:23:36.151Z
@@ -2110,7 +2111,7 @@ appTemplate:
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
-                - pageSize: 11
+                - pageSize: 9
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -2174,7 +2175,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2019-06-06T04:12:26.562Z
-            updatedAt: 2019-12-18T00:40:41.416Z
+            updatedAt: 2019-12-18T00:40:45.268Z
       - button2:
           pluginTemplate:
             id: button2
@@ -2608,7 +2609,7 @@ appTemplate:
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
-                - pageSize: 11
+                - pageSize: 19
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -2678,7 +2679,7 @@ appTemplate:
                 width: 8
                 tabNum: 2
             createdAt: 2019-07-09T07:09:32.386Z
-            updatedAt: 2019-12-18T00:40:41.430Z
+            updatedAt: 2019-12-18T00:40:45.276Z
       - image9:
           pluginTemplate:
             id: image9
