@@ -13,31 +13,60 @@ appTemplate:
             template:
               ordered:
                 - queryRefreshTime: ''
+                - paginationLimit: ''
                 - body: ''
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
+                - paginationPaginationField: ''
                 - headers: ''
+                - paginationEnabled: false
                 - query: 'https://httpbin.org/get'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - cookies: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
                 - watchedParams: []
+                - paginationDataField: ''
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10001'
                 - requireConfirmation: false
                 - type: GET
+                - enableCaching: false
                 - bodyType: json
                 - queryThrottleTime: '750'
+            createdAt: 2019-12-20T01:42:09.393Z
+            updatedAt: 2019-12-20T01:42:09.393Z
   createdAt: null
-  version: null
+  version: 2.50.4
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
