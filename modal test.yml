@@ -8,23 +8,18 @@ appTemplate:
           pluginTemplate:
             id: query1
             type: datasource
-            subtype: RESTQuery
-            resourceName: REST-WithoutResource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
             template:
               ordered:
                 - queryRefreshTime: ''
-                - paginationLimit: ''
-                - body: ''
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
                 - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
-                - runWhenModelUpdates: true
-                - paginationPaginationField: ''
-                - headers: ''
-                - paginationEnabled: false
-                - query: 'https://httpbin.org/get'
+                - runWhenModelUpdates: false
+                - query: 'modal1.open ? modal1.close() : modal1.open()'
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
@@ -37,14 +32,12 @@ appTemplate:
                 - isImported: false
                 - showSuccessToaster: true
                 - cacheKeyTtl: ''
-                - cookies: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
                 - isFetching: false
                 - rawData: null
                 - queryTriggerDelay: '0'
                 - watchedParams: []
-                - paginationDataField: ''
                 - timestamp: 0
                 - importedQueryDefaults:
                     ordered: []
@@ -57,14 +50,12 @@ appTemplate:
                     row.quantity > 20)
 
                     return data
-                - queryTimeout: '10001'
+                - queryTimeout: '10000'
                 - requireConfirmation: false
-                - type: GET
                 - enableCaching: false
-                - bodyType: json
                 - queryThrottleTime: '750'
             createdAt: 2019-12-20T01:42:09.393Z
-            updatedAt: 2019-12-20T01:42:09.393Z
+            updatedAt: 2019-12-20T01:42:25.667Z
       - button1:
           pluginTemplate:
             id: button1
