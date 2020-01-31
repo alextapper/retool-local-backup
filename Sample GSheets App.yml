@@ -16,28 +16,55 @@ appTemplate:
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - useSheetRange: true
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - useRawSpreadsheetId: true
                 - runWhenModelUpdates: true
                 - spreadsheetId: 1jQKcJQRgjBNzr2ZlKHJOGzv7HwSHJZOiYV0wQ9sx2EI
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - sheetUpdate: ''
                 - privateParams: []
                 - triggersOnSuccess: []
                 - sheetIdToCopy: ''
+                - sheetName: ''
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - filterBy: ''
                 - actionType: read
                 - triggersOnFailure: []
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
+                - offset: ''
+                - queryTriggerDelay: '0'
                 - watchedParams: []
                 - useRawCopyToSpreadsheetId: false
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - copyToSpreadsheetId: ''
                 - runWhenPageLoads: false
                 - sheetTitle: ''
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
+                - limit: ''
+                - enableCaching: false
                 - sheetRange: 'A3:Z'
                 - queryThrottleTime: '750'
             createdAt: 2018-09-17T20:07:05.926Z
@@ -50,6 +77,9 @@ appTemplate:
             template:
               ordered:
                 - actionButtonQuery: ''
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
                 - actionButtonType: runQuery
                 - columnWidths:
                     - ordered:
@@ -60,6 +90,9 @@ appTemplate:
                         - value: 80
                 - actionButtonDisabled: ''
                 - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
                 - columnHeaderNames:
                     ordered: []
                 - alwaysShowPaginator: false
@@ -90,9 +123,11 @@ appTemplate:
                 - allowMultiRowSelect: false
                 - columnFormats:
                     ordered: []
+                - showFilterButton: true
                 - actionButtonUrl: ''
                 - actionButton: false
                 - actionButtonNewWindow: false
+                - nextBeforeCursor: ''
                 - columnVisibility:
                     ordered:
                       - address_id: true
@@ -118,8 +153,14 @@ appTemplate:
                       - Description: true
                       - category: true
                 - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ filteredCompanies.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
                 - selectRowByDefault: true
                 - defaultSortByColumn: ''
                 - paginationOffset: 0
@@ -128,17 +169,41 @@ appTemplate:
                     ordered: []
                 - actionButtonInternalUrlPath: ''
                 - pageSize: 8
+                - useDynamicColumnSettings: false
                 - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
                 - sortedColumn: ''
                 - actionButtonText: ''
                 - columnAllowOverflow:
                     ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
                 - onRowSelect: ''
+                - showDownloadButton: true
                 - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
                 - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
                 - columnMappers:
                     ordered: []
                 - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
                 - columns:
                     - Title
                     - Sales
@@ -164,10 +229,14 @@ appTemplate:
                     - category
                 - sort: null
                 - actionButtonInternalUrlQuery: ''
+                - calculatedColumns: []
                 - selectedRow:
                     object:
                       index: null
                       data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
             position2:
               position2:
                 row: 3
@@ -189,13 +258,20 @@ appTemplate:
               ordered:
                 - readonly: 'true'
                 - disabledKeyCodes: ''
+                - onBlur: ''
                 - docsSlug: textinput
+                - currencyType: USD
                 - leftIconName: mail
                 - initialValue: '{{  companiesTable.selectedRow.data.email  }}'
+                - tooltipText: ''
                 - value: ''
+                - suffix: ''
                 - placeholder: Send to...
                 - label: 'To:'
+                - currencyMajorOnly: false
+                - formattedValue: ''
                 - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
                 - onSubmit: ''
                 - type: text
                 - allowedRegex: .*
@@ -222,13 +298,20 @@ appTemplate:
               ordered:
                 - readonly: ''
                 - disabledKeyCodes: ''
+                - onBlur: ''
                 - docsSlug: textinput
+                - currencyType: USD
                 - leftIconName: mail
                 - initialValue: ''
+                - tooltipText: ''
                 - value: ''
+                - suffix: ''
                 - placeholder: BCC'd emails (maybe your email?)
                 - label: 'BCC (optional):'
+                - currencyMajorOnly: false
+                - formattedValue: ''
                 - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
                 - onSubmit: ''
                 - type: text
                 - allowedRegex: .*
@@ -255,13 +338,20 @@ appTemplate:
               ordered:
                 - readonly: ''
                 - disabledKeyCodes: ''
+                - onBlur: ''
                 - docsSlug: textinput
+                - currencyType: USD
                 - leftIconName: search
                 - initialValue: ''
+                - tooltipText: ''
                 - value: ''
+                - suffix: ''
                 - placeholder: I was excited by the potential your company has!
                 - label: Personalized snippet
+                - currencyMajorOnly: false
+                - formattedValue: ''
                 - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
                 - onSubmit: ''
                 - type: text
                 - allowedRegex: .*
@@ -286,7 +376,9 @@ appTemplate:
             subtype: ButtonWidget
             template:
               ordered:
+                - valueToCopy: ''
                 - color: ''
+                - internalUrlHashParams: ''
                 - exportFileType: csv
                 - buttonType: action
                 - exportTemplate: null
@@ -335,6 +427,7 @@ appTemplate:
                 - html: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 height: 1
@@ -354,7 +447,9 @@ appTemplate:
               ordered:
                 - readonly: 'true'
                 - disabledKeyCodes: ''
+                - onBlur: ''
                 - docsSlug: textinput
+                - currencyType: USD
                 - leftIconName: search
                 - initialValue: >-
                     Hi founders at {{  companiesTable.selectedRow.data.name }},
@@ -365,10 +460,15 @@ appTemplate:
 
 
                     Thanks!
+                - tooltipText: ''
                 - value: ''
+                - suffix: ''
                 - placeholder: Search here...
                 - label: Email preview
+                - currencyMajorOnly: false
+                - formattedValue: ''
                 - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
                 - onSubmit: ''
                 - type: text
                 - allowedRegex: .*
@@ -403,27 +503,49 @@ appTemplate:
                 - queryDisabledMessage: Please enter in a personalized snippet!
                 - successMessage: ''
                 - queryDisabled: '{{ !personalizedInput.value}}'
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: false
                 - paginationPaginationField: ''
                 - headers: ''
                 - paginationEnabled: false
                 - query: emails/new
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - cookies: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
                 - watchedParams: []
                 - paginationDataField: ''
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
                 - type: POST
+                - enableCaching: false
                 - bodyType: json
                 - queryThrottleTime: '750'
             createdAt: 2018-09-19T05:51:17.389Z
@@ -435,16 +557,26 @@ appTemplate:
             subtype: MultiSelectWidget
             template:
               ordered:
+                - values: '  {{ companiesQuery.data.map(function(d) { return d.category })}}'
+                - allowOutOfRangeValues: false
+                - enableFuzzyMatching: true
+                - searchValue: ''
+                - displayValue: ''
+                - tooltipText: ''
+                - value: ''
+                - maxResults: 50
+                - placeholder: ''
                 - label: Filter by category
                 - labelMaxWidth: ''
-                - value: ''
-                - displayValue: ''
-                - placeholder: ''
-                - values: '  {{ companiesQuery.data.map(function(d) { return d.category })}}'
+                - labelPlacedOnLeft: ''
+                - onSelect: ''
+                - allowCustomValues: false
+                - disabled: ''
+                - hideClearButton: false
+                - required: false
                 - labels: >-
                     {{ companiesQuery.data.map(function(d) { return d.category
                     })}}
-                - disabled: ''
             position2:
               position2:
                 row: 1
@@ -469,29 +601,51 @@ appTemplate:
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - query: >-
                     select * from {{ companiesQuery.data }} where {{
                     multiselect1.value.length == 0}} or category = ANY ({{
                     multiselect1.value}}) order by category
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
                 - watchedParams: []
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
+                - enableCaching: false
                 - queryThrottleTime: '750'
             createdAt: 2018-09-20T08:08:33.866Z
             updatedAt: 2018-09-20T08:10:29.929Z
   createdAt: null
-  version: 2.29.11
+  version: 2.53.39
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
