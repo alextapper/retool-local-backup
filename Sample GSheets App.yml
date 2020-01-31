@@ -95,7 +95,7 @@ appTemplate:
                 - onRowAdded: ''
                 - columnHeaderNames:
                     ordered: []
-                - alwaysShowPaginator: false
+                - alwaysShowPaginator: true
                 - columnColors:
                     ordered:
                       - address_id: ''
@@ -168,7 +168,7 @@ appTemplate:
                 - columnMappersRenderAsHTML:
                     ordered: []
                 - actionButtonInternalUrlPath: ''
-                - pageSize: 8
+                - pageSize: 14
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -234,9 +234,9 @@ appTemplate:
                     object:
                       index: null
                       data: null
-                - showPaginationOnTop: false
+                - showPaginationOnTop: true
                 - nextAfterCursor: ''
-                - useCompactMode: false
+                - useCompactMode: true
             position2:
               position2:
                 row: 3
@@ -248,7 +248,7 @@ appTemplate:
                 height: 9
                 width: 12
             createdAt: 2018-08-06T18:01:25.280Z
-            updatedAt: 2018-09-20T08:59:14.957Z
+            updatedAt: 2020-01-31T19:55:03.101Z
       - toInput:
           pluginTemplate:
             id: toInput
