@@ -154,8 +154,8 @@ appTemplate:
             position2:
               position2:
                 row: 5
-                height: 6
-                width: 4
+                height: 11
+                width: 6
             mobilePosition2:
               position2:
                 row: 5
