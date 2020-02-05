@@ -90,8 +90,7 @@ appTemplate:
                 - disabled: ''
             position2:
               position2:
-                row: 8
-                col: 5
+                row: 3
                 height: 1
                 width: 2
             mobilePosition2:
@@ -131,7 +130,7 @@ appTemplate:
             position2:
               position2:
                 row: 3
-                col: 7
+                col: 2
                 height: 1
                 width: 4
             mobilePosition2:
