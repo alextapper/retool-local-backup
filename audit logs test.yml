@@ -24,7 +24,7 @@ appTemplate:
                 - paginationPaginationField: ''
                 - headers: ''
                 - paginationEnabled: false
-                - query: 'https://httpbin.org/get?people=1'
+                - query: people/?search=r2
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
@@ -64,7 +64,7 @@ appTemplate:
                 - bodyType: json
                 - queryThrottleTime: '750'
             createdAt: 2020-02-05T23:21:13.621Z
-            updatedAt: 2020-02-05T23:22:03.508Z
+            updatedAt: 2020-02-05T23:23:23.770Z
   createdAt: null
   version: 2.53.42
   responsiveLayoutDisabled: false
