@@ -101,9 +101,9 @@ appTemplate:
                 width: 2
             createdAt: 2020-02-05T23:23:42.471Z
             updatedAt: 2020-02-05T23:23:44.627Z
-      - textinput1:
+      - encoding:
           pluginTemplate:
-            id: textinput1
+            id: encoding
             type: widget
             subtype: TextInputWidget
             template:
