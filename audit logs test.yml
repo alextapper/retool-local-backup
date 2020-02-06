@@ -163,9 +163,9 @@ appTemplate:
                 width: 4
             createdAt: 2020-02-06T00:00:20.112Z
             updatedAt: 2020-02-06T00:00:31.339Z
-      - select1:
+      - format:
           pluginTemplate:
-            id: select1
+            id: format
             type: widget
             subtype: SelectWidget
             template:
