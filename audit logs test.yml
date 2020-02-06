@@ -180,7 +180,7 @@ appTemplate:
                 - value: ''
                 - suffix: ''
                 - placeholder: Search here...
-                - label: Name
+                - label: person
                 - currencyMajorOnly: false
                 - formattedValue: ''
                 - labelMaxWidth: ''
@@ -202,7 +202,7 @@ appTemplate:
                 height: 1
                 width: 4
             createdAt: 2020-02-06T00:00:20.112Z
-            updatedAt: 2020-02-06T00:00:20.112Z
+            updatedAt: 2020-02-06T00:00:23.837Z
   createdAt: null
   version: 2.53.42
   responsiveLayoutDisabled: false
