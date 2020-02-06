@@ -186,7 +186,7 @@ appTemplate:
                 - labelMaxWidth: ''
                 - labelPlacedOnLeft: ''
                 - onSubmit: ''
-                - type: text
+                - type: number
                 - allowedRegex: .*
                 - required: false
             position2:
@@ -202,7 +202,7 @@ appTemplate:
                 height: 1
                 width: 4
             createdAt: 2020-02-06T00:00:20.112Z
-            updatedAt: 2020-02-06T00:00:23.837Z
+            updatedAt: 2020-02-06T00:00:31.339Z
   createdAt: null
   version: 2.53.42
   responsiveLayoutDisabled: false
