@@ -24,7 +24,7 @@ appTemplate:
                 - paginationPaginationField: ''
                 - headers: ''
                 - paginationEnabled: false
-                - query: 'people/?search={{encoding.value}}'
+                - query: 'people/{{person.value}}?encoding={{encoding.value}}'
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
@@ -64,7 +64,7 @@ appTemplate:
                 - bodyType: json
                 - queryThrottleTime: '750'
             createdAt: 2020-02-05T23:21:13.621Z
-            updatedAt: 2020-02-06T00:00:43.328Z
+            updatedAt: 2020-02-06T00:01:04.607Z
       - button1:
           pluginTemplate:
             id: button1
