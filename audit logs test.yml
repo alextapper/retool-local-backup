@@ -170,7 +170,7 @@ appTemplate:
             subtype: SelectWidget
             template:
               ordered:
-                - values: ''
+                - values: '["wookiee","JSON"]'
                 - allowOutOfRangeValues: false
                 - enableFuzzyMatching: true
                 - searchValue: ''
@@ -200,7 +200,7 @@ appTemplate:
                 height: 1
                 width: 4
             createdAt: 2020-02-06T00:02:10.942Z
-            updatedAt: 2020-02-06T00:02:25.163Z
+            updatedAt: 2020-02-06T00:02:30.157Z
   createdAt: null
   version: 2.53.42
   responsiveLayoutDisabled: false
