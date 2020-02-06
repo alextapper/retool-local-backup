@@ -24,7 +24,7 @@ appTemplate:
                 - paginationPaginationField: ''
                 - headers: ''
                 - paginationEnabled: false
-                - query: 'people/{{person.value}}?encoding={{encoding.value}}'
+                - query: 'people/{{person.value}}?format={{format.value}}'
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
@@ -64,7 +64,7 @@ appTemplate:
                 - bodyType: json
                 - queryThrottleTime: '750'
             createdAt: 2020-02-05T23:21:13.621Z
-            updatedAt: 2020-02-06T00:01:04.607Z
+            updatedAt: 2020-02-06T00:01:43.667Z
       - button1:
           pluginTemplate:
             id: button1
@@ -118,7 +118,7 @@ appTemplate:
                 - value: ''
                 - suffix: ''
                 - placeholder: Search here...
-                - label: encoding
+                - label: format
                 - currencyMajorOnly: false
                 - formattedValue: ''
                 - labelMaxWidth: ''
@@ -140,7 +140,7 @@ appTemplate:
                 height: 1
                 width: 4
             createdAt: 2020-02-05T23:25:24.947Z
-            updatedAt: 2020-02-06T00:00:38.261Z
+            updatedAt: 2020-02-06T00:01:42.234Z
       - jsonexplorer1:
           pluginTemplate:
             id: jsonexplorer1
