@@ -25,7 +25,7 @@ appTemplate:
                 - headers: ''
                 - paginationEnabled: false
                 - query: >-
-                    people/{{person.value}}?{{format.value == "wookie" ?
+                    people/{{person.value}}?{{format.value == "wookiee" ?
                     "format" : "undefined"}}={{format.value}}
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
@@ -66,7 +66,7 @@ appTemplate:
                 - bodyType: json
                 - queryThrottleTime: '750'
             createdAt: 2020-02-05T23:21:13.621Z
-            updatedAt: 2020-02-06T00:03:45.744Z
+            updatedAt: 2020-02-06T00:04:14.500Z
       - button1:
           pluginTemplate:
             id: button1
