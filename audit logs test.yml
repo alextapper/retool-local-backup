@@ -27,7 +27,8 @@ appTemplate:
                 - query: 'people/{{person.value}}?format={{format.value}}'
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
-                - privateParams: []
+                - privateParams:
+                    - query-1
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
@@ -64,7 +65,7 @@ appTemplate:
                 - bodyType: json
                 - queryThrottleTime: '750'
             createdAt: 2020-02-05T23:21:13.621Z
-            updatedAt: 2020-02-06T00:54:43.081Z
+            updatedAt: 2020-02-06T00:55:34.330Z
       - button1:
           pluginTemplate:
             id: button1
