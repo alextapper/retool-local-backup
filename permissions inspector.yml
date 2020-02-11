@@ -1,0 +1,1374 @@
+version: 43.0.9
+pageUuid: b5b6c524-d665-11e9-bc01-b72eeb56b303
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - getPages:
+          pluginTemplate:
+            id: getPages
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from pages where name ilike {{'%' +
+                    textinput1.value + '%'}}
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10001'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-09-13T20:33:15.090Z
+            updatedAt: 2019-09-13T23:12:12.973Z
+      - tPages:
+          pluginTemplate:
+            id: tPages
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: name
+                        value: 228
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - folderId: ''
+                      - name: green
+                      - deletedAt: ''
+                      - organizationId: ''
+                      - updatedAt: ''
+                      - releasedTagId: ''
+                      - id: ''
+                      - createdAt: ''
+                      - uuid: ''
+                      - photoUrl: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - folderId: true
+                      - name: true
+                      - Sales: true
+                      - deletedAt: true
+                      - organizationId: true
+                      - updatedAt: true
+                      - Title: true
+                      - releasedTagId: true
+                      - id: true
+                      - createdAt: true
+                      - uuid: true
+                      - Description: true
+                      - photoUrl: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ getPages.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 23
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - Title
+                    - Description
+                    - Sales
+                    - id
+                    - name
+                    - createdAt
+                    - updatedAt
+                    - organizationId
+                    - folderId
+                    - uuid
+                    - releasedTagId
+                    - photoUrl
+                    - deletedAt
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                row: 1
+                height: 16
+                width: 6
+            mobilePosition2:
+              position2:
+                height: 8
+                width: 8
+            createdAt: 2019-09-13T21:15:56.479Z
+            updatedAt: 2019-09-13T23:12:12.974Z
+      - textinput1:
+          pluginTemplate:
+            id: textinput1
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - docsSlug: textinput
+                - currencyType: USD
+                - leftIconName: search
+                - initialValue: ''
+                - tooltipText: ''
+                - value: ''
+                - suffix: ''
+                - placeholder: Search here...
+                - label: Name
+                - currencyMajorOnly: false
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                col: 3
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                col: 4
+                height: 1
+                width: 4
+            createdAt: 2019-09-13T21:16:14.514Z
+            updatedAt: 2019-09-13T23:12:12.974Z
+      - getGroupPages:
+          pluginTemplate:
+            id: getGroupPages
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from group_pages  where
+                    ({{!tPages.selectedRow.data}} OR "pageId" =
+                    {{tPages.selectedRow.data.id}});
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-09-13T21:16:44.236Z
+            updatedAt: 2019-09-13T23:12:12.975Z
+      - text1:
+          pluginTemplate:
+            id: text1
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '### Pages (aka Apps)'
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                height: 1
+                width: 3
+            createdAt: 2019-09-13T21:17:37.407Z
+            updatedAt: 2019-09-13T23:12:12.975Z
+      - tGroups:
+          pluginTemplate:
+            id: tGroups
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: universalResourceAccess
+                        value: 161
+                    - object:
+                        id: id
+                        value: 58
+                    - object:
+                        id: name
+                        value: 200
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - accessLevel: ''
+                      - universalQueryLibraryAccess: ''
+                      - pageId: ''
+                      - name: green
+                      - organizationId: ''
+                      - updatedAt: ''
+                      - universalAccess: ''
+                      - groupId: ''
+                      - id: ''
+                      - createdAt: ''
+                      - universalResourceAccess: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - accessLevel: true
+                      - universalQueryLibraryAccess: true
+                      - pageId: true
+                      - name: true
+                      - Sales: true
+                      - organizationId: true
+                      - updatedAt: true
+                      - universalAccess: true
+                      - Title: true
+                      - groupId: true
+                      - id: true
+                      - createdAt: true
+                      - Description: true
+                      - universalResourceAccess: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ getGroups.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 6
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - id
+                    - name
+                    - universalAccess
+                    - universalResourceAccess
+                    - organizationId
+                    - createdAt
+                    - updatedAt
+                    - universalQueryLibraryAccess
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                row: 2
+                col: 6
+                height: 5
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 24
+                height: 8
+                width: 8
+            createdAt: 2019-09-13T21:23:13.894Z
+            updatedAt: 2020-02-11T21:10:43.798Z
+      - getGroups:
+          pluginTemplate:
+            id: getGroups
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from groups where id =
+                    ANY({{getGroupPages.data.groupId}});
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-09-13T21:23:28.635Z
+            updatedAt: 2019-09-13T23:12:12.976Z
+      - text3:
+          pluginTemplate:
+            id: text3
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    #### Groups that can access
+                    "{{tPages.selectedRow.data.name}}" app
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: does not account for admin group
+            position2:
+              position2:
+                row: 1
+                col: 6
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                row: 21
+                height: 1
+                width: 3
+            createdAt: 2019-09-13T21:24:10.127Z
+            updatedAt: 2019-09-13T23:12:12.976Z
+      - getUserGroups:
+          pluginTemplate:
+            id: getUserGroups
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from user_groups where "groupId" = ANY
+                    ({{tGroups.data.id}});
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-09-13T21:26:21.064Z
+            updatedAt: 2019-09-13T23:12:12.976Z
+      - getUsers:
+          pluginTemplate:
+            id: getUsers
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from users where id = ANY
+                    ({{getUserGroups.data.userId}});
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-09-13T21:26:37.555Z
+            updatedAt: 2019-09-13T23:22:33.659Z
+      - tUsers:
+          pluginTemplate:
+            id: tUsers
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: email
+                        value: 175
+                    - object:
+                        id: id
+                        value: 62
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - googleToken: ''
+                      - lastName: ''
+                      - enabled: ''
+                      - profilePhotoUrl: ''
+                      - hashedPassword: ''
+                      - resetPasswordExpires: ''
+                      - name: ''
+                      - sales: ''
+                      - sid: ''
+                      - organizationId: ''
+                      - updatedAt: ''
+                      - resetPasswordToken: ''
+                      - twoFactorAuthSecret: ''
+                      - googleId: ''
+                      - userName: ''
+                      - id: ''
+                      - createdAt: ''
+                      - firstName: ''
+                      - lastActive: ''
+                      - email: green
+                      - lastLoggedIn: ''
+                      - twoFactorAuthEnabled: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - googleToken: true
+                      - lastName: true
+                      - enabled: true
+                      - profilePhotoUrl: true
+                      - hashedPassword: true
+                      - resetPasswordExpires: true
+                      - name: true
+                      - Sales: true
+                      - sales: true
+                      - sid: true
+                      - organizationId: true
+                      - updatedAt: true
+                      - resetPasswordToken: true
+                      - twoFactorAuthSecret: true
+                      - googleId: true
+                      - userName: true
+                      - Title: true
+                      - id: true
+                      - createdAt: true
+                      - firstName: true
+                      - lastActive: true
+                      - email: true
+                      - Description: true
+                      - lastLoggedIn: true
+                      - twoFactorAuthEnabled: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{getUsers.data}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 11
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - Title
+                    - Description
+                    - Sales
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - firstName
+                    - lastName
+                    - profilePhotoUrl
+                    - googleId
+                    - googleToken
+                    - hashedPassword
+                    - organizationId
+                    - createdAt
+                    - updatedAt
+                    - lastLoggedIn
+                    - enabled
+                    - resetPasswordToken
+                    - resetPasswordExpires
+                    - sid
+                    - userName
+                    - twoFactorAuthSecret
+                    - twoFactorAuthEnabled
+                    - lastActive
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                row: 9
+                col: 6
+                height: 8
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 15
+                height: 8
+                width: 8
+            createdAt: 2019-09-13T21:26:47.902Z
+            updatedAt: 2019-09-13T23:12:12.978Z
+      - text4:
+          pluginTemplate:
+            id: text4
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '#### **All Users in the groups:** {{tGroups.data.name}}'
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                row: 8
+                col: 6
+                height: 1
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 14
+                height: 1
+                width: 3
+            createdAt: 2019-09-13T21:26:51.064Z
+            updatedAt: 2019-09-13T23:23:32.994Z
+      - getResources:
+          pluginTemplate:
+            id: getResources
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from resources where id =
+                    ANY({{getGroupResources.data.resourceId}});
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-09-13T21:45:46.285Z
+            updatedAt: 2019-09-13T23:12:12.978Z
+      - tResources:
+          pluginTemplate:
+            id: tResources
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: name
+                        value: 167
+                    - object:
+                        id: id
+                        value: 63
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: true
+                - columnColors:
+                    ordered:
+                      - port: ''
+                      - databaseName: ''
+                      - editPrivilege: ''
+                      - host: ''
+                      - dynamicallyQueryable: ''
+                      - name: green
+                      - sales: ''
+                      - ssl: ''
+                      - organizationId: ''
+                      - updatedAt: ''
+                      - databaseUsername: ''
+                      - environment: ''
+                      - databasePassword: ''
+                      - type: ''
+                      - id: ''
+                      - createdAt: ''
+                      - email: ''
+                      - options: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - port: true
+                      - databaseName: true
+                      - editPrivilege: true
+                      - host: true
+                      - dynamicallyQueryable: true
+                      - name: true
+                      - Sales: true
+                      - sales: true
+                      - ssl: true
+                      - organizationId: true
+                      - updatedAt: true
+                      - databaseUsername: true
+                      - environment: true
+                      - databasePassword: true
+                      - Title: true
+                      - type: true
+                      - id: true
+                      - createdAt: true
+                      - email: true
+                      - Description: true
+                      - options: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{getResources.data}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 7
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - Title
+                    - Description
+                    - Sales
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - type
+                    - host
+                    - port
+                    - databaseName
+                    - databaseUsername
+                    - databasePassword
+                    - createdAt
+                    - updatedAt
+                    - organizationId
+                    - ssl
+                    - editPrivilege
+                    - options
+                    - environment
+                    - dynamicallyQueryable
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                row: 18
+                col: 6
+                height: 6
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 24
+                height: 8
+                width: 8
+            createdAt: 2019-09-13T21:46:01.638Z
+            updatedAt: 2019-09-13T23:12:12.979Z
+      - text6:
+          pluginTemplate:
+            id: text6
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    #### User {{ tUsers.selectedRow.data.email}} has access to
+                    these resources:
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                row: 17
+                col: 6
+                height: 1
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 23
+                height: 1
+                width: 3
+            createdAt: 2019-09-13T21:46:18.259Z
+            updatedAt: 2019-09-13T23:12:12.979Z
+      - getGroupResources:
+          pluginTemplate:
+            id: getGroupResources
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select * from group_resources where "groupId" = ANY
+                    ({{getGroups.data.id}});
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-09-13T21:48:14.336Z
+            updatedAt: 2019-09-13T23:12:12.980Z
+      - table5:
+          pluginTemplate:
+            id: table5
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - accessLevel: ''
+                      - googleToken: ''
+                      - lastName: ''
+                      - enabled: ''
+                      - profilePhotoUrl: ''
+                      - hashedPassword: ''
+                      - pageId: ''
+                      - resetPasswordExpires: ''
+                      - sid: ''
+                      - organizationId: ''
+                      - updatedAt: ''
+                      - resetPasswordToken: ''
+                      - twoFactorAuthSecret: ''
+                      - googleId: ''
+                      - userName: ''
+                      - groupId: ''
+                      - id: ''
+                      - createdAt: ''
+                      - firstName: ''
+                      - lastActive: ''
+                      - email: ''
+                      - lastLoggedIn: ''
+                      - twoFactorAuthEnabled: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - accessLevel: true
+                      - googleToken: true
+                      - lastName: true
+                      - enabled: true
+                      - profilePhotoUrl: true
+                      - hashedPassword: true
+                      - pageId: true
+                      - resetPasswordExpires: true
+                      - Sales: true
+                      - sid: true
+                      - organizationId: true
+                      - updatedAt: true
+                      - resetPasswordToken: true
+                      - twoFactorAuthSecret: true
+                      - googleId: true
+                      - userName: true
+                      - Title: true
+                      - groupId: true
+                      - id: true
+                      - createdAt: true
+                      - firstName: true
+                      - lastActive: true
+                      - email: true
+                      - Description: true
+                      - lastLoggedIn: true
+                      - twoFactorAuthEnabled: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{getGroupPages.data}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 6
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - Title
+                    - Description
+                    - Sales
+                    - id
+                    - email
+                    - firstName
+                    - lastName
+                    - profilePhotoUrl
+                    - googleId
+                    - googleToken
+                    - hashedPassword
+                    - organizationId
+                    - createdAt
+                    - updatedAt
+                    - lastLoggedIn
+                    - enabled
+                    - resetPasswordToken
+                    - resetPasswordExpires
+                    - sid
+                    - userName
+                    - twoFactorAuthSecret
+                    - twoFactorAuthEnabled
+                    - lastActive
+                    - groupId
+                    - pageId
+                    - accessLevel
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                row: 18
+                height: 8
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 24
+                col: 1
+                height: 8
+                width: 8
+            createdAt: 2019-09-13T23:38:28.743Z
+            updatedAt: 2019-09-13T23:38:57.276Z
+  createdAt: null
+  version: 2.53.68
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
