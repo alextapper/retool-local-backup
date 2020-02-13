@@ -1,0 +1,1884 @@
+version: 43.0.9
+pageUuid: 7c82a1ce-3d44-11ea-a1ae-ab7be25cc3d8
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - topPages:
+          pluginTemplate:
+            id: topPages
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: '{{ tabbedcontainer1.selectedTabIndex != 0 }}'
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT "pageName", count(*) as view_count FROM
+                    audit_trail_events
+
+                    WHERE "actionType" = 'PAGE_VIEW'
+
+                    AND "createdAt" > {{
+                    daterangepicker1.startFormattedString.replace(/\//g, '-') }}
+
+                    AND "createdAt" < {{
+                    daterangepicker1.endFormattedString.replace(/\//g, '-') }}
+
+                    GROUP BY ("pageName")
+
+                    ORDER BY view_count DESC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '240000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-10T21:21:30.485Z
+            updatedAt: 2020-01-22T18:25:47.289Z
+      - table1:
+          pluginTemplate:
+            id: table1
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: view_count
+                        value: 85.671875
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - view_count: ''
+                      - pageName: ''
+                      - id: ''
+                      - name: ''
+                      - email: ''
+                      - sales: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - view_count: true
+                      - pageName: true
+                      - id: true
+                      - name: true
+                      - email: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ topPages.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 17
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - view_count
+                    - pageName
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                height: 19
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 1
+                height: 8
+                width: 8
+            createdAt: 2019-06-10T21:30:11.013Z
+            updatedAt: 2019-06-21T15:53:37.235Z
+      - daterangepicker1:
+          pluginTemplate:
+            id: daterangepicker1
+            type: widget
+            subtype: DateRangePickerWidget
+            template:
+              ordered:
+                - minDate: ''
+                - startFormattedString: null
+                - formattedString: null
+                - startValue: '{{ moment().subtract(7, ''days'') }}'
+                - tooltipText: ''
+                - startPlaceholder: ''
+                - endFormattedString: null
+                - maxDate: ''
+                - label: "Date Filter\t"
+                - endValue: '{{ moment() }}'
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - format: MM/DD/YYYY
+                - endPlaceholder: ''
+                - onSelect: ''
+                - disabled: ''
+            position2:
+              position2:
+                col: 9
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                col: 5
+                height: 1
+                width: 3
+            createdAt: 2019-06-10T21:39:14.673Z
+            updatedAt: 2019-06-21T15:37:38.290Z
+      - slowQueries:
+          pluginTemplate:
+            id: slowQueries
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: '{{ tabbedcontainer1.selectedTabIndex != 1}}'
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT "pageName", "queryName", ROUND(AVG("responseTimeMs")
+                    :: float) as avg_response_time_ms, count(*) as
+                    number_of_times_run FROM audit_trail_events
+
+                    WHERE "actionType" = 'QUERY_RUN'
+
+                    AND "createdAt" > {{
+                    daterangepicker1.startFormattedString.replace(/\//g, '-') }}
+
+                    AND "createdAt" < {{
+                    daterangepicker1.endFormattedString.replace(/\//g, '-') }}
+
+                    GROUP BY ("queryName", "pageName")
+
+                    ORDER BY avg_response_time_ms DESC;
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '240000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-10T21:46:29.755Z
+            updatedAt: 2020-01-22T18:25:51.647Z
+      - table2:
+          pluginTemplate:
+            id: table2
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - pageName: ''
+                      - queryName: ''
+                      - avg_response_time_ms: ''
+                      - number_of_times_run: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - pageName: true
+                      - queryName: true
+                      - avg_response_time_ms: true
+                      - number_of_times_run: true
+                      - id: true
+                      - name: true
+                      - email: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ slowQueries.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 17
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - pageName
+                    - queryName
+                    - avg_response_time_ms
+                    - number_of_times_run
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                height: 19
+                width: 6
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                row: 4
+                col: 4
+                height: 8
+                width: 8
+            createdAt: 2019-06-10T21:49:01.679Z
+            updatedAt: 2019-06-21T15:55:00.246Z
+      - performanceByDate:
+          pluginTemplate:
+            id: performanceByDate
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: '{{ tabbedcontainer1.selectedTabIndex != 1 }}'
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT AVG("responseTimeMs") as avg_response_time_ms,
+                    date_trunc('day', "createdAt") as event_date FROM
+                    audit_trail_events
+
+                    WHERE "actionType" = 'QUERY_RUN'
+
+                    AND "createdAt" > {{
+                    daterangepicker1.startFormattedString.replace(/\//g, '-') }}
+
+                    AND "createdAt" < {{
+                    daterangepicker1.endFormattedString.replace(/\//g, '-') }}
+
+                    GROUP BY event_date
+
+                    ORDER BY event_date ASC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '60000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-10T22:20:20.771Z
+            updatedAt: 2020-01-22T18:25:55.383Z
+      - areachart1:
+          pluginTemplate:
+            id: areachart1
+            type: widget
+            subtype: AreaChartWidget
+            template:
+              ordered:
+                - autoSkipTicks: false
+                - yAxisLabel: ms
+                - xAxisLabel: Day
+                - xValues: >-
+                    {{ performanceByDate.data.event_date.map(item =>
+                    item.split('T')[0])}}
+                - xValuesType: category
+                - datasets:
+                    ordered:
+                      - dataset1:
+                          ordered:
+                            - yValues: >-
+                                {{ performanceByDate.data.avg_response_time_ms
+                                }}
+                            - seriesLabel: Average Query Time
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 6
+                height: 9
+                width: 6
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                row: 20
+                height: 7
+                width: 4
+            createdAt: 2019-06-10T22:23:41.156Z
+            updatedAt: 2019-06-21T15:37:38.292Z
+      - mostUsedQueries:
+          pluginTemplate:
+            id: mostUsedQueries
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: '{{ tabbedcontainer1.selectedTabIndex != 1 }}'
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT "pageName", "queryName", count(*) as
+                    number_of_times_run FROM audit_trail_events
+
+                    WHERE "actionType" = 'QUERY_RUN'
+
+                    AND "createdAt" > {{
+                    daterangepicker1.startFormattedString.replace(/\//g, '-') }}
+
+                    AND "createdAt" < {{
+                    daterangepicker1.endFormattedString.replace(/\//g, '-') }}
+
+                    GROUP BY ("queryName", "pageName")
+
+                    ORDER BY number_of_times_run DESC
+
+                    LIMIT 100;
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-10T23:45:13.671Z
+            updatedAt: 2020-01-22T18:25:58.323Z
+      - tabbedcontainer1:
+          pluginTemplate:
+            id: tabbedcontainer1
+            type: widget
+            subtype: TabbedContainerWidget
+            template:
+              ordered:
+                - disabled: ''
+                - selectedTab: '"0"'
+                - selectedTabIndex: 0
+                - showTabBar: true
+                - tabNames: '["Page Usage", "Query Performance", "Editors"]'
+                - spinWhenChildrenAreFetching: true
+            position2:
+              position2:
+                row: 1
+                height: 22
+                width: 12
+            mobilePosition2:
+              position2:
+                height: 8
+                width: 6
+            createdAt: 2019-06-21T15:39:50.135Z
+            updatedAt: 2019-06-21T15:42:06.485Z
+      - numberOfQueryRuns:
+          pluginTemplate:
+            id: numberOfQueryRuns
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT count(*) as run_count, date_trunc('day', "createdAt")
+                    as event_date FROM audit_trail_events
+
+                    WHERE "actionType" = 'QUERY_RUN'
+
+                    AND "createdAt" > {{
+                    daterangepicker1.startFormattedString.replace(/\//g, '-') }}
+
+                    AND "createdAt" < {{
+                    daterangepicker1.endFormattedString.replace(/\//g, '-') }}
+
+                    GROUP BY event_date
+
+                    ORDER BY event_date ASC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-21T15:43:56.729Z
+            updatedAt: 2020-01-22T18:26:01.552Z
+      - areachart2:
+          pluginTemplate:
+            id: areachart2
+            type: widget
+            subtype: AreaChartWidget
+            template:
+              ordered:
+                - autoSkipTicks: false
+                - yAxisLabel: Query Run Count
+                - xAxisLabel: Date
+                - xValues: >-
+                    {{ numberOfQueryRuns.data.event_date.map(item =>
+                    item.split('T')[0])}}
+                - xValuesType: category
+                - datasets:
+                    ordered:
+                      - dataset1:
+                          ordered:
+                            - yValues: '{{ numberOfQueryRuns.data.run_count }}'
+                            - seriesLabel: Number Of Query Runs
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 10
+                col: 6
+                height: 9
+                width: 6
+                tabNum: 1
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 7
+                col: 6
+                height: 7
+                width: 4
+                tabNum: 1
+            createdAt: 2019-06-21T15:45:01.644Z
+            updatedAt: 2019-06-21T15:46:54.126Z
+      - numberOfQueryRunsPage:
+          pluginTemplate:
+            id: numberOfQueryRunsPage
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT "queryName", count(*) as number_of_times_run FROM
+                    audit_trail_events
+
+                    WHERE "actionType" = 'QUERY_RUN'
+
+                    AND "createdAt" > {{
+                    daterangepicker1.startFormattedString.replace(/\//g, '-') }}
+
+                    AND "createdAt" < {{
+                    daterangepicker1.endFormattedString.replace(/\//g, '-') }}
+
+                    AND "pageName" = {{ table1.selectedRow.data.pageName }}
+
+                    GROUP BY ("queryName")
+
+                    ORDER BY number_of_times_run DESC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-21T15:51:07.380Z
+            updatedAt: 2020-01-22T18:26:06.326Z
+      - table3:
+          pluginTemplate:
+            id: table3
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - queryName: ''
+                      - number_of_times_run: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - queryName: true
+                      - number_of_times_run: true
+                      - id: true
+                      - name: true
+                      - email: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ numberOfQueryRunsPage.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 8
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - queryName
+                    - number_of_times_run
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 6
+                height: 10
+                width: 6
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 4
+                height: 8
+                width: 8
+            createdAt: 2019-06-21T15:52:38.006Z
+            updatedAt: 2019-06-21T16:12:21.472Z
+      - text4:
+          pluginTemplate:
+            id: text4
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    **Most Run Queries On {{ table1.selectedRow.data.pageName
+                    }}**
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 6
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                col: 6
+                height: 1
+                width: 3
+            createdAt: 2019-06-21T15:53:00.790Z
+            updatedAt: 2019-06-21T15:53:28.116Z
+      - text5:
+          pluginTemplate:
+            id: text5
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '**Most Viewed Pages**'
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                height: 1
+                width: 3
+            createdAt: 2019-06-21T15:53:41.458Z
+            updatedAt: 2019-06-21T15:53:53.115Z
+      - pageList:
+          pluginTemplate:
+            id: pageList
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: '{{ tabbedcontainer1.selectedTabIndex != 2}}'
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT pages.id, pages.name, pages."createdAt",
+                    pages."updatedAt", folders.name as folder_name,
+                    COUNT(DISTINCT page_saves.id) as number_of_edits FROM pages
+
+                    JOIN folders ON pages."folderId" = folders.id
+
+                    LEFT JOIN page_saves on page_saves."pageId" = pages.id
+
+                    WHERE ({{ searchField.value}} = '' OR CONCAT(pages.name, '
+                    ', folders.name) ILIKE {{ "%" + searchField.value.replace("
+                    ", "%") + "%" }} )
+
+                    GROUP BY (pages.id, folders.name)
+
+                    ORDER BY number_of_edits DESC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-21T15:59:16.108Z
+            updatedAt: 2020-01-22T18:26:08.937Z
+      - searchField:
+          pluginTemplate:
+            id: searchField
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - docsSlug: textinput
+                - currencyType: USD
+                - leftIconName: search
+                - initialValue: ''
+                - tooltipText: ''
+                - value: ''
+                - suffix: ''
+                - placeholder: Search here...
+                - label: Page Name
+                - currencyMajorOnly: false
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                col: 8
+                height: 1
+                width: 4
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                height: 1
+                width: 4
+                tabNum: 2
+            createdAt: 2019-06-21T15:59:48.637Z
+            updatedAt: 2019-06-21T15:59:58.562Z
+      - table4:
+          pluginTemplate:
+            id: table4
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - id: ''
+                      - name: ''
+                      - createdAt: ''
+                      - updatedAt: ''
+                      - folder_name: ''
+                      - number_of_edits: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - id: false
+                      - name: true
+                      - createdAt: true
+                      - updatedAt: true
+                      - folder_name: true
+                      - number_of_edits: true
+                      - email: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ pageList.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 16
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - id
+                    - name
+                    - folder_name
+                    - number_of_edits
+                    - createdAt
+                    - updatedAt
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 2
+                height: 18
+                width: 6
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                height: 8
+                width: 8
+                tabNum: 2
+            createdAt: 2019-06-21T16:00:49.402Z
+            updatedAt: 2019-06-21T16:08:57.623Z
+      - pageEditors:
+          pluginTemplate:
+            id: pageEditors
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >
+                    SELECT count(DISTINCT page_saves.id) as number_of_edits,
+                    users.email FROM page_saves
+
+                    JOIN users ON users.id = page_saves."userId"
+
+                    WHERE page_saves."pageId" = {{ table4.selectedRow.data.id }}
+
+                    GROUP BY users.email
+
+                    ORDER BY number_of_edits DESC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-21T16:01:21.704Z
+            updatedAt: 2020-01-22T18:26:13.393Z
+      - table5:
+          pluginTemplate:
+            id: table5
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - number_of_edits: ''
+                      - email: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - number_of_edits: true
+                      - email: true
+                      - id: true
+                      - name: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ pageEditors.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 6
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - number_of_edits
+                    - email
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 2
+                col: 6
+                height: 8
+                width: 6
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 4
+                height: 8
+                width: 8
+                tabNum: 2
+            createdAt: 2019-06-21T16:01:59.439Z
+            updatedAt: 2019-06-21T16:08:22.521Z
+      - text3:
+          pluginTemplate:
+            id: text3
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '**{{ table4.selectedRow.data.name}} Top Contributors** '
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 6
+                height: 1
+                width: 3
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 6
+                height: 1
+                width: 3
+                tabNum: 2
+            createdAt: 2019-06-21T16:02:50.147Z
+            updatedAt: 2019-06-21T16:02:54.852Z
+      - text6:
+          pluginTemplate:
+            id: text6
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '**Most Edited Pages**'
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                height: 1
+                width: 3
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                height: 1
+                width: 3
+                tabNum: 2
+            createdAt: 2019-06-21T16:03:09.607Z
+            updatedAt: 2019-06-21T16:03:18.550Z
+      - pageEditHistory:
+          pluginTemplate:
+            id: pageEditHistory
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT page_saves."createdAt" as change_date, users.email
+                    FROM page_saves
+
+                    JOIN users ON users.id = page_saves."userId"
+
+                    WHERE page_saves."pageId" = {{ table4.selectedRow.data.id }}
+
+                    ORDER BY page_saves."createdAt" DESC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-21T16:03:39.530Z
+            updatedAt: 2020-01-22T18:26:15.830Z
+      - table6:
+          pluginTemplate:
+            id: table6
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - change_date: ''
+                      - email: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - change_date: true
+                      - email: true
+                      - id: true
+                      - name: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ pageEditHistory.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 7
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - change_date
+                    - email
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 11
+                col: 6
+                height: 9
+                width: 6
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 14
+                col: 4
+                height: 8
+                width: 8
+                tabNum: 2
+            createdAt: 2019-06-21T16:04:18.714Z
+            updatedAt: 2019-06-21T16:07:28.177Z
+      - text7:
+          pluginTemplate:
+            id: text7
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '**{{ table4.selectedRow.data.name}} History** '
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 10
+                col: 6
+                height: 1
+                width: 3
+                tabNum: 2
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 2
+                col: 6
+                height: 1
+                width: 3
+                tabNum: 2
+            createdAt: 2019-06-21T16:07:44.118Z
+            updatedAt: 2019-06-21T16:08:05.946Z
+      - topUsersPerPage:
+          pluginTemplate:
+            id: topUsersPerPage
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: '{{ tabbedcontainer1.selectedTabIndex != 0}}'
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    SELECT users.email, count(*) as view_count FROM
+                    audit_trail_events
+
+                    LEFT JOIN users ON users.id = audit_trail_events."userId"
+
+                    WHERE "actionType" = 'PAGE_VIEW'
+
+                    AND audit_trail_events."createdAt" > {{
+                    daterangepicker1.startFormattedString.replace(/\//g, '-') }}
+
+                    AND audit_trail_events."createdAt" < {{
+                    daterangepicker1.endFormattedString.replace(/\//g, '-') }}
+
+                    AND "pageName" = {{ table1.selectedRow.data.pageName}}
+
+                    GROUP BY users.email
+
+                    ORDER BY view_count DESC
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-06-21T16:12:56.803Z
+            updatedAt: 2020-01-22T18:26:18.464Z
+      - table7:
+          pluginTemplate:
+            id: table7
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - email: ''
+                      - view_count: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - email: true
+                      - view_count: true
+                      - id: true
+                      - name: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ topUsersPerPage.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 6
+                - useDynamicColumnSettings: false
+                - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - email
+                    - view_count
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 12
+                col: 6
+                height: 8
+                width: 6
+            mobilePosition2:
+              position2:
+                row: 24
+                col: 4
+                height: 8
+                width: 8
+            createdAt: 2019-06-21T16:18:07.840Z
+            updatedAt: 2019-06-21T16:18:19.945Z
+      - text8:
+          pluginTemplate:
+            id: text8
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '**Top Users Of {{ table1.selectedRow.data.pageName }}**'
+                - renderAsMarkdown: true
+                - renderAsHtml: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                container: tabbedcontainer1
+                row: 11
+                col: 6
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                container: tabbedcontainer1
+                row: 1
+                col: 6
+                height: 1
+                width: 3
+            createdAt: 2019-06-21T16:18:25.855Z
+            updatedAt: 2019-06-21T16:18:49.551Z
+  createdAt: null
+  version: 2.54.0
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
