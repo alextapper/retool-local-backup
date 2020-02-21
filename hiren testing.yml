@@ -9,7 +9,7 @@ appTemplate:
             id: query1
             type: datasource
             subtype: SqlQuery
-            resourceName: onprem-db
+            resourceName: shipbob-AdventureWorks
             template:
               ordered:
                 - queryRefreshTime: ''
@@ -20,12 +20,135 @@ appTemplate:
                 - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
-                - query: ''
+                - query: >-
+                    select Product.ProductID, Product.Name,
+                    Product.ProductNumber, Product.Color, Product.StandardCost,
+                    Product.ListPrice, Product.Size, Product.Weight,
+                    Product.ProductCategoryID, Product.ProductModelID,
+                    Product.SellStartDate, Product.SellEndDate,
+                    Product.DiscontinuedDate, Product.ThumbNailPhoto,
+                    Product.ThumbnailPhotoFileName, Product.rowguid,
+                    Product.ModifiedDate, ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate,
+                    Product.ProductID, Product.Name, Product.ProductNumber,
+                    Product.Color, Product.StandardCost, Product.ListPrice,
+                    Product.Size, Product.Weight, Product.ProductCategoryID,
+                    Product.ProductModelID, Product.SellStartDate,
+                    Product.SellEndDate, Product.DiscontinuedDate,
+                    Product.ThumbNailPhoto, Product.ThumbnailPhotoFileName,
+                    Product.rowguid, Product.ModifiedDate,
+                    ProductCategory.ProductCategoryID,
+                    ProductCategory.ParentProductCategoryID,
+                    ProductCategory.Name, ProductCategory.rowguid,
+                    ProductCategory.ModifiedDate, ProductModel.ProductModelID,
+                    ProductModel.Name, ProductModel.CatalogDescription,
+                    ProductModel.rowguid, ProductModel.ModifiedDate   from
+                    saleslt.Product Product   inner join saleslt.ProductCategory
+                    ProductCategory   on ProductCategory.productcategoryid =
+                    product.productcategoryid  inner join saleslt.ProductModel
+                    ProductModel   on ProductModel.productmodelid =
+                    product.productmodelid
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
+                - warningCodes: []
                 - data: null
                 - importedQueryInputs:
                     ordered: []
@@ -57,10 +180,10 @@ appTemplate:
                 - requireConfirmation: false
                 - enableCaching: false
                 - databaseUsernameOverride: ''
-                - shouldEnableBatchQuerying: false
+                - shouldEnableBatchQuerying: true
                 - queryThrottleTime: '750'
             createdAt: 2020-02-21T00:47:47.726Z
-            updatedAt: 2020-02-21T00:47:47.726Z
+            updatedAt: 2020-02-21T23:11:11.162Z
   createdAt: null
   version: 2.54.0
   responsiveLayoutDisabled: false
