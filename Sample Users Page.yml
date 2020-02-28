@@ -260,7 +260,7 @@ appTemplate:
                 width: 12
             tabIndex: 12
             createdAt: 2020-02-28T23:42:40.995Z
-            updatedAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:44.771Z
       - table1:
           pluginTemplate:
             id: table1
@@ -580,7 +580,7 @@ appTemplate:
                 width: 12
             tabIndex: 21
             createdAt: 2020-02-28T23:42:40.996Z
-            updatedAt: 2020-02-28T23:42:42.501Z
+            updatedAt: 2020-02-28T23:42:46.814Z
       - keyvaluemap2:
           pluginTemplate:
             id: keyvaluemap2
@@ -626,7 +626,7 @@ appTemplate:
                 width: 12
             tabIndex: 22
             createdAt: 2020-02-28T23:42:40.996Z
-            updatedAt: 2020-02-28T23:42:42.503Z
+            updatedAt: 2020-02-28T23:42:46.955Z
       - text9:
           pluginTemplate:
             id: text9
