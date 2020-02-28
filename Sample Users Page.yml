@@ -15,29 +15,57 @@ appTemplate:
                 - queryRefreshTime: ''
                 - paginationLimit: ''
                 - body: ''
+                - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - paginationPaginationField: ''
                 - headers: '[{"key":"Accept","value":"json"}]'
                 - paginationEnabled: false
                 - query: 'https://jsonplaceholder.typicode.com/users'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - cookies: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
                 - paginationDataField: ''
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - hideRequireConfirmation: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
                 - type: GET
+                - enableCaching: false
                 - bodyType: raw
                 - queryThrottleTime: '750'
+            createdAt: 2020-02-28T23:42:40.994Z
+            updatedAt: 2020-02-28T23:42:40.994Z
       - container1:
           pluginTemplate:
             id: container1
@@ -45,13 +73,21 @@ appTemplate:
             subtype: ContainerWidget
             template:
               ordered:
+                - title: ''
                 - disabled: ''
+                - spinWhenChildrenAreFetching: true
+                - showBorder: true
+                - showDropShadow: true
+                - backgroundColor: white
+                - scroll: false
             position2:
               position2:
                 row: 1
                 height: 4
                 width: 12
             tabIndex: 2
+            createdAt: 2020-02-28T23:42:40.994Z
+            updatedAt: 2020-02-28T23:42:40.994Z
       - text1:
           pluginTemplate:
             id: text1
@@ -60,15 +96,19 @@ appTemplate:
             template:
               ordered:
                 - value: <center> <h3> Welcome! </h3></center>
-                - html: true
+                - renderAsMarkdown: false
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container1
                 height: 1
                 width: 12
             tabIndex: 3
+            createdAt: 2020-02-28T23:42:40.994Z
+            updatedAt: 2020-02-28T23:42:40.994Z
       - textinput1:
           pluginTemplate:
             id: textinput1
@@ -78,13 +118,20 @@ appTemplate:
               ordered:
                 - readonly: ''
                 - disabledKeyCodes: ''
+                - onBlur: ''
                 - docsSlug: textinput
+                - currencyType: USD
                 - leftIconName: search
                 - initialValue: ''
+                - tooltipText: ''
                 - value: __RETOOL_CONTROLLED_PROPERTY__
+                - suffix: ''
                 - placeholder: Search here...
                 - label: Filter by status
+                - currencyMajorOnly: false
+                - formattedValue: ''
                 - labelMaxWidth: ''
+                - labelPlacedOnLeft: false
                 - onSubmit: ''
                 - type: text
                 - allowedRegex: .*
@@ -96,6 +143,8 @@ appTemplate:
                 height: 2
                 width: 4
             tabIndex: 5
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - select1:
           pluginTemplate:
             id: select1
@@ -103,13 +152,23 @@ appTemplate:
             subtype: SelectWidget
             template:
               ordered:
+                - values: '["unknown", "active", "inactive", "any"]'
+                - allowOutOfRangeValues: false
+                - enableFuzzyMatching: true
+                - searchValue: ''
+                - displayValue: ''
+                - tooltipText: ''
+                - value: any
+                - maxResults: 50
+                - placeholder: ''
                 - label: Filter by status
                 - labelMaxWidth: ''
-                - value: any
-                - displayValue: ''
-                - placeholder: ''
-                - raw_values: '["unknown", "active", "inactive", "any"]'
-                - display_values: ''
+                - labelPlacedOnLeft: false
+                - onSelect: ''
+                - disabled: ''
+                - hideClearButton: false
+                - required: false
+                - labels: ''
             position2:
               position2:
                 container: container1
@@ -118,6 +177,8 @@ appTemplate:
                 height: 2
                 width: 2
             tabIndex: 7
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - button1:
           pluginTemplate:
             id: button1
@@ -125,7 +186,9 @@ appTemplate:
             subtype: ButtonWidget
             template:
               ordered:
+                - valueToCopy: ''
                 - color: ''
+                - internalUrlHashParams: ''
                 - exportFileType: xlsx
                 - buttonType: action
                 - exportTemplate: null
@@ -147,6 +210,8 @@ appTemplate:
                 height: 1
                 width: 2
             tabIndex: 8
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - checkboxgroup1:
           pluginTemplate:
             id: checkboxgroup1
@@ -154,11 +219,16 @@ appTemplate:
             subtype: CheckboxGroupWidget
             template:
               ordered:
+                - values: "[\"sales\", \"engineering\", \"ops\", \"support\", \"IT\"]\t"
+                - verticalAligned: false
+                - onChange: ''
+                - tooltipText: ''
+                - value: ''
                 - label: Filter by department
                 - labelMaxWidth: ''
-                - value: ''
-                - raw_values: "[\"sales\", \"engineering\", \"ops\", \"support\", \"IT\"]\t"
-                - display_values: ''
+                - labelPlacedOnLeft: false
+                - disabled: ''
+                - labels: ''
             position2:
               position2:
                 container: container1
@@ -167,6 +237,8 @@ appTemplate:
                 height: 2
                 width: 4
             tabIndex: 11
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - container2:
           pluginTemplate:
             id: container2
@@ -174,13 +246,21 @@ appTemplate:
             subtype: ContainerWidget
             template:
               ordered:
+                - title: ''
                 - disabled: ''
+                - spinWhenChildrenAreFetching: true
+                - showBorder: true
+                - showDropShadow: true
+                - backgroundColor: white
+                - scroll: false
             position2:
               position2:
                 row: 5
                 height: 39
                 width: 12
             tabIndex: 12
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - table1:
           pluginTemplate:
             id: table1
@@ -188,6 +268,10 @@ appTemplate:
             subtype: TableWidget
             template:
               ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - actionButtonType: runQuery
                 - columnWidths:
                     - object:
                         id: Title
@@ -198,7 +282,11 @@ appTemplate:
                     - object:
                         id: id
                         value: 70
+                - actionButtonDisabled: ''
                 - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
                 - columnHeaderNames:
                     ordered: []
                 - alwaysShowPaginator: false
@@ -219,6 +307,10 @@ appTemplate:
                 - allowMultiRowSelect: false
                 - columnFormats:
                     ordered: []
+                - showFilterButton: true
+                - actionButtonUrl: ''
+                - actionButtonNewWindow: false
+                - nextBeforeCursor: ''
                 - columnVisibility:
                     ordered:
                       - a: true
@@ -233,20 +325,58 @@ appTemplate:
                       - email: true
                       - Description: true
                       - company: false
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - downloadRawData: true
+                - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{  users.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
                 - paginationOffset: 0
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
+                - actionButtonInternalUrlPath: ''
                 - pageSize: 5
+                - useDynamicColumnSettings: false
                 - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
                 - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
                 - onRowSelect: ''
+                - showDownloadButton: true
                 - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
                 - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
                 - columnMappers:
                     ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
                 - columns:
                     - Title
                     - Sales
@@ -261,10 +391,16 @@ appTemplate:
                     - website
                     - company
                 - sort: null
+                - actionButtonInternalUrlHashParams: ''
+                - actionButtonInternalUrlQuery: ''
+                - calculatedColumns: []
                 - selectedRow:
                     object:
                       index: null
                       data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
             position2:
               position2:
                 container: container2
@@ -272,6 +408,8 @@ appTemplate:
                 height: 8
                 width: 12
             tabIndex: 13
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - text5:
           pluginTemplate:
             id: text5
@@ -280,15 +418,19 @@ appTemplate:
             template:
               ordered:
                 - value: '##### Search results'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container2
                 height: 1
                 width: 3
             tabIndex: 14
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - container3:
           pluginTemplate:
             id: container3
@@ -296,7 +438,13 @@ appTemplate:
             subtype: ContainerWidget
             template:
               ordered:
+                - title: ''
                 - disabled: ''
+                - spinWhenChildrenAreFetching: true
+                - showBorder: true
+                - showDropShadow: true
+                - backgroundColor: white
+                - scroll: false
             position2:
               position2:
                 container: container2
@@ -304,6 +452,8 @@ appTemplate:
                 height: 14
                 width: 4
             tabIndex: 16
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - button2:
           pluginTemplate:
             id: button2
@@ -311,7 +461,9 @@ appTemplate:
             subtype: ButtonWidget
             template:
               ordered:
+                - valueToCopy: ''
                 - color: ''
+                - internalUrlHashParams: ''
                 - exportFileType: xlsx
                 - buttonType: action
                 - exportTemplate: null
@@ -332,6 +484,8 @@ appTemplate:
                 height: 1
                 width: 12
             tabIndex: 18
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - text7:
           pluginTemplate:
             id: text7
@@ -340,15 +494,19 @@ appTemplate:
             template:
               ordered:
                 - value: '##### {{ table1.selectedRow.data.name}}'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container3
                 height: 1
                 width: 12
             tabIndex: 19
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - text8:
           pluginTemplate:
             id: text8
@@ -361,14 +519,18 @@ appTemplate:
                     https://jsonplaceholder.typicode.com/  (The search and
                     filters do not work, but you can browse albums and see
                     pictures)*
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 height: 1
                 width: 12
             tabIndex: 20
+            createdAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:40.995Z
       - keyvaluemap1:
           pluginTemplate:
             id: keyvaluemap1
@@ -383,6 +545,8 @@ appTemplate:
                 - valueTitle: ''
                 - data: '{{ table1.selectedRow.data.address}}'
                 - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
                     ordered: []
                 - rowVisibility:
                     ordered:
@@ -415,6 +579,8 @@ appTemplate:
                 height: 5
                 width: 12
             tabIndex: 21
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - keyvaluemap2:
           pluginTemplate:
             id: keyvaluemap2
@@ -429,6 +595,8 @@ appTemplate:
                 - valueTitle: ''
                 - data: '{{ table1.selectedRow.data.company}}'
                 - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
                     ordered: []
                 - rowVisibility:
                     ordered:
@@ -457,6 +625,8 @@ appTemplate:
                 height: 4
                 width: 12
             tabIndex: 22
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - text9:
           pluginTemplate:
             id: text9
@@ -482,9 +652,11 @@ appTemplate:
                     <b>Phone number</b>:
 
                     {{ table1.selectedRow.data.phone}}
-                - html: true
+                - renderAsMarkdown: false
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container3
@@ -492,6 +664,8 @@ appTemplate:
                 height: 2
                 width: 12
             tabIndex: 23
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - container4:
           pluginTemplate:
             id: container4
@@ -499,7 +673,13 @@ appTemplate:
             subtype: ContainerWidget
             template:
               ordered:
+                - title: ''
                 - disabled: ''
+                - spinWhenChildrenAreFetching: true
+                - showBorder: true
+                - showDropShadow: true
+                - backgroundColor: white
+                - scroll: false
             position2:
               position2:
                 container: container2
@@ -508,6 +688,8 @@ appTemplate:
                 height: 14
                 width: 8
             tabIndex: 26
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - table2:
           pluginTemplate:
             id: table2
@@ -515,6 +697,10 @@ appTemplate:
             subtype: TableWidget
             template:
               ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - actionButtonType: runQuery
                 - columnWidths:
                     - object:
                         id: Title
@@ -528,7 +714,11 @@ appTemplate:
                     - object:
                         id: id
                         value: 119
+                - actionButtonDisabled: ''
                 - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
                 - columnHeaderNames:
                     ordered: []
                 - alwaysShowPaginator: false
@@ -543,6 +733,10 @@ appTemplate:
                 - allowMultiRowSelect: false
                 - columnFormats:
                     ordered: []
+                - showFilterButton: true
+                - actionButtonUrl: ''
+                - actionButtonNewWindow: false
+                - nextBeforeCursor: ''
                 - columnVisibility:
                     ordered:
                       - userId: true
@@ -551,20 +745,58 @@ appTemplate:
                       - Title: true
                       - Description: true
                       - Sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - downloadRawData: true
+                - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ user_albums.data}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
                 - paginationOffset: 0
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
+                - actionButtonInternalUrlPath: ''
                 - pageSize: 12
+                - useDynamicColumnSettings: false
                 - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
                 - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
                 - onRowSelect: ''
+                - showDownloadButton: true
                 - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
                 - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
                 - columnMappers:
                     ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
                 - columns:
                     - Title
                     - Sales
@@ -573,10 +805,16 @@ appTemplate:
                     - id
                     - title
                 - sort: null
+                - actionButtonInternalUrlHashParams: ''
+                - actionButtonInternalUrlQuery: ''
+                - calculatedColumns: []
                 - selectedRow:
                     object:
                       index: null
                       data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
             position2:
               position2:
                 container: container2
@@ -584,6 +822,8 @@ appTemplate:
                 height: 13
                 width: 7
             tabIndex: 27
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - text10:
           pluginTemplate:
             id: text10
@@ -592,9 +832,11 @@ appTemplate:
             template:
               ordered:
                 - value: '###### Albums owned by {{ table1.selectedRow.data.name}}'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container2
@@ -602,6 +844,8 @@ appTemplate:
                 height: 1
                 width: 7
             tabIndex: 28
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - user_albums:
           pluginTemplate:
             id: user_albums
@@ -613,8 +857,11 @@ appTemplate:
                 - queryRefreshTime: ''
                 - paginationLimit: ''
                 - body: ''
+                - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - paginationPaginationField: ''
                 - headers: ''
@@ -622,22 +869,47 @@ appTemplate:
                 - query: >-
                     https://jsonplaceholder.typicode.com/albums?userId={{
                     table1.selectedRow.data.id }}
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - cookies: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
                 - paginationDataField: ''
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - hideRequireConfirmation: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
                 - type: GET
+                - enableCaching: false
                 - bodyType: json
                 - queryThrottleTime: '750'
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - listview1:
           pluginTemplate:
             id: listview1
@@ -657,6 +929,8 @@ appTemplate:
                 height: 13
                 width: 5
             tabIndex: 29
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - text11:
           pluginTemplate:
             id: text11
@@ -667,9 +941,11 @@ appTemplate:
                 - value: >-
                     ###### Pictures in album "{{
                     table2.selectedRow.data.title}}"
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container2
@@ -678,6 +954,8 @@ appTemplate:
                 height: 1
                 width: 5
             tabIndex: 30
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - album_pictures:
           pluginTemplate:
             id: album_pictures
@@ -689,30 +967,58 @@ appTemplate:
                 - queryRefreshTime: ''
                 - paginationLimit: ''
                 - body: ''
+                - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - paginationPaginationField: ''
                 - headers: ''
                 - paginationEnabled: false
                 - query: >-
                     https://jsonplaceholder.typicode.com/photos?albumId={{table2.selectedRow.data.id}}
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - cookies: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
                 - paginationDataField: ''
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - hideRequireConfirmation: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
                 - type: GET
+                - enableCaching: false
                 - bodyType: json
                 - queryThrottleTime: '750'
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - text12:
           pluginTemplate:
             id: text12
@@ -721,9 +1027,11 @@ appTemplate:
             template:
               ordered:
                 - value: '<img src="{{album_pictures.data[i].url}}" width="100"/>'
-                - html: true
+                - renderAsMarkdown: false
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: listview1
@@ -731,6 +1039,8 @@ appTemplate:
                 height: 3
                 width: 6
             tabIndex: 31
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - text13:
           pluginTemplate:
             id: text13
@@ -739,15 +1049,19 @@ appTemplate:
             template:
               ordered:
                 - value: '**Picture title:** {{ album_pictures.data[i].title}}'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: listview1
                 height: 1
                 width: 12
             tabIndex: 32
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - table3:
           pluginTemplate:
             id: table3
@@ -755,6 +1069,10 @@ appTemplate:
             subtype: TableWidget
             template:
               ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - actionButtonType: runQuery
                 - columnWidths:
                     - object:
                         id: Title
@@ -768,7 +1086,11 @@ appTemplate:
                     - object:
                         id: id
                         value: 97
+                - actionButtonDisabled: ''
                 - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
                 - columnHeaderNames:
                     ordered: []
                 - alwaysShowPaginator: false
@@ -784,6 +1106,10 @@ appTemplate:
                 - allowMultiRowSelect: false
                 - columnFormats:
                     ordered: []
+                - showFilterButton: true
+                - actionButtonUrl: ''
+                - actionButtonNewWindow: false
+                - nextBeforeCursor: ''
                 - columnVisibility:
                     ordered:
                       - userId: false
@@ -793,20 +1119,58 @@ appTemplate:
                       - Title: true
                       - Description: true
                       - Sales: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - downloadRawData: true
+                - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ user_posts.data}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
                 - paginationOffset: 0
                 - sortedDesc: false
                 - columnMappersRenderAsHTML:
                     ordered: []
+                - actionButtonInternalUrlPath: ''
                 - pageSize: 11
+                - useDynamicColumnSettings: false
                 - selectedColumn: null
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
                 - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
                 - onRowSelect: ''
+                - showDownloadButton: true
                 - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
                 - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
                 - columnMappers:
                     ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
                 - columns:
                     - Title
                     - Sales
@@ -816,10 +1180,16 @@ appTemplate:
                     - title
                     - body
                 - sort: null
+                - actionButtonInternalUrlHashParams: ''
+                - actionButtonInternalUrlQuery: ''
+                - calculatedColumns: []
                 - selectedRow:
                     object:
                       index: null
                       data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
             position2:
               position2:
                 container: container4
@@ -827,6 +1197,8 @@ appTemplate:
                 height: 12
                 width: 12
             tabIndex: 33
+            createdAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:40.996Z
       - user_posts:
           pluginTemplate:
             id: user_posts
@@ -838,8 +1210,11 @@ appTemplate:
                 - queryRefreshTime: ''
                 - paginationLimit: ''
                 - body: ''
+                - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - paginationPaginationField: ''
                 - headers: ''
@@ -847,22 +1222,47 @@ appTemplate:
                 - query: >-
                     https://jsonplaceholder.typicode.com/posts?userId={{
                     table1.selectedRow.data.id }}
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - cookies: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
                 - paginationDataField: ''
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - hideRequireConfirmation: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
                 - type: GET
+                - enableCaching: false
                 - bodyType: json
                 - queryThrottleTime: '750'
+            createdAt: 2020-02-28T23:42:40.997Z
+            updatedAt: 2020-02-28T23:42:40.997Z
       - text14:
           pluginTemplate:
             id: text14
@@ -871,17 +1271,21 @@ appTemplate:
             template:
               ordered:
                 - value: '##### Posts'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container4
                 height: 1
                 width: 3
             tabIndex: 34
+            createdAt: 2020-02-28T23:42:40.997Z
+            updatedAt: 2020-02-28T23:42:40.997Z
   createdAt: null
-  version: 2.7.3
+  version: 2.54.6
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
