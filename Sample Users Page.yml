@@ -307,7 +307,7 @@ appTemplate:
                 - allowMultiRowSelect: false
                 - columnFormats:
                     ordered:
-                      - id: modal
+                      - id: button
                 - showFilterButton: true
                 - actionButtonUrl: ''
                 - actionButtonNewWindow: false
@@ -410,7 +410,7 @@ appTemplate:
                 width: 12
             tabIndex: 13
             createdAt: 2020-02-28T23:42:40.995Z
-            updatedAt: 2020-02-28T23:42:51.910Z
+            updatedAt: 2020-02-28T23:43:43.632Z
       - text5:
           pluginTemplate:
             id: text5
