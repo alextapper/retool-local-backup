@@ -342,7 +342,7 @@ appTemplate:
                 - columnMappersRenderAsHTML:
                     ordered: []
                 - actionButtonInternalUrlPath: ''
-                - pageSize: 5
+                - pageSize: 6
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -409,7 +409,7 @@ appTemplate:
                 width: 12
             tabIndex: 13
             createdAt: 2020-02-28T23:42:40.995Z
-            updatedAt: 2020-02-28T23:42:40.995Z
+            updatedAt: 2020-02-28T23:42:41.238Z
       - text5:
           pluginTemplate:
             id: text5
@@ -580,7 +580,7 @@ appTemplate:
                 width: 12
             tabIndex: 21
             createdAt: 2020-02-28T23:42:40.996Z
-            updatedAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:42.501Z
       - keyvaluemap2:
           pluginTemplate:
             id: keyvaluemap2
@@ -626,7 +626,7 @@ appTemplate:
                 width: 12
             tabIndex: 22
             createdAt: 2020-02-28T23:42:40.996Z
-            updatedAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:42.503Z
       - text9:
           pluginTemplate:
             id: text9
@@ -762,7 +762,7 @@ appTemplate:
                 - columnMappersRenderAsHTML:
                     ordered: []
                 - actionButtonInternalUrlPath: ''
-                - pageSize: 12
+                - pageSize: 11
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -823,7 +823,7 @@ appTemplate:
                 width: 7
             tabIndex: 27
             createdAt: 2020-02-28T23:42:40.996Z
-            updatedAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:41.263Z
       - text10:
           pluginTemplate:
             id: text10
@@ -1136,7 +1136,7 @@ appTemplate:
                 - columnMappersRenderAsHTML:
                     ordered: []
                 - actionButtonInternalUrlPath: ''
-                - pageSize: 11
+                - pageSize: 10
                 - useDynamicColumnSettings: false
                 - selectedColumn: null
                 - actionButtonPosition: left
@@ -1198,7 +1198,7 @@ appTemplate:
                 width: 12
             tabIndex: 33
             createdAt: 2020-02-28T23:42:40.996Z
-            updatedAt: 2020-02-28T23:42:40.996Z
+            updatedAt: 2020-02-28T23:42:41.254Z
       - user_posts:
           pluginTemplate:
             id: user_posts
