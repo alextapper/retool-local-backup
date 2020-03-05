@@ -174,7 +174,8 @@ appTemplate:
                     array: []
                 - newRow: null
                 - columnEditable:
-                    ordered: []
+                    ordered:
+                      - id: true
                 - filters:
                     array: []
                 - displayedDataIndices: null
@@ -228,7 +229,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2020-03-05T01:23:37.119Z
-            updatedAt: 2020-03-05T01:24:28.345Z
+            updatedAt: 2020-03-05T01:24:32.933Z
   createdAt: null
   version: 2.54.0
   responsiveLayoutDisabled: false
