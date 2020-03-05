@@ -120,22 +120,22 @@ appTemplate:
                       - name: true
                       - Sales: true
                       - sales: true
-                      - sid: true
+                      - sid: false
                       - organizationId: true
                       - updatedAt: true
                       - resetPasswordToken: true
-                      - twoFactorAuthSecret: true
+                      - twoFactorAuthSecret: false
                       - googleId: true
-                      - userName: true
+                      - userName: false
                       - Title: true
                       - id: true
                       - createdAt: true
                       - firstName: true
-                      - lastActive: true
+                      - lastActive: false
                       - email: true
                       - Description: true
                       - lastLoggedIn: true
-                      - twoFactorAuthEnabled: true
+                      - twoFactorAuthEnabled: false
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
@@ -229,7 +229,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2020-03-05T01:23:37.119Z
-            updatedAt: 2020-03-05T01:23:53.371Z
+            updatedAt: 2020-03-05T01:23:58.892Z
   createdAt: null
   version: 2.54.0
   responsiveLayoutDisabled: false
