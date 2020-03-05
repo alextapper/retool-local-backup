@@ -111,10 +111,10 @@ appTemplate:
                 - nextBeforeCursor: ''
                 - columnVisibility:
                     ordered:
-                      - googleToken: true
+                      - googleToken: false
                       - lastName: true
                       - enabled: true
-                      - profilePhotoUrl: true
+                      - profilePhotoUrl: false
                       - hashedPassword: true
                       - resetPasswordExpires: true
                       - name: true
@@ -125,7 +125,7 @@ appTemplate:
                       - updatedAt: true
                       - resetPasswordToken: true
                       - twoFactorAuthSecret: false
-                      - googleId: true
+                      - googleId: false
                       - userName: false
                       - Title: true
                       - id: true
@@ -229,7 +229,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2020-03-05T01:23:37.119Z
-            updatedAt: 2020-03-05T01:23:58.892Z
+            updatedAt: 2020-03-05T01:24:03.002Z
   createdAt: null
   version: 2.54.0
   responsiveLayoutDisabled: false
