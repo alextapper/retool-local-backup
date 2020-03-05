@@ -113,17 +113,17 @@ appTemplate:
                     ordered:
                       - googleToken: false
                       - lastName: true
-                      - enabled: true
+                      - enabled: false
                       - profilePhotoUrl: false
-                      - hashedPassword: true
-                      - resetPasswordExpires: true
+                      - hashedPassword: false
+                      - resetPasswordExpires: false
                       - name: true
                       - Sales: true
                       - sales: true
                       - sid: false
-                      - organizationId: true
+                      - organizationId: false
                       - updatedAt: true
-                      - resetPasswordToken: true
+                      - resetPasswordToken: false
                       - twoFactorAuthSecret: false
                       - googleId: false
                       - userName: false
@@ -229,7 +229,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2020-03-05T01:23:37.119Z
-            updatedAt: 2020-03-05T01:24:03.002Z
+            updatedAt: 2020-03-05T01:24:11.033Z
   createdAt: null
   version: 2.54.0
   responsiveLayoutDisabled: false
