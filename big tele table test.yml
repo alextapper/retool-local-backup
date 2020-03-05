@@ -1,0 +1,38 @@
+version: 43.0.9
+pageUuid: ec73e50e-5e7f-11ea-b97a-077e28f6a6df
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - query1:
+          pluginTemplate:
+            id: query1
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onprem-db
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: ''
+                - privateParams: []
+                - triggersOnSuccess: []
+                - data: null
+                - showSuccessToaster: true
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - watchedParams: []
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10001'
+                - requireConfirmation: false
+                - queryThrottleTime: '750'
+  createdAt: null
+  version: null
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
