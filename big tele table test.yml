@@ -179,7 +179,8 @@ appTemplate:
                     array: []
                 - displayedDataIndices: null
                 - columnMappers:
-                    ordered: []
+                    ordered:
+                      - Calculated Column 1: '{{ currentRow.id * 10}}'
                 - showClearSelection: false
                 - selectedCell:
                     object:
@@ -232,7 +233,7 @@ appTemplate:
                 height: 8
                 width: 8
             createdAt: 2020-03-05T01:23:37.119Z
-            updatedAt: 2020-03-05T01:24:15.432Z
+            updatedAt: 2020-03-05T01:24:24.549Z
   createdAt: null
   version: 2.54.0
   responsiveLayoutDisabled: false
