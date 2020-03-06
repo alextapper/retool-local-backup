@@ -120,6 +120,7 @@ appTemplate:
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
+                - downloadRawData: false
                 - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ topPages.data }}'
@@ -345,6 +346,7 @@ appTemplate:
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
+                - downloadRawData: false
                 - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ slowQueries.data }}'
@@ -845,6 +847,7 @@ appTemplate:
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
+                - downloadRawData: false
                 - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ numberOfQueryRunsPage.data }}'
@@ -1132,6 +1135,7 @@ appTemplate:
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
+                - downloadRawData: false
                 - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ pageList.data }}'
@@ -1315,6 +1319,7 @@ appTemplate:
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
+                - downloadRawData: false
                 - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ pageEditors.data }}'
@@ -1554,6 +1559,7 @@ appTemplate:
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
+                - downloadRawData: false
                 - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ pageEditHistory.data }}'
@@ -1774,6 +1780,7 @@ appTemplate:
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
+                - downloadRawData: false
                 - showFetchingIndicator: true
                 - serverPaginated: false
                 - data: '{{ topUsersPerPage.data }}'
@@ -1878,7 +1885,7 @@ appTemplate:
             createdAt: 2019-06-21T16:18:25.855Z
             updatedAt: 2019-06-21T16:18:49.551Z
   createdAt: null
-  version: 2.54.0
+  version: 2.54.11
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
