@@ -208,7 +208,7 @@ appTemplate:
                 - showDownloadButton: true
                 - selectedIndex: ''
                 - defaultSortDescending: false
-                - dynamicColumnSettings: "{\n  \"id\": {\n  \t\"columnVisibility\":true\n  },\n  \"email\": {\n   \"columnVisibility\":true\n  },\n  \"firstName\": {\n  \t\"columnVisibility\":false\n  }\n}"
+                - dynamicColumnSettings: "{\n  \"columnVisibility\": {\n  \t\"id\":true,\n  \t\"email\": true,\n  \t\"firstName\":false\n  }\n }"
                 - totalRowCount: ''
                 - recordUpdates:
                     array: []
@@ -286,7 +286,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T01:07:42.540Z
+            updatedAt: 2020-03-07T01:08:42.827Z
       - table2:
           pluginTemplate:
             id: table2
