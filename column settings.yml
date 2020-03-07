@@ -1,0 +1,403 @@
+version: 43.0.9
+pageUuid: 1ede9fe0-6009-11ea-807f-2fea906f13de
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - query1:
+          pluginTemplate:
+            id: query1
+            type: datasource
+            subtype: SqlQuery
+            resourceName: ecommerce
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: select * from users limit 10
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10001'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2020-03-07T00:18:13.020Z
+            updatedAt: 2020-03-07T00:44:12.852Z
+      - table1:
+          pluginTemplate:
+            id: table1
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - credits_used: ''
+                      - market_tier: ''
+                      - address_id: ''
+                      - active: ''
+                      - sales_rep: ''
+                      - name: ''
+                      - sales: ''
+                      - company_name: ''
+                      - mrr: ''
+                      - activebool: ''
+                      - records_validated: ''
+                      - credits_remaining: ''
+                      - create_date: ''
+                      - last_update: ''
+                      - contract_length: ''
+                      - last_name: ''
+                      - records_expected: ''
+                      - store_id: ''
+                      - first_name: ''
+                      - id: ''
+                      - customer_id: ''
+                      - email: ''
+                      - csm: ''
+                      - pm: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - credits_used: false
+                      - market_tier: false
+                      - address_id: true
+                      - active: true
+                      - sales_rep: false
+                      - name: true
+                      - Sales: true
+                      - sales: true
+                      - company_name: false
+                      - mrr: false
+                      - activebool: true
+                      - records_validated: false
+                      - credits_remaining: false
+                      - create_date: true
+                      - last_update: true
+                      - contract_length: false
+                      - last_name: true
+                      - records_expected: false
+                      - Title: true
+                      - store_id: true
+                      - first_name: true
+                      - id: true
+                      - customer_id: true
+                      - email: true
+                      - Description: true
+                      - csm: false
+                      - pm: false
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{query1.data}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 14
+                - useDynamicColumnSettings: true
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: "{}\n\t\"customer_id\":\n\t{\n\t\t\"name\":\"email-new\"\n\t}\n\n  }"
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - Title
+                    - Description
+                    - Sales
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - customer_id
+                    - store_id
+                    - first_name
+                    - last_name
+                    - address_id
+                    - activebool
+                    - create_date
+                    - last_update
+                    - active
+                    - company_name
+                    - credits_used
+                    - credits_remaining
+                    - records_validated
+                    - records_expected
+                    - sales_rep
+                    - csm
+                    - pm
+                    - market_tier
+                    - contract_length
+                    - mrr
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            position2:
+              position2:
+                height: 10
+                width: 12
+            createdAt: 2020-03-07T00:18:19.284Z
+            updatedAt: 2020-03-07T00:47:42.030Z
+      - table2:
+          pluginTemplate:
+            id: table2
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths: []
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - credits_used: ''
+                      - market_tier: ''
+                      - address_id: ''
+                      - active: ''
+                      - sales_rep: ''
+                      - company_name: ''
+                      - mrr: ''
+                      - activebool: ''
+                      - records_validated: ''
+                      - credits_remaining: ''
+                      - create_date: ''
+                      - last_update: ''
+                      - contract_length: ''
+                      - last_name: ''
+                      - records_expected: ''
+                      - store_id: ''
+                      - first_name: ''
+                      - customer_id: ''
+                      - email: ''
+                      - csm: ''
+                      - pm: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - credits_used: true
+                      - market_tier: true
+                      - address_id: true
+                      - active: true
+                      - sales_rep: true
+                      - Sales: true
+                      - company_name: true
+                      - mrr: true
+                      - activebool: true
+                      - records_validated: true
+                      - credits_remaining: true
+                      - create_date: true
+                      - last_update: true
+                      - contract_length: true
+                      - last_name: true
+                      - records_expected: true
+                      - Title: true
+                      - store_id: true
+                      - first_name: true
+                      - customer_id: true
+                      - email: true
+                      - Description: true
+                      - csm: true
+                      - pm: true
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query1.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 6
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered: []
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - Title
+                    - Description
+                    - Sales
+                    - customer_id
+                    - store_id
+                    - first_name
+                    - last_name
+                    - email
+                    - address_id
+                    - activebool
+                    - create_date
+                    - last_update
+                    - active
+                    - company_name
+                    - credits_used
+                    - credits_remaining
+                    - records_validated
+                    - records_expected
+                    - sales_rep
+                    - csm
+                    - pm
+                    - market_tier
+                    - contract_length
+                    - mrr
+                - sort: null
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                row: 11
+                height: 8
+                width: 8
+            createdAt: 2020-03-07T00:44:37.400Z
+            updatedAt: 2020-03-07T00:44:37.699Z
+  createdAt: null
+  version: 2.54.11
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
