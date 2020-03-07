@@ -9,7 +9,7 @@ appTemplate:
             id: query1
             type: datasource
             subtype: SqlQuery
-            resourceName: ecommerce
+            resourceName: onprem-db
             template:
               ordered:
                 - queryRefreshTime: ''
@@ -61,7 +61,7 @@ appTemplate:
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2020-03-07T00:18:13.020Z
-            updatedAt: 2020-03-07T00:44:12.852Z
+            updatedAt: 2020-03-07T00:52:10.808Z
       - table1:
           pluginTemplate:
             id: table1
