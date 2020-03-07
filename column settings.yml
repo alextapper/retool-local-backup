@@ -291,7 +291,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T00:58:55.040Z
+            updatedAt: 2020-03-07T00:59:05.148Z
       - table2:
           pluginTemplate:
             id: table2
