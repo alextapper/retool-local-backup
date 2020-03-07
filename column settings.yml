@@ -211,7 +211,8 @@ appTemplate:
                 - dynamicColumnSettings: |-
                     [
                       "email": {
-                      "name":"email-new"
+                      "name":"email-new",
+                      
                       }
                     ]
                 - totalRowCount: ''
@@ -291,7 +292,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T00:53:04.910Z
+            updatedAt: 2020-03-07T00:53:07.735Z
       - table2:
           pluginTemplate:
             id: table2
