@@ -208,11 +208,12 @@ appTemplate:
                 - showDownloadButton: true
                 - selectedIndex: ''
                 - defaultSortDescending: false
-                - dynamicColumnSettings: |2
-
+                - dynamicColumnSettings: |-
+                    {
                       "email": {
                        "type": "Button"
                       }
+                    }
                 - totalRowCount: ''
                 - recordUpdates:
                     array: []
@@ -290,7 +291,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T00:58:26.128Z
+            updatedAt: 2020-03-07T00:58:28.529Z
       - table2:
           pluginTemplate:
             id: table2
