@@ -20,7 +20,7 @@ appTemplate:
                 - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
-                - query: select * from users limit 10
+                - query: 'select id, email, "firstName" from users limit 10'
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
@@ -61,7 +61,7 @@ appTemplate:
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2020-03-07T00:18:13.020Z
-            updatedAt: 2020-03-07T00:52:10.808Z
+            updatedAt: 2020-03-07T01:02:32.981Z
       - table1:
           pluginTemplate:
             id: table1
