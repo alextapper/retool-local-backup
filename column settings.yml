@@ -211,8 +211,8 @@ appTemplate:
                 - dynamicColumnSettings: |-
                     [
                       "email": {
-                      "name":"email-new",
-                      "background color":"green"
+                       "name":"email-new",
+                       "background color":"green"
                       }
                     ]
                 - totalRowCount: ''
@@ -292,7 +292,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T00:53:41.622Z
+            updatedAt: 2020-03-07T00:55:29.303Z
       - table2:
           pluginTemplate:
             id: table2
