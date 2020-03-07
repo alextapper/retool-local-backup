@@ -208,7 +208,10 @@ appTemplate:
                 - showDownloadButton: true
                 - selectedIndex: ''
                 - defaultSortDescending: false
-                - dynamicColumnSettings: "{}\n\t\"customer_id\":\n\t{\n\t\t\"name\":\"email-new\"\n\t}\n\n  }"
+                - dynamicColumnSettings: |-
+                    [
+                      "email"
+                    ]
                 - totalRowCount: ''
                 - recordUpdates:
                     array: []
@@ -286,7 +289,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T00:52:11.219Z
+            updatedAt: 2020-03-07T00:52:49.044Z
       - table2:
           pluginTemplate:
             id: table2
