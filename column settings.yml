@@ -193,7 +193,7 @@ appTemplate:
                 - columnMappersRenderAsHTML:
                     ordered: []
                 - pageSize: 14
-                - useDynamicColumnSettings: ''
+                - useDynamicColumnSettings: 'true'
                 - actionButtonPosition: left
                 - bulkUpdateAction: ''
                 - afterCursor: ''
@@ -286,7 +286,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T01:03:52.325Z
+            updatedAt: 2020-03-07T01:03:58.378Z
       - table2:
           pluginTemplate:
             id: table2
