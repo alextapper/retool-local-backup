@@ -213,7 +213,8 @@ appTemplate:
                       "email": {
                        "name": "email-new",
                        "color":"blue"
-                      }
+                      },
+                      ""
                     }
                 - totalRowCount: ''
                 - recordUpdates:
@@ -292,7 +293,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T01:02:01.874Z
+            updatedAt: 2020-03-07T01:02:56.134Z
       - table2:
           pluginTemplate:
             id: table2
