@@ -208,14 +208,7 @@ appTemplate:
                 - showDownloadButton: true
                 - selectedIndex: ''
                 - defaultSortDescending: false
-                - dynamicColumnSettings: |-
-                    {
-                      "email": {
-                       "name": "email-new",
-                       "color":"blue"
-                      },
-                      ""
-                    }
+                - dynamicColumnSettings: "{\n  \"id\": {\n  \t\"name\":\"new id\"\n  },\n  \"email\": {\n   \"name\": \"email-new\",\n   \"color\":\"blue\"\n  },\n  \"firstName\": {\n  \t\"name\": \"new name who dis\"\n  }\n}"
                 - totalRowCount: ''
                 - recordUpdates:
                     array: []
@@ -293,7 +286,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T01:02:56.134Z
+            updatedAt: 2020-03-07T01:03:40.811Z
       - table2:
           pluginTemplate:
             id: table2
