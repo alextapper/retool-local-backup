@@ -208,7 +208,7 @@ appTemplate:
                 - showDownloadButton: true
                 - selectedIndex: ''
                 - defaultSortDescending: false
-                - dynamicColumnSettings: '[ "column1": { "name": "column2", "type": "integer" } ]'
+                - dynamicColumnSettings: ''
                 - totalRowCount: ''
                 - recordUpdates:
                     array: []
@@ -286,7 +286,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T01:11:35.573Z
+            updatedAt: 2020-03-07T01:12:06.685Z
       - table2:
           pluginTemplate:
             id: table2
