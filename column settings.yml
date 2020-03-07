@@ -167,7 +167,7 @@ appTemplate:
                       - first_name: true
                       - id: true
                       - createdAt: true
-                      - firstName: false
+                      - firstName: 'true'
                       - customer_id: true
                       - lastActive: true
                       - email: true
@@ -286,7 +286,7 @@ appTemplate:
                 height: 10
                 width: 12
             createdAt: 2020-03-07T00:18:19.284Z
-            updatedAt: 2020-03-07T01:04:55.310Z
+            updatedAt: 2020-03-07T01:05:00.380Z
       - table2:
           pluginTemplate:
             id: table2
