@@ -185,7 +185,7 @@ appTemplate:
             createdAt: 2020-02-21T00:47:47.726Z
             updatedAt: 2020-02-21T23:11:11.162Z
   createdAt: null
-  version: 2.54.0
+  version: 2.54.11
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
