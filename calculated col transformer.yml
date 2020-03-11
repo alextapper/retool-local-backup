@@ -238,7 +238,7 @@ appTemplate:
                 - columnMappers:
                     ordered:
                       - Calculated Column 1: >-
-                          {{transformer1.value.filter(r => r.customer_id  ==
+                          {{transformer1.value.filter(r => r.id  ==
                           currentRow.id  ).map(s => s["profilePhoto"] *
                           textinput1.value * 10)[0] }}
                       - Calculated Column 2: '{{currentRow.id  * textinput1.value }}'
@@ -311,7 +311,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-11T23:55:35.775Z
+            updatedAt: 2020-03-11T23:56:03.515Z
       - transformer1:
           pluginTemplate:
             id: transformer1
