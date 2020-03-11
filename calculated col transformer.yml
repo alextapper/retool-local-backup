@@ -138,6 +138,7 @@ appTemplate:
                 - columnFormats:
                     ordered:
                       - profilePhotoUrl: integer
+                      - sid: integer
                 - showFilterButton: true
                 - nextBeforeCursor: ''
                 - columnVisibility:
@@ -311,7 +312,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-11T23:57:04.087Z
+            updatedAt: 2020-03-11T23:57:13.268Z
       - transformer1:
           pluginTemplate:
             id: transformer1
