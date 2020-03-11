@@ -1,0 +1,361 @@
+version: 43.0.9
+pageUuid: 37de1d40-5f05-11ea-b899-2fbfc64dbb35
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - query1:
+          pluginTemplate:
+            id: query1
+            type: datasource
+            subtype: SqlQuery
+            resourceName: ecommerce
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - databasePasswordOverride: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: 0
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: select * from users order by customer_id asc
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - warningCodes: []
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - showSuccessConfetti: false
+                - isImported: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - cacheKeyTtl: ''
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - queryTimeout: '10001'
+                - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
+                - queryThrottleTime: '750'
+            createdAt: 2020-03-05T17:17:47.807Z
+            updatedAt: 2020-03-05T18:47:06.431Z
+      - table1:
+          pluginTemplate:
+            id: table1
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - sortMappedValue:
+                    ordered: []
+                - normalizedData: null
+                - columnWidths:
+                    - object:
+                        id: Calculated Column 2
+                        value: 165
+                    - object:
+                        id: Calculated Column 1
+                        value: 155
+                - columnWidthsMobile: []
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - credits_used: ''
+                      - market_tier: ''
+                      - address_id: ''
+                      - active: ''
+                      - Calculated Column 1: lightgreen
+                      - Calculated Column 2: blue
+                      - sales_rep: ''
+                      - name: ''
+                      - sales: ''
+                      - company_name: ''
+                      - mrr: ''
+                      - activebool: ''
+                      - records_validated: ''
+                      - credits_remaining: ''
+                      - create_date: ''
+                      - last_update: ''
+                      - contract_length: ''
+                      - last_name: ''
+                      - records_expected: ''
+                      - store_id: orange
+                      - first_name: ''
+                      - id: ''
+                      - customer_id: ''
+                      - email: ''
+                      - csm: ''
+                      - pm: ''
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - showFilterButton: true
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - credits_used: false
+                      - market_tier: false
+                      - address_id: false
+                      - active: false
+                      - Calculated Column 1: true
+                      - Calculated Column 2: true
+                      - sales_rep: false
+                      - name: true
+                      - Sales: true
+                      - sales: true
+                      - company_name: false
+                      - mrr: false
+                      - activebool: false
+                      - records_validated: false
+                      - credits_remaining: false
+                      - create_date: false
+                      - last_update: false
+                      - contract_length: false
+                      - last_name: true
+                      - records_expected: false
+                      - Title: true
+                      - store_id: true
+                      - first_name: true
+                      - id: true
+                      - customer_id: true
+                      - email: true
+                      - Description: true
+                      - csm: false
+                      - pm: false
+                - selectedPageIndex: '0'
+                - actionButtonColumnName: Actions
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{query1.data}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - sortedDesc: false
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - pageSize: 10
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: ''
+                - defaultSortDescending: false
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - columnEditable:
+                    ordered:
+                      - customer_id: false
+                      - store_id: true
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - columnMappers:
+                    ordered:
+                      - Calculated Column 1: >-
+                          {{transformer1.value.filter(r => r.customer_id  ==
+                          currentRow.customer_id  ).map(s => s.store_id *
+                          textinput1.value * 10)[0] }}
+                      - Calculated Column 2: '{{currentRow.customer_id  * textinput1.value }}'
+                      - last_name: '{{self + textinput1.value}}'
+                - showClearSelection: false
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - email
+                    - customer_id
+                    - store_id
+                    - first_name
+                    - last_name
+                    - Calculated Column 1
+                    - Calculated Column 2
+                    - address_id
+                    - activebool
+                    - create_date
+                    - last_update
+                    - active
+                    - company_name
+                    - credits_used
+                    - credits_remaining
+                    - records_validated
+                    - records_expected
+                    - sales_rep
+                    - csm
+                    - pm
+                    - market_tier
+                    - contract_length
+                    - mrr
+                - sort: null
+                - calculatedColumns:
+                    - Calculated Column 1
+                    - Calculated Column 2
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            position2:
+              position2:
+                row: 1
+                height: 12
+                width: 12
+            createdAt: 2020-03-05T17:17:54.001Z
+            updatedAt: 2020-03-10T18:45:58.057Z
+      - transformer1:
+          pluginTemplate:
+            id: transformer1
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: >-
+                    let table_data = {{query1.data}}
+
+
+                    let data = _.groupBy(formatDataAsArray(table_data),
+                    "customer_id")
+
+
+                    let recordUpdates = _.groupBy({{table1.recordUpdates}},
+                    "customer_id")
+
+
+                    data = Object.keys(data).map(id => recordUpdates[id] ||
+                    data[id]).map(arr => arr[0])
+
+
+                    return data
+                - value: ''
+            createdAt: 2020-03-05T18:38:57.281Z
+            updatedAt: 2020-03-10T07:59:45.332Z
+      - textinput1:
+          pluginTemplate:
+            id: textinput1
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - validationMaxlengthValue: ''
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - validationMaxValue: ''
+                - onBlur: ''
+                - validatonType: ''
+                - currencyType: USD
+                - leftIconName: ''
+                - initialValue: ''
+                - validationMessage: ''
+                - tooltipText: ''
+                - value: ''
+                - suffix: ''
+                - validationMinlengthValue: ''
+                - validationLengthValue: ''
+                - placeholder: Search here...
+                - validationType: regexp
+                - label: should edit blue column
+                - currencyMajorOnly: false
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - enableValidationType: false
+                - labelPlacedOnLeft: false
+                - onSubmit: ''
+                - validationMinValue: ''
+                - validationState:
+                    object:
+                      required: ''
+                      validationType: ''
+                - type: number
+                - allowedRegex: ''
+                - required: false
+            position2:
+              position2:
+                col: 6
+                height: 1
+                width: 6
+            createdAt: 2020-03-05T19:09:43.772Z
+            updatedAt: 2020-03-05T19:10:15.685Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - color: '#3c92dc'
+                - internalUrlHashParams: ''
+                - exportFileType: json
+                - buttonType: export
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: Submit
+                - exportQuery: '{{ query1.data }}'
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                row: 13
+                col: 10
+                height: 1
+                width: 2
+            createdAt: 2020-03-11T04:09:32.944Z
+            updatedAt: 2020-03-11T04:09:47.283Z
+  createdAt: null
+  version: 2.54.17
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
