@@ -152,6 +152,7 @@ appTemplate:
                       - Calculated Column 2: true
                       - resetPasswordExpires: true
                       - sales_rep: false
+                      - Calculated Column 3: true
                       - name: true
                       - Sales: true
                       - sales: true
@@ -287,10 +288,12 @@ appTemplate:
                     - twoFactorAuthSecret
                     - twoFactorAuthEnabled
                     - lastActive
+                    - Calculated Column 3
                 - sort: null
                 - calculatedColumns:
                     - Calculated Column 1
                     - Calculated Column 2
+                    - Calculated Column 3
                 - selectedRow:
                     object:
                       index: null
@@ -304,7 +307,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-11T23:50:50.178Z
+            updatedAt: 2020-03-11T23:51:01.995Z
       - transformer1:
           pluginTemplate:
             id: transformer1
