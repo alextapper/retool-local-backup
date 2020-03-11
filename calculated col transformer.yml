@@ -84,7 +84,9 @@ appTemplate:
                     ordered: []
                 - onRowAdded: ''
                 - columnHeaderNames:
-                    ordered: []
+                    ordered:
+                      - Calculated Column 3: |
+                          32
                 - alwaysShowPaginator: false
                 - columnColors:
                     ordered:
@@ -307,7 +309,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-11T23:51:01.995Z
+            updatedAt: 2020-03-11T23:51:14.249Z
       - transformer1:
           pluginTemplate:
             id: transformer1
