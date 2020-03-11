@@ -1,0 +1,441 @@
+version: 43.0.9
+pageUuid: ed6d1064-6336-11ea-9ff2-2faa6f32e302
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - customcomponent1:
+          pluginTemplate:
+            id: customcomponent1
+            type: widget
+            subtype: CustomComponentWidget
+            template:
+              ordered:
+                - iframeCode: "<style>\n  body {\n    margin: 0;\n  }\n</style>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react.production.min.js\" crossorigin></script>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react-dom.production.min.js\" crossorigin></script>\n<script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>\n<script src=\"https://unpkg.com/react-plotly.js@2.2.0/dist/create-plotly-component.js\"></script>\n<script src=\"https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js\"></script>\n\n<div id=\"react\"></div>\n\n<script type=\"text/babel\">\n\tconst Plot = createPlotlyComponent(Plotly)\n\n  const MyCustomComponent = ({ triggerQuery, model, modelUpdate }) => (\n\t\t  <Plot\n        data={[\n          {\n            x: model.plotData.x,\n            y: model.plotData.y,\n            type: 'scatter',\n            mode: 'lines+points',\n            marker: {color: 'red'},\n          },\n        ]}\n        onClick={(v) => {\n\t\t\t\t\tmodelUpdate({ selectedPoints: v.points.map(p => ({ x: p.x, y: p.y })) })\n        }}\n        onSelect={v => {\n        \tconsole.log(v)\n        }}\n        layout={{title: 'Line Chart', dragmode: 'lasso'}}\n        style={{width: \"100%\", height: \"100vh\"}}\n      />\n  );\n\n  const ConnectedComponent = Retool.connectReactComponent(MyCustomComponent);\n  ReactDOM.render(<ConnectedComponent />, document.getElementById(\"react\"));\n</script>"
+                - model: "{\n  \"onClickQuery\": 'query2',\n\t\"plotData\": {{ linechartQuery.data }}\n}"
+            position2:
+              position2:
+                row: 3
+                height: 6
+                width: 5
+            createdAt: 2019-02-09T02:04:27.808Z
+            updatedAt: 2019-04-26T04:54:16.746Z
+      - state1:
+          pluginTemplate:
+            id: state1
+            type: state
+            subtype: State
+            template:
+              ordered:
+                - value: null
+            createdAt: 2019-02-09T02:45:43.280Z
+            updatedAt: 2019-04-26T04:54:16.746Z
+      - salesByType:
+          pluginTemplate:
+            id: salesByType
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: "const res = {}\n{{state1.value}}['campaign type'].forEach(key => {\n\tres[key] = res[key] == null ? 1 : res[key] + 1\n})\nreturn res"
+                - value: ''
+            createdAt: 2019-02-09T03:03:30.904Z
+            updatedAt: 2019-04-26T04:54:16.746Z
+      - transformer2:
+          pluginTemplate:
+            id: transformer2
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: return 5
+                - value: ''
+            createdAt: 2019-02-09T03:08:14.137Z
+            updatedAt: 2019-04-26T04:54:16.746Z
+      - customcomponent2:
+          pluginTemplate:
+            id: customcomponent2
+            type: widget
+            subtype: CustomComponentWidget
+            template:
+              ordered:
+                - iframeCode: "<style>\n  body {\n    margin: 0;\n  }\n</style>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react.production.min.js\" crossorigin></script>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react-dom.production.min.js\" crossorigin></script>\n<script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>\n<script src=\"https://unpkg.com/react-plotly.js@2.2.0/dist/create-plotly-component.js\"></script>\n\n<div id=\"react\"></div>\n\n<script type=\"text/babel\">\n\tconst Plot = createPlotlyComponent(Plotly)\n\n  const MyCustomComponent = ({ triggerQuery, model, modelUpdate }) => (\n\t\t  <Plot\n        data={[\n          {\n            type: 'bar',\n            x: model.plotData.x,\n            y: model.plotData.y\n          },\n        ]}\n        onClick={(v) => {\n\t\t\t\t\tmodelUpdate({ selectedPoints: v.points.map(p => ({ x: p.x, y: p.y })) })\n        }}\n        layout={{title: 'Bar Chart'}}\n\t\t\t\tstyle={{width: \"100%\", height: \"100vh\"}}\n      />\n  );\n\n  const ConnectedComponent = Retool.connectReactComponent(MyCustomComponent);\n  ReactDOM.render(<ConnectedComponent />, document.getElementById(\"react\"));\n</script>"
+                - model: "{\n  \"displayText\": \"Custom React component with Material-UI!\",\n  \"queryToTrigger\": \"query1\",\n\t\"plotData\": {{ barchartQuery.data }}\n}"
+            position2:
+              position2:
+                row: 10
+                col: 6
+                height: 6
+                width: 5
+            createdAt: 2019-02-09T03:33:47.699Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - customcomponent3:
+          pluginTemplate:
+            id: customcomponent3
+            type: widget
+            subtype: CustomComponentWidget
+            template:
+              ordered:
+                - iframeCode: "<style>\n  body {\n    margin: 0;\n  }\n</style>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react.production.min.js\" crossorigin></script>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react-dom.production.min.js\" crossorigin></script>\n<script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>\n<script src=\"https://unpkg.com/react-plotly.js@2.2.0/dist/create-plotly-component.js\"></script>\n\n<div id=\"react\"></div>\n\n<script type=\"text/babel\">\n\tconst Plot = createPlotlyComponent(Plotly)\n\n  const MyCustomComponent = ({ triggerQuery, model, modelUpdate }) => (\n\t\t  <Plot\n        data={[\n          {\n            x: model.plotData.x,\n            y: model.plotData.y,\n            type: 'scatter',\n            mode: 'markers',\n            marker: {color: 'red'},\n          }\n        ]}\n        onClick={(v) => {\n\t\t\t\t\tmodelUpdate({ selectedPoints: v.points.map(p => ({ x: p.x, y: p.y })) })\n        }}\n        layout={{title: 'Scatter Plot'}}\n        style={{width: \"100%\", height: \"100vh\"}}\n      />\n  );\n\n  const ConnectedComponent = Retool.connectReactComponent(MyCustomComponent);\n  ReactDOM.render(<ConnectedComponent />, document.getElementById(\"react\"));\n</script>"
+                - model: |-
+                    {
+                      "displayText": "Custom React component with Material-UI!",
+                      "queryToTrigger": "query1",
+                      "plotData": {{ scatterPlotQuery.data }}
+                    }
+            position2:
+              position2:
+                row: 3
+                col: 6
+                height: 6
+                width: 5
+            createdAt: 2019-02-10T20:53:07.168Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - customcomponent4:
+          pluginTemplate:
+            id: customcomponent4
+            type: widget
+            subtype: CustomComponentWidget
+            template:
+              ordered:
+                - iframeCode: "<style>\n  body {\n    margin: 0;\n  }\n</style>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react.production.min.js\" crossorigin></script>\n<script src=\"https://s3.us-east-2.amazonaws.com/retool-s3/js/react-dom.production.min.js\" crossorigin></script>\n<script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>\n<script src=\"https://unpkg.com/react-plotly.js@2.2.0/dist/create-plotly-component.js\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js\"></script>\n\n<div id=\"react\"></div>\n\n<script type=\"text/babel\">\n\tconst Plot = createPlotlyComponent(Plotly)\n\n\tconst traceData1 = _.range(5).map(() => Math.random())\n  const traceData2 = _.range(500).map(() => Math.random())\n    \n  const MyCustomComponent = ({ triggerQuery, model, modelUpdate }) => (\n\t\t  <Plot\n        data={[\n          {\n            y: model.plotData.y1,\n            type: 'box',\n          },\n\t\t\t\t\t{\n            y: model.plotData.y2,\n            type: 'box',\n          },\n        ]}\n        onClick={(v) => {\n\t\t\t\t\tmodelUpdate({ selectedPoints: v.points.map(p => ({ x: p.x, y: p.y })) })\n        }}\n        layout={{title: 'Box Plot'}}\n\t\t\t\tstyle={{width: \"100%\", height: \"100vh\"}}\n      />\n  );\n\n  const ConnectedComponent = Retool.connectReactComponent(MyCustomComponent);\n  ReactDOM.render(<ConnectedComponent />, document.getElementById(\"react\"));\n</script>"
+                - model: |-
+                    {
+                      "displayText": "Custom React component with Material-UI!",
+                      "queryToTrigger": "query1",
+                      "plotData": {{ boxPlotQuery.data }}
+                    }
+            position2:
+              position2:
+                row: 10
+                height: 6
+                width: 5
+            createdAt: 2019-02-10T21:34:19.187Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - text1:
+          pluginTemplate:
+            id: text1
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    Selected Points: `{{
+                    JSON.stringify(customcomponent1.model.selectedPoints) }}`
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                row: 2
+                height: 1
+                width: 5
+            createdAt: 2019-02-10T21:47:37.829Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - text2:
+          pluginTemplate:
+            id: text2
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    Selected Points: `{{
+                    JSON.stringify(customcomponent2.model.selectedPoints) }}`
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: true
+            position2:
+              position2:
+                row: 9
+                col: 6
+                height: 1
+                width: 5
+            createdAt: 2019-02-10T21:57:55.349Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - text3:
+          pluginTemplate:
+            id: text3
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    Selected Points: `{{
+                    JSON.stringify(customcomponent4.model.selectedPoints) }}`
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: true
+            position2:
+              position2:
+                row: 9
+                height: 1
+                width: 5
+            createdAt: 2019-02-10T21:58:22.448Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - text4:
+          pluginTemplate:
+            id: text4
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    Selected Points: `{{
+                    JSON.stringify(customcomponent3.model.selectedPoints) }}`
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                row: 2
+                col: 6
+                height: 1
+                width: 5
+            createdAt: 2019-02-10T21:58:49.604Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - linechartQuery:
+          pluginTemplate:
+            id: linechartQuery
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onboarding_db (readonly)
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: >-
+                    select generate_series(1,100) as x, generate_series(1,100) *
+                    generate_series(1,100) as y
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - showSuccessConfetti: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-02-10T22:08:12.000Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - barchartQuery:
+          pluginTemplate:
+            id: barchartQuery
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onboarding_db (readonly)
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: |-
+                    select i as x, random() * 10 as y
+                    from generate_series(1, 5) as i
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - showSuccessConfetti: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-02-10T22:16:05.677Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - scatterPlotQuery:
+          pluginTemplate:
+            id: scatterPlotQuery
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onboarding_db (readonly)
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: |-
+                    select i as x, random() * i as y
+                    from generate_series(1, 20) as i
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - showSuccessConfetti: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-02-10T22:20:51.578Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - boxPlotQuery:
+          pluginTemplate:
+            id: boxPlotQuery
+            type: datasource
+            subtype: SqlQuery
+            resourceName: onboarding_db (readonly)
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - query: |-
+                    select random() as y1, random() as y2
+                    from generate_series(1, 20) as i
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - showSuccessConfetti: false
+                - showSuccessToaster: true
+                - dataArray: []
+                - triggersOnFailure: []
+                - databaseNameOverride: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-02-10T22:26:08.015Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - color: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: Regenerate Data
+                - exportQuery: ''
+                - action: refreshAll
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                row: 16
+                col: 9
+                height: 1
+                width: 2
+            createdAt: 2019-03-07T01:44:04.510Z
+            updatedAt: 2019-04-26T04:54:33.889Z
+      - refreshAll:
+          pluginTemplate:
+            id: refreshAll
+            type: datasource
+            subtype: JavascriptQuery
+            resourceName: JavascriptQuery
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - query: |-
+                    linechartQuery.trigger()
+                    boxPlotQuery.trigger()
+                    scatterPlotQuery.trigger()
+                    barchartQuery.trigger()
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - showSuccessConfetti: false
+                - showSuccessToaster: true
+                - triggersOnFailure: []
+                - confirmationMessage: null
+                - isFetching: false
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - timestamp: 0
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-03-07T01:44:13.145Z
+            updatedAt: 2019-04-26T04:54:16.747Z
+      - text5:
+          pluginTemplate:
+            id: text5
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: |-
+                    # Interactive Plotly Charts
+
+                    #### Click points to select them
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                height: 1
+                width: 3
+            createdAt: 2019-04-26T04:55:18.481Z
+            updatedAt: 2019-04-26T04:56:43.772Z
+  createdAt: null
+  version: 2.38.71
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
