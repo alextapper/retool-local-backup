@@ -1,0 +1,411 @@
+version: 43.0.9
+pageUuid: e3747520-6336-11ea-a39b-5361f98f9b20
+appTemplate:
+  isFetching: false
+  plugins:
+    ordered:
+      - filepicker1:
+          pluginTemplate:
+            id: filepicker1
+            type: widget
+            subtype: FilePickerWidget
+            template:
+              ordered:
+                - parsedValue: ''
+                - directorySelectable: false
+                - color: ''
+                - multipleSelectable: false
+                - text: Upload File to S3
+                - tooltipText: ''
+                - label: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - disabled: ''
+                - onFilePick: oneClickUploadToS3
+            position2:
+              position2:
+                row: 4
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                row: 8
+                col: 5
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T19:54:17.231Z
+            updatedAt: 2019-05-17T20:07:36.676Z
+      - text1:
+          pluginTemplate:
+            id: text1
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: >-
+                    <h1>Upload file to S3</h1>
+
+
+                    all uploaded files <a 
+                    href="https://tryretool.com/templates/s3-file-explorer"
+                    target="_blank">go here!</a>
+                - html: true
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                col: 4
+                height: 2
+                width: 3
+            mobilePosition2:
+              position2:
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T19:54:31.397Z
+            updatedAt: 2019-05-17T20:01:47.433Z
+      - oneClickUploadToS3:
+          pluginTemplate:
+            id: oneClickUploadToS3
+            type: datasource
+            subtype: S3Query
+            resourceName: '[demo] s3'
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - delimiter: ''
+                - uploadFileName: '{{ filepicker1.file.name }}'
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: '{{ filepicker1.file }}'
+                - showSuccessConfetti: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - actionType: upload
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: retool-public-demo
+                - timestamp: 0
+                - signedOperationName: ''
+                - uploadFileType: binary
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-05-17T19:55:24.224Z
+            updatedAt: 2019-05-17T20:00:17.819Z
+      - text2:
+          pluginTemplate:
+            id: text2
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '# One-click upload'
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                row: 3
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                row: 3
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T20:03:48.749Z
+            updatedAt: 2019-05-17T20:03:54.789Z
+      - text3:
+          pluginTemplate:
+            id: text3
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '# OR'
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                row: 3
+                col: 4
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                row: 3
+                col: 4
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T20:03:58.714Z
+            updatedAt: 2019-05-17T20:04:03.284Z
+      - text4:
+          pluginTemplate:
+            id: text4
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '# Upload Form'
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                row: 3
+                col: 8
+                height: 1
+                width: 3
+            mobilePosition2:
+              position2:
+                row: 3
+                col: 8
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T20:04:09.780Z
+            updatedAt: 2019-05-17T20:04:15.544Z
+      - container1:
+          pluginTemplate:
+            id: container1
+            type: widget
+            subtype: ContainerWidget
+            template:
+              ordered:
+                - disabled: ''
+                - spinWhenChildrenAreFetching: true
+            position2:
+              position2:
+                row: 4
+                col: 8
+                height: 8
+                width: 4
+            mobilePosition2:
+              position2:
+                row: 4
+                col: 6
+                height: 8
+                width: 6
+            createdAt: 2019-05-17T20:04:25.780Z
+            updatedAt: 2019-05-17T20:04:25.780Z
+      - filepicker2:
+          pluginTemplate:
+            id: filepicker2
+            type: widget
+            subtype: FilePickerWidget
+            template:
+              ordered:
+                - parsedValue: ''
+                - directorySelectable: false
+                - color: ''
+                - multipleSelectable: false
+                - text: Pick File
+                - tooltipText: ''
+                - label: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - disabled: ''
+                - onFilePick: ''
+            position2:
+              position2:
+                container: container1
+                row: 1
+                height: 1
+                width: 12
+            mobilePosition2:
+              position2:
+                container: container1
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T20:04:41.366Z
+            updatedAt: 2019-05-17T20:05:04.933Z
+      - text5:
+          pluginTemplate:
+            id: text5
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '#### 1. Pick file to upload'
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                container: container1
+                height: 1
+                width: 9
+            mobilePosition2:
+              position2:
+                container: container1
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T20:04:55.661Z
+            updatedAt: 2019-05-17T20:05:44.783Z
+      - textinput1:
+          pluginTemplate:
+            id: textinput1
+            type: widget
+            subtype: TextInputWidget
+            template:
+              ordered:
+                - readonly: ''
+                - disabledKeyCodes: ''
+                - onBlur: ''
+                - docsSlug: textinput
+                - currencyType: USD
+                - leftIconName: ''
+                - initialValue: '{{ filepicker2.file.name }}'
+                - tooltipText: ''
+                - value: ''
+                - placeholder: Filename
+                - label: Filename
+                - formattedValue: ''
+                - labelMaxWidth: ''
+                - labelPlacedOnLeft: ''
+                - onSubmit: ''
+                - type: text
+                - allowedRegex: .*
+                - required: false
+            position2:
+              position2:
+                container: container1
+                row: 3
+                height: 2
+                width: 12
+            mobilePosition2:
+              position2:
+                container: container1
+                row: 3
+                height: 1
+                width: 4
+            createdAt: 2019-05-17T20:05:26.445Z
+            updatedAt: 2019-05-17T20:06:44.906Z
+      - text6:
+          pluginTemplate:
+            id: text6
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: '#### 2. Pick file name'
+                - html: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+            position2:
+              position2:
+                container: container1
+                row: 2
+                height: 1
+                width: 12
+            mobilePosition2:
+              position2:
+                container: container1
+                row: 2
+                height: 1
+                width: 3
+            createdAt: 2019-05-17T20:05:31.928Z
+            updatedAt: 2019-05-17T20:05:59.213Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - color: ''
+                - internalUrlHashParams: ''
+                - exportFileType: csv
+                - buttonType: action
+                - exportTemplate: null
+                - url: ''
+                - newWindow: false
+                - value: Upload To S3
+                - exportQuery: ''
+                - action: formUploadToS3
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - exportFileName: ''
+                - loading: ''
+                - disabled: ''
+            position2:
+              position2:
+                container: container1
+                row: 6
+                height: 1
+                width: 12
+            mobilePosition2:
+              position2:
+                container: container1
+                row: 6
+                height: 1
+                width: 2
+            createdAt: 2019-05-17T20:06:52.595Z
+            updatedAt: 2019-05-17T20:08:20.327Z
+      - formUploadToS3:
+          pluginTemplate:
+            id: formUploadToS3
+            type: datasource
+            subtype: S3Query
+            resourceName: '[demo] s3'
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - queryDisabledMessage: ''
+                - fileKey: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - delimiter: ''
+                - uploadFileName: '{{ textinput1.value }}'
+                - privateParams: []
+                - triggersOnSuccess: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - uploadData: '{{ filepicker2.file }}'
+                - showSuccessConfetti: false
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - actionType: upload
+                - triggersOnFailure: []
+                - copySource: ''
+                - confirmationMessage: null
+                - isFetching: false
+                - prefix: ''
+                - signedOperationOptions: ''
+                - queryTriggerDelay: '0'
+                - watchedParams: []
+                - bucketName: retool-public-demo
+                - timestamp: 0
+                - signedOperationName: ''
+                - uploadFileType: binary
+                - runWhenPageLoads: false
+                - queryTimeout: '10000'
+                - requireConfirmation: false
+                - enableCaching: false
+                - queryThrottleTime: '750'
+            createdAt: 2019-05-17T20:07:19.424Z
+            updatedAt: 2019-05-17T20:08:10.485Z
+  createdAt: null
+  version: 2.39.5
+  responsiveLayoutDisabled: false
+  urlFragmentDefinitions: []
+  pageLoadValueOverrides: []
