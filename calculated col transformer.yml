@@ -230,6 +230,7 @@ appTemplate:
                     ordered:
                       - customer_id: false
                       - store_id: true
+                      - profilePhotoUrl: true
                 - filters:
                     array: []
                 - displayedDataIndices: null
@@ -309,7 +310,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-11T23:54:07.677Z
+            updatedAt: 2020-03-11T23:54:29.381Z
       - transformer1:
           pluginTemplate:
             id: transformer1
