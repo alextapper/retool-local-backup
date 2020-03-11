@@ -13,7 +13,7 @@ appTemplate:
               ordered:
                 - parsedValue: ''
                 - directorySelectable: false
-                - color: ''
+                - color: '#3c92dc'
                 - multipleSelectable: false
                 - text: Upload File to S3
                 - tooltipText: ''
@@ -49,9 +49,11 @@ appTemplate:
                     all uploaded files <a 
                     href="https://tryretool.com/templates/s3-file-explorer"
                     target="_blank">go here!</a>
-                - html: true
+                - renderAsMarkdown: false
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 col: 4
@@ -76,16 +78,22 @@ appTemplate:
                 - fileKey: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: false
                 - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - uploadFileName: '{{ filepicker1.file.name }}'
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
                 - uploadData: '{{ filepicker1.file }}'
+                - importedQueryInputs:
+                    ordered: []
                 - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
                 - cacheKeyTtl: ''
                 - actionType: upload
@@ -94,14 +102,26 @@ appTemplate:
                 - confirmationMessage: null
                 - isFetching: false
                 - prefix: ''
+                - rawData: null
                 - signedOperationOptions: ''
                 - queryTriggerDelay: '0'
                 - watchedParams: []
                 - bucketName: retool-public-demo
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
                 - signedOperationName: ''
+                - enableTransformer: false
                 - uploadFileType: binary
+                - maxKeys: ''
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
                 - enableCaching: false
@@ -116,9 +136,11 @@ appTemplate:
             template:
               ordered:
                 - value: '# One-click upload'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 row: 3
@@ -139,9 +161,11 @@ appTemplate:
             template:
               ordered:
                 - value: '# OR'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 row: 3
@@ -164,9 +188,11 @@ appTemplate:
             template:
               ordered:
                 - value: '# Upload Form'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 row: 3
@@ -188,8 +214,13 @@ appTemplate:
             subtype: ContainerWidget
             template:
               ordered:
+                - title: ''
                 - disabled: ''
                 - spinWhenChildrenAreFetching: true
+                - showBorder: true
+                - showDropShadow: true
+                - backgroundColor: white
+                - scroll: false
             position2:
               position2:
                 row: 4
@@ -213,7 +244,7 @@ appTemplate:
               ordered:
                 - parsedValue: ''
                 - directorySelectable: false
-                - color: ''
+                - color: '#3c92dc'
                 - multipleSelectable: false
                 - text: Pick File
                 - tooltipText: ''
@@ -243,9 +274,11 @@ appTemplate:
             template:
               ordered:
                 - value: '#### 1. Pick file to upload'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container1
@@ -274,8 +307,10 @@ appTemplate:
                 - initialValue: '{{ filepicker2.file.name }}'
                 - tooltipText: ''
                 - value: ''
+                - suffix: ''
                 - placeholder: Filename
                 - label: Filename
+                - currencyMajorOnly: false
                 - formattedValue: ''
                 - labelMaxWidth: ''
                 - labelPlacedOnLeft: ''
@@ -305,9 +340,11 @@ appTemplate:
             template:
               ordered:
                 - value: '#### 2. Pick file name'
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 container: container1
@@ -330,7 +367,7 @@ appTemplate:
             template:
               ordered:
                 - valueToCopy: ''
-                - color: ''
+                - color: '#3c92dc'
                 - internalUrlHashParams: ''
                 - exportFileType: csv
                 - buttonType: action
@@ -372,16 +409,22 @@ appTemplate:
                 - fileKey: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: false
                 - delimiter: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - uploadFileName: '{{ textinput1.value }}'
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
                 - uploadData: '{{ filepicker2.file }}'
+                - importedQueryInputs:
+                    ordered: []
                 - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
                 - cacheKeyTtl: ''
                 - actionType: upload
@@ -390,14 +433,26 @@ appTemplate:
                 - confirmationMessage: null
                 - isFetching: false
                 - prefix: ''
+                - rawData: null
                 - signedOperationOptions: ''
                 - queryTriggerDelay: '0'
                 - watchedParams: []
                 - bucketName: retool-public-demo
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
                 - signedOperationName: ''
+                - enableTransformer: false
                 - uploadFileType: binary
+                - maxKeys: ''
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
                 - enableCaching: false
@@ -405,7 +460,7 @@ appTemplate:
             createdAt: 2019-05-17T20:07:19.424Z
             updatedAt: 2019-05-17T20:08:10.485Z
   createdAt: null
-  version: 2.39.5
+  version: 2.54.11
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
