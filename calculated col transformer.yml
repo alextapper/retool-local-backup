@@ -237,7 +237,7 @@ appTemplate:
                     ordered:
                       - Calculated Column 1: >-
                           {{transformer1.value.filter(r => r.customer_id  ==
-                          currentRow.customer_id  ).map(s => s.store_id *
+                          currentRow.id  ).map(s => s.store_id *
                           textinput1.value * 10)[0] }}
                       - Calculated Column 2: '{{currentRow.id  * textinput1.value }}'
                       - last_name: '{{self + textinput1.value}}'
@@ -309,7 +309,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-11T23:53:31.692Z
+            updatedAt: 2020-03-11T23:53:58.757Z
       - transformer1:
           pluginTemplate:
             id: transformer1
