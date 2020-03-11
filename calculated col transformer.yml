@@ -9,7 +9,7 @@ appTemplate:
             id: query1
             type: datasource
             subtype: SqlQuery
-            resourceName: onprem-db
+            resourceName: ecommerce
             template:
               ordered:
                 - queryRefreshTime: ''
@@ -20,7 +20,7 @@ appTemplate:
                 - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
-                - query: 'select * from users '
+                - query: select * from users order by customer_id asc
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
@@ -61,7 +61,7 @@ appTemplate:
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2020-03-05T17:17:47.807Z
-            updatedAt: 2020-03-11T23:50:49.732Z
+            updatedAt: 2020-03-05T18:47:06.431Z
       - table1:
           pluginTemplate:
             id: table1
@@ -84,113 +84,72 @@ appTemplate:
                     ordered: []
                 - onRowAdded: ''
                 - columnHeaderNames:
-                    ordered:
-                      - Calculated Column 3: |
-                          32
+                    ordered: []
                 - alwaysShowPaginator: false
                 - columnColors:
                     ordered:
-                      - googleToken: ''
-                      - lastName: ''
-                      - enabled: ''
                       - credits_used: ''
                       - market_tier: ''
                       - address_id: ''
-                      - profilePhotoUrl: ''
                       - active: ''
-                      - hashedPassword: ''
                       - Calculated Column 1: lightgreen
                       - Calculated Column 2: blue
-                      - resetPasswordExpires: ''
                       - sales_rep: ''
                       - name: ''
                       - sales: ''
                       - company_name: ''
                       - mrr: ''
-                      - sid: ''
-                      - organizationId: ''
-                      - updatedAt: ''
-                      - resetPasswordToken: ''
                       - activebool: ''
                       - records_validated: ''
                       - credits_remaining: ''
                       - create_date: ''
                       - last_update: ''
                       - contract_length: ''
-                      - twoFactorAuthSecret: ''
-                      - googleId: ''
                       - last_name: ''
                       - records_expected: ''
-                      - userName: ''
                       - store_id: orange
                       - first_name: ''
                       - id: ''
-                      - createdAt: ''
-                      - firstName: ''
                       - customer_id: ''
-                      - lastActive: ''
                       - email: ''
                       - csm: ''
                       - pm: ''
-                      - lastLoggedIn: ''
-                      - twoFactorAuthEnabled: ''
                 - allowMultiRowSelect: false
                 - columnFormats:
-                    ordered:
-                      - profilePhotoUrl: integer
-                      - sid: integer
+                    ordered: []
                 - showFilterButton: true
                 - nextBeforeCursor: ''
                 - columnVisibility:
                     ordered:
-                      - googleToken: true
-                      - lastName: true
-                      - enabled: true
                       - credits_used: false
                       - market_tier: false
                       - address_id: false
-                      - profilePhotoUrl: true
                       - active: false
-                      - hashedPassword: true
                       - Calculated Column 1: true
                       - Calculated Column 2: true
-                      - resetPasswordExpires: true
                       - sales_rep: false
-                      - Calculated Column 3: true
                       - name: true
                       - Sales: true
                       - sales: true
                       - company_name: false
                       - mrr: false
-                      - sid: true
-                      - organizationId: true
-                      - updatedAt: true
-                      - resetPasswordToken: true
                       - activebool: false
                       - records_validated: false
                       - credits_remaining: false
                       - create_date: false
                       - last_update: false
                       - contract_length: false
-                      - twoFactorAuthSecret: true
-                      - googleId: true
                       - last_name: true
                       - records_expected: false
-                      - userName: true
                       - Title: true
                       - store_id: true
                       - first_name: true
                       - id: true
-                      - createdAt: true
-                      - firstName: true
                       - customer_id: true
-                      - lastActive: true
                       - email: true
                       - Description: true
                       - csm: false
                       - pm: false
-                      - lastLoggedIn: true
-                      - twoFactorAuthEnabled: true
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
@@ -232,18 +191,16 @@ appTemplate:
                     ordered:
                       - customer_id: false
                       - store_id: true
-                      - profilePhotoUrl: true
-                      - sid: true
                 - filters:
                     array: []
                 - displayedDataIndices: null
                 - columnMappers:
                     ordered:
                       - Calculated Column 1: >-
-                          {{transformer1.value.filter(r => r.id  ==
-                          currentRow.id  ).map(s => parseInt(s.sid) *
-                          textinput1.value * 10) }}
-                      - Calculated Column 2: '{{currentRow.id  * textinput1.value }}'
+                          {{transformer1.value.filter(r => r.customer_id  ==
+                          currentRow.customer_id  ).map(s => s.store_id *
+                          textinput1.value * 10)[0] }}
+                      - Calculated Column 2: '{{currentRow.customer_id  * textinput1.value }}'
                       - last_name: '{{self + textinput1.value}}'
                 - showClearSelection: false
                 - selectedCell:
@@ -253,33 +210,32 @@ appTemplate:
                       columnName: null
                 - columns:
                     - email
+                    - customer_id
+                    - store_id
+                    - first_name
+                    - last_name
                     - Calculated Column 1
                     - Calculated Column 2
-                    - id
-                    - sid
-                    - firstName
-                    - lastName
-                    - profilePhotoUrl
-                    - googleId
-                    - googleToken
-                    - hashedPassword
-                    - organizationId
-                    - createdAt
-                    - updatedAt
-                    - lastLoggedIn
-                    - enabled
-                    - resetPasswordToken
-                    - resetPasswordExpires
-                    - userName
-                    - twoFactorAuthSecret
-                    - twoFactorAuthEnabled
-                    - lastActive
-                    - Calculated Column 3
+                    - address_id
+                    - activebool
+                    - create_date
+                    - last_update
+                    - active
+                    - company_name
+                    - credits_used
+                    - credits_remaining
+                    - records_validated
+                    - records_expected
+                    - sales_rep
+                    - csm
+                    - pm
+                    - market_tier
+                    - contract_length
+                    - mrr
                 - sort: null
                 - calculatedColumns:
                     - Calculated Column 1
                     - Calculated Column 2
-                    - Calculated Column 3
                 - selectedRow:
                     object:
                       index: null
@@ -293,7 +249,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-11T23:58:15.787Z
+            updatedAt: 2020-03-10T18:45:58.057Z
       - transformer1:
           pluginTemplate:
             id: transformer1
