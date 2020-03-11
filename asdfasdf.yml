@@ -122,9 +122,11 @@ appTemplate:
                 - value: >-
                     Selected Points: `{{
                     JSON.stringify(customcomponent1.model.selectedPoints) }}`
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 row: 2
@@ -142,9 +144,11 @@ appTemplate:
                 - value: >-
                     Selected Points: `{{
                     JSON.stringify(customcomponent2.model.selectedPoints) }}`
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: true
+                - tooltipText: ''
             position2:
               position2:
                 row: 9
@@ -163,9 +167,11 @@ appTemplate:
                 - value: >-
                     Selected Points: `{{
                     JSON.stringify(customcomponent4.model.selectedPoints) }}`
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: true
+                - tooltipText: ''
             position2:
               position2:
                 row: 9
@@ -183,9 +189,11 @@ appTemplate:
                 - value: >-
                     Selected Points: `{{
                     JSON.stringify(customcomponent3.model.selectedPoints) }}`
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 row: 2
@@ -203,31 +211,53 @@ appTemplate:
             template:
               ordered:
                 - queryRefreshTime: ''
+                - databasePasswordOverride: ''
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - query: >-
                     select generate_series(1,100) as x, generate_series(1,100) *
                     generate_series(1,100) as y
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
                 - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
                 - dataArray: []
+                - cacheKeyTtl: ''
                 - triggersOnFailure: []
                 - databaseNameOverride: ''
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
                 - queryTriggerDelay: '0'
                 - watchedParams: []
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2019-02-10T22:08:12.000Z
             updatedAt: 2019-04-26T04:54:16.747Z
@@ -240,31 +270,53 @@ appTemplate:
             template:
               ordered:
                 - queryRefreshTime: ''
+                - databasePasswordOverride: ''
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - query: |-
                     select i as x, random() * 10 as y
                     from generate_series(1, 5) as i
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
                 - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
                 - dataArray: []
+                - cacheKeyTtl: ''
                 - triggersOnFailure: []
                 - databaseNameOverride: ''
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
                 - queryTriggerDelay: '0'
                 - watchedParams: []
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2019-02-10T22:16:05.677Z
             updatedAt: 2019-04-26T04:54:16.747Z
@@ -277,31 +329,53 @@ appTemplate:
             template:
               ordered:
                 - queryRefreshTime: ''
+                - databasePasswordOverride: ''
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - query: |-
                     select i as x, random() * i as y
                     from generate_series(1, 20) as i
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
                 - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
                 - dataArray: []
+                - cacheKeyTtl: ''
                 - triggersOnFailure: []
                 - databaseNameOverride: ''
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
                 - queryTriggerDelay: '0'
                 - watchedParams: []
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2019-02-10T22:20:51.578Z
             updatedAt: 2019-04-26T04:54:16.747Z
@@ -314,31 +388,53 @@ appTemplate:
             template:
               ordered:
                 - queryRefreshTime: ''
+                - databasePasswordOverride: ''
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
                 - query: |-
                     select random() as y1, random() as y2
                     from generate_series(1, 20) as i
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
                 - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
                 - dataArray: []
+                - cacheKeyTtl: ''
                 - triggersOnFailure: []
                 - databaseNameOverride: ''
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
                 - queryTriggerDelay: '0'
                 - watchedParams: []
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
+                - enableCaching: false
+                - databaseUsernameOverride: ''
+                - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2019-02-10T22:26:08.015Z
             updatedAt: 2019-04-26T04:54:16.747Z
@@ -350,7 +446,7 @@ appTemplate:
             template:
               ordered:
                 - valueToCopy: ''
-                - color: ''
+                - color: '#3c92dc'
                 - internalUrlHashParams: ''
                 - exportFileType: csv
                 - buttonType: action
@@ -385,6 +481,7 @@ appTemplate:
                 - queryDisabledMessage: ''
                 - successMessage: ''
                 - queryDisabled: ''
+                - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: false
                 - query: |-
@@ -392,21 +489,39 @@ appTemplate:
                     boxPlotQuery.trigger()
                     scatterPlotQuery.trigger()
                     barchartQuery.trigger()
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: 0
                 - privateParams: []
                 - triggersOnSuccess: []
                 - runWhenPageLoadsDelay: ''
                 - data: null
+                - importedQueryInputs:
+                    ordered: []
                 - showSuccessConfetti: false
+                - isImported: false
                 - showSuccessToaster: true
+                - cacheKeyTtl: ''
                 - triggersOnFailure: []
                 - confirmationMessage: null
                 - isFetching: false
+                - rawData: null
                 - queryTriggerDelay: '0'
                 - watchedParams: []
                 - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
                 - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
                 - queryTimeout: '10000'
                 - requireConfirmation: false
+                - enableCaching: false
                 - queryThrottleTime: '750'
             createdAt: 2019-03-07T01:44:13.145Z
             updatedAt: 2019-04-26T04:54:16.747Z
@@ -421,9 +536,11 @@ appTemplate:
                     # Interactive Plotly Charts
 
                     #### Click points to select them
-                - html: false
+                - renderAsMarkdown: true
+                - renderAsHtml: true
                 - scrollOverflow: false
                 - truncateOverflow: false
+                - tooltipText: ''
             position2:
               position2:
                 height: 1
@@ -435,7 +552,7 @@ appTemplate:
             createdAt: 2019-04-26T04:55:18.481Z
             updatedAt: 2019-04-26T04:56:43.772Z
   createdAt: null
-  version: 2.38.71
+  version: 2.54.11
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
