@@ -88,32 +88,50 @@ appTemplate:
                 - alwaysShowPaginator: false
                 - columnColors:
                     ordered:
+                      - googleToken: ''
+                      - lastName: ''
+                      - enabled: ''
                       - credits_used: ''
                       - market_tier: ''
                       - address_id: ''
+                      - profilePhotoUrl: ''
                       - active: ''
+                      - hashedPassword: ''
                       - Calculated Column 1: lightgreen
                       - Calculated Column 2: blue
+                      - resetPasswordExpires: ''
                       - sales_rep: ''
                       - name: ''
                       - sales: ''
                       - company_name: ''
                       - mrr: ''
+                      - sid: ''
+                      - organizationId: ''
+                      - updatedAt: ''
+                      - resetPasswordToken: ''
                       - activebool: ''
                       - records_validated: ''
                       - credits_remaining: ''
                       - create_date: ''
                       - last_update: ''
                       - contract_length: ''
+                      - twoFactorAuthSecret: ''
+                      - googleId: ''
                       - last_name: ''
                       - records_expected: ''
+                      - userName: ''
                       - store_id: orange
                       - first_name: ''
                       - id: ''
+                      - createdAt: ''
+                      - firstName: ''
                       - customer_id: ''
+                      - lastActive: ''
                       - email: ''
                       - csm: ''
                       - pm: ''
+                      - lastLoggedIn: ''
+                      - twoFactorAuthEnabled: ''
                 - allowMultiRowSelect: false
                 - columnFormats:
                     ordered: []
@@ -121,35 +139,53 @@ appTemplate:
                 - nextBeforeCursor: ''
                 - columnVisibility:
                     ordered:
+                      - googleToken: true
+                      - lastName: true
+                      - enabled: true
                       - credits_used: false
                       - market_tier: false
                       - address_id: false
+                      - profilePhotoUrl: true
                       - active: false
+                      - hashedPassword: true
                       - Calculated Column 1: true
                       - Calculated Column 2: true
+                      - resetPasswordExpires: true
                       - sales_rep: false
                       - name: true
                       - Sales: true
                       - sales: true
                       - company_name: false
                       - mrr: false
+                      - sid: true
+                      - organizationId: true
+                      - updatedAt: true
+                      - resetPasswordToken: true
                       - activebool: false
                       - records_validated: false
                       - credits_remaining: false
                       - create_date: false
                       - last_update: false
                       - contract_length: false
+                      - twoFactorAuthSecret: true
+                      - googleId: true
                       - last_name: true
                       - records_expected: false
+                      - userName: true
                       - Title: true
                       - store_id: true
                       - first_name: true
                       - id: true
+                      - createdAt: true
+                      - firstName: true
                       - customer_id: true
+                      - lastActive: true
                       - email: true
                       - Description: true
                       - csm: false
                       - pm: false
+                      - lastLoggedIn: true
+                      - twoFactorAuthEnabled: true
                 - selectedPageIndex: '0'
                 - actionButtonColumnName: Actions
                 - filterStackType: and
@@ -232,6 +268,25 @@ appTemplate:
                     - market_tier
                     - contract_length
                     - mrr
+                    - id
+                    - firstName
+                    - lastName
+                    - profilePhotoUrl
+                    - googleId
+                    - googleToken
+                    - hashedPassword
+                    - organizationId
+                    - createdAt
+                    - updatedAt
+                    - lastLoggedIn
+                    - enabled
+                    - resetPasswordToken
+                    - resetPasswordExpires
+                    - sid
+                    - userName
+                    - twoFactorAuthSecret
+                    - twoFactorAuthEnabled
+                    - lastActive
                 - sort: null
                 - calculatedColumns:
                     - Calculated Column 1
@@ -249,7 +304,7 @@ appTemplate:
                 height: 12
                 width: 12
             createdAt: 2020-03-05T17:17:54.001Z
-            updatedAt: 2020-03-10T18:45:58.057Z
+            updatedAt: 2020-03-11T23:50:50.178Z
       - transformer1:
           pluginTemplate:
             id: transformer1
