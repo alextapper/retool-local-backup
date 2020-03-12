@@ -9,7 +9,7 @@ appTemplate:
             id: query1
             type: datasource
             subtype: SqlQuery
-            resourceName: ecommerce
+            resourceName: onprem-db
             template:
               ordered:
                 - queryRefreshTime: ''
@@ -20,7 +20,15 @@ appTemplate:
                 - playgroundQuerySaveId: 0
                 - resourceNameOverride: ''
                 - runWhenModelUpdates: true
-                - query: select * from users order by customer_id asc
+                - query: |-
+                    select
+                      email,
+                      id as customer_id,
+                      "organizationId" as store_id,
+                      "firstName" as first_name,
+                      "lastName" as last_name
+                    from
+                      users
                 - playgroundQueryUuid: ''
                 - playgroundQueryId: 0
                 - privateParams: []
@@ -61,7 +69,7 @@ appTemplate:
                 - shouldEnableBatchQuerying: false
                 - queryThrottleTime: '750'
             createdAt: 2020-03-05T17:17:47.807Z
-            updatedAt: 2020-03-05T18:47:06.431Z
+            updatedAt: 2020-03-12T00:00:25.518Z
       - table1:
           pluginTemplate:
             id: table1
