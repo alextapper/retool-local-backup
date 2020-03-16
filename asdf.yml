@@ -298,25 +298,38 @@ appTemplate:
             subtype: TextInputWidget
             template:
               ordered:
+                - validationMaxlengthValue: ''
                 - readonly: ''
                 - disabledKeyCodes: ''
+                - validationMaxValue: ''
                 - onBlur: ''
                 - docsSlug: textinput
+                - validatonType: ''
                 - currencyType: USD
                 - leftIconName: ''
                 - initialValue: '{{ filepicker2.file.name }}'
+                - validationMessage: ''
                 - tooltipText: ''
                 - value: ''
                 - suffix: ''
+                - validationMinlengthValue: ''
+                - validationLengthValue: ''
                 - placeholder: Filename
+                - validationType: regexp
                 - label: Filename
                 - currencyMajorOnly: false
                 - formattedValue: ''
                 - labelMaxWidth: ''
+                - enableValidationType: false
                 - labelPlacedOnLeft: ''
                 - onSubmit: ''
+                - validationMinValue: ''
+                - validationState:
+                    object:
+                      required: ''
+                      validationType: ''
                 - type: text
-                - allowedRegex: .*
+                - allowedRegex: ''
                 - required: false
             position2:
               position2:
@@ -460,7 +473,7 @@ appTemplate:
             createdAt: 2019-05-17T20:07:19.424Z
             updatedAt: 2019-05-17T20:08:10.485Z
   createdAt: null
-  version: 2.54.11
+  version: 2.54.18
   responsiveLayoutDisabled: false
   urlFragmentDefinitions: []
   pageLoadValueOverrides: []
