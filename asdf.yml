@@ -472,6 +472,26 @@ appTemplate:
                 - queryThrottleTime: '750'
             createdAt: 2019-05-17T20:07:19.424Z
             updatedAt: 2019-05-17T20:08:10.485Z
+      - text7:
+          pluginTemplate:
+            id: text7
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - value: "**Hello** friend! \U0001F603\n\n"
+                - renderAsMarkdown: true
+                - renderAsHtml: false
+                - scrollOverflow: false
+                - truncateOverflow: false
+                - tooltipText: ''
+            position2:
+              position2:
+                row: 8
+                height: 1
+                width: 3
+            createdAt: 2020-03-16T22:51:55.059Z
+            updatedAt: 2020-03-16T22:51:55.059Z
   createdAt: null
   version: 2.54.18
   responsiveLayoutDisabled: false
